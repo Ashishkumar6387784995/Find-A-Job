@@ -54,7 +54,7 @@ class HomeController extends Controller
         $data['dashboard'] = [
             'count_total_booking'               => Booking::myBooking()->count(),
             'count_total_service'               => Service::myService()->count(),
-            'count_total_provider'              => User::where('user_type','provider')->count(),
+            'count_total_provider'              => User::where('user_type', 'provider')->count(),
             'new_customer'                      => User::myUsers('get_customer')->orderBy('id', 'DESC')->take(5)->get(),
             'new_provider'                      => User::myUsers('get_provider')->with('getServiceRating')->orderBy('id', 'DESC')->take(5)->get(),
             // 'upcomming_booking'                 => Booking::myBooking()->with('customer')->where('status', 'pending')->orderBy('id', 'DESC')->take(5)->get(),
@@ -75,27 +75,27 @@ class HomeController extends Controller
         $data['CommissionEarning'] = CommissionEarning::whereIn('commission_status', ['paid', 'unpaid'])->sum('commission_amount');
         $data['cancellationcharge'] = Booking::where('status', 'cancelled')->sum('cancellation_charge_amount');
         $data['total_subscription_amout'] = SubscriptionTransaction::where('payment_status', 'paid')->sum('amount');
-        $data['total_revenue'] = $data['CommissionEarning'] + $data['cancellationcharge']+ $data['total_subscription_amout'];
+        $data['total_revenue'] = $data['CommissionEarning'] + $data['cancellationcharge'] + $data['total_subscription_amout'];
         if ($user->hasAnyRole(['admin', 'demo_admin'])) {
             $data['revenueData']    =  adminEarning();
         }
-        $setting = Setting::getValueByKey('site-setup','site-setup');
+        $setting = Setting::getValueByKey('site-setup', 'site-setup');
         $digitafter_decimal_point = $setting ? $setting->digitafter_decimal_point : "2";
         if ($user->hasRole('provider')) {
             $revenuedata = ProviderPayout::selectRaw('sum(amount) as total , DATE_FORMAT(updated_at , "%m") as month')
-            ->where('provider_id', $user->id)
-            ->whereYear('updated_at', date('Y'))
-            // ->whereIn('commission_status', ['paid'])
-            ->groupBy('month');
+                ->where('provider_id', $user->id)
+                ->whereYear('updated_at', date('Y'))
+                // ->whereIn('commission_status', ['paid'])
+                ->groupBy('month');
             $revenuedata = $revenuedata->get()->toArray();
             $data['revenueData']    =    [];
             $data['revenuelableData']    =    [];
             for ($i = 1; $i <= 12; $i++) {
                 $revenueData = 0.0;
-                
+
                 foreach ($revenuedata as $revenue) {
                     if ($revenue['month'] == $i) {
-                        $data['revenueData'][] = round($revenue['total'],$digitafter_decimal_point);
+                        $data['revenueData'][] = round($revenue['total'], $digitafter_decimal_point);
                         $revenueData++;
                     }
                 }
@@ -106,15 +106,15 @@ class HomeController extends Controller
             // dd($data['revenueData']);
             $data['currency_data'] = currency_data();
         }
-        
-        $data['total_tax']  =    Booking::with('commissionsdata')->whereHas('commissionsdata', function($query){
-            $query->whereIn('commission_status', ['unpaid','paid'])->groupBy('booking_id');
+
+        $data['total_tax']  =    Booking::with('commissionsdata')->whereHas('commissionsdata', function ($query) {
+            $query->whereIn('commission_status', ['unpaid', 'paid'])->groupBy('booking_id');
         })->sum('final_total_tax') ?? 0;
-        $data['total_earning']  = CommissionEarning::whereIn('user_type',['admin', 'demo_admin'])->whereIn('commission_status', ['unpaid','paid'])->sum('commission_amount') ?? 0;
-       
+        $data['total_earning']  = CommissionEarning::whereIn('user_type', ['admin', 'demo_admin'])->whereIn('commission_status', ['unpaid', 'paid'])->sum('commission_amount') ?? 0;
+
 
         $data['total_earning'] += $data['cancellationcharge'] + $data['total_subscription_amout'];
-    // dd($data);
+        // dd($data);
 
         //     $data['total_revenue'] = getPriceFormat($total_revenue);
         // }
@@ -128,11 +128,11 @@ class HomeController extends Controller
         if ($user->hasRole('provider')) {
             $user = User::with('commission_earning')->where('id', $user->id)->where('user_type', 'provider')->first();
             $commissions = $user->commission_earning()
-            ->whereHas('getbooking', function ($query) {
-                $query->where('status', 'completed');
-            })
-            ->where('commission_status', 'unpaid')
-            ->pluck('booking_id'); // Get all booking IDs
+                ->whereHas('getbooking', function ($query) {
+                    $query->where('status', 'completed');
+                })
+                ->where('commission_status', 'unpaid')
+                ->pluck('booking_id'); // Get all booking IDs
 
             $ProviderEarning = 0;
 
@@ -146,14 +146,14 @@ class HomeController extends Controller
 
 
             $data['remaining_payout']  = $ProviderEarning;
-            $data['total_earning']  = ProviderPayout::where('provider_id',$user->id)->sum('amount') ?? 0;
-        }elseif($user->hasRole('handyman')){
+            $data['total_earning']  = ProviderPayout::where('provider_id', $user->id)->sum('amount') ?? 0;
+        } elseif ($user->hasRole('handyman')) {
             $data['remaining_payout']  = CommissionEarning::where('employee_id', $user->id)->where('commission_status', 'unpaid')->sum('commission_amount') ?? 0;
-            $data['total_earning']  = HandymanPayout::where('handyman_id',$user->id)->sum('amount') ?? 0;
+            $data['total_earning']  = HandymanPayout::where('handyman_id', $user->id)->sum('amount') ?? 0;
         }
 
-$sitesetup = Setting::where('type','site-setup')->where('key', 'site-setup')->first();
-$data['datetime'] = $sitesetup ? json_decode($sitesetup->value) : null;
+        $sitesetup = Setting::where('type', 'site-setup')->where('key', 'site-setup')->first();
+        $data['datetime'] = $sitesetup ? json_decode($sitesetup->value) : null;
 
         if (auth()->user()->hasAnyRole(['admin', 'demo_admin'])) {
             return $this->adminDashboard($data);
@@ -406,19 +406,19 @@ $data['datetime'] = $sitesetup ? json_decode($sitesetup->value) : null;
                 // $items = $items->get();
                 // if (isset($request->language_id) && $request->language_id !== null) {
                 //     $languageId = $request->language_id;
-            
+
                 //     // Map through the items and apply translations for the 'name' attribute
                 //     $items = $items->map(function ($item) use ($languageId) {
                 //         // Translate the 'name' field using the translate method
                 //         $translatedName = $item->translate('name', $languageId);
-            
+
                 //         // If a translation is found, use it; otherwise, fallback to the original name
                 //         $item->text = $translatedName ?: $item->text;
-            
+
                 //         return $item;
                 //     });
                 // }
-            
+
                 // Return the items (either translated or original) as JSON response
                 return response()->json($items);
                 break;
@@ -428,7 +428,7 @@ $data['datetime'] = $sitesetup ? json_decode($sitesetup->value) : null;
                 if ($value != '') {
                     $items->where('name', 'LIKE', '%' . $value . '%');
                 }
-                if($request->has('category_id')){
+                if ($request->has('category_id')) {
                     $items->where('category_id', $request->category_id);
                 }
                 if ($request->has('language_id')) {
@@ -455,8 +455,8 @@ $data['datetime'] = $sitesetup ? json_decode($sitesetup->value) : null;
 
                 if ($request->has('language_id')) {
                     $languageId = $request->input('language_id');
-                    $items = $items->get()->map(function ($provider)  {
-                        
+                    $items = $items->get()->map(function ($provider) {
+
                         return [
                             'id' => $provider->id,    // ID to be used by Select2
                             'text' => $provider->text // Display name of the provider
@@ -467,7 +467,7 @@ $data['datetime'] = $sitesetup ? json_decode($sitesetup->value) : null;
                     $items = $items->get();
                 }
                 //$items = $items->get();
-                
+
                 break;
 
             case 'user':
@@ -493,10 +493,10 @@ $data['datetime'] = $sitesetup ? json_decode($sitesetup->value) : null;
 
                 $items = $items->get();
                 break;
-            
+
             case 'provider-user-handyman':
                 $items = \App\Models\User::select('id', 'display_name as text')
-                    ->whereIn('user_type', ['provider','user','handyman'])
+                    ->whereIn('user_type', ['provider', 'user', 'handyman'])
                     ->where('status', 1);
 
                 if ($value != '') {
@@ -552,13 +552,13 @@ $data['datetime'] = $sitesetup ? json_decode($sitesetup->value) : null;
                         ->pluck('service_id')
                         ->toArray();
 
-                        if (!empty($topRatedServiceIds)) {
-                            $items->whereIn('id', $topRatedServiceIds)
-                                ->orderByRaw("FIELD(id, " . implode(',', $topRatedServiceIds) . ")");
-                        } else {
-                            // Optional: Handle case where no services match the criteria
-                            $items->whereRaw('0 = 1'); // Ensures no results are returned
-                        }
+                    if (!empty($topRatedServiceIds)) {
+                        $items->whereIn('id', $topRatedServiceIds)
+                            ->orderByRaw("FIELD(id, " . implode(',', $topRatedServiceIds) . ")");
+                    } else {
+                        // Optional: Handle case where no services match the criteria
+                        $items->whereRaw('0 = 1'); // Ensures no results are returned
+                    }
                 }
 
                 if (isset($request->is_featured)) {
@@ -571,19 +571,19 @@ $data['datetime'] = $sitesetup ? json_decode($sitesetup->value) : null;
 
                 break;
             case 'service-list':
-                $items = \App\Models\Service::select('id', 'name as text','price')
-                ->where('status', 1)
-                ->where('service_type', 'service');
+                $items = \App\Models\Service::select('id', 'name as text', 'price')
+                    ->where('status', 1)
+                    ->where('service_type', 'service');
                 // Apply search filter if $value is provided
                 if (!empty($value)) {
                     $items->where('name', 'LIKE', '%' . $value . '%');
                 }
-                
+
                 // // Filter by provider_id if it's provided in the request
                 // if ($request->filled('provider_id')) {
                 //     $items->where('provider_id', $request->provider_id);
                 // }
-                
+
                 // Filter by handyman_id if it's provided in the request
                 if ($request->filled('handyman_id')) {
                     $providerId = \App\Models\User::where('id', $request->handyman_id)
@@ -595,7 +595,7 @@ $data['datetime'] = $sitesetup ? json_decode($sitesetup->value) : null;
                 }
 
                 // $items = $items->get();
-                if(auth()->user()->hasRole('provider')){
+                if (auth()->user()->hasRole('provider')) {
                     $provider_id = !empty($request->provider_id) ? $request->provider_id : auth()->user()->id;
                     $items->where('provider_id', $request->provider_id);
                 }
@@ -1013,7 +1013,7 @@ $data['datetime'] = $sitesetup ? json_decode($sitesetup->value) : null;
     }
     function getAjaxServiceList(Request $request)
     {
-        $items = \App\Models\Service::select('id', 'name as text','price')->where('status', 1)->where('type', 'fixed');
+        $items = \App\Models\Service::select('id', 'name as text', 'price')->where('status', 1)->where('type', 'fixed');
 
         $provider_id = !empty($request->provider_id) ? $request->provider_id : auth()->user()->id;
         $items->where('provider_id', $provider_id);
@@ -1036,7 +1036,7 @@ $data['datetime'] = $sitesetup ? json_decode($sitesetup->value) : null;
                 $serviceData = Service::find($id);
                 $attachments = $serviceData->getMedia('service_attachment');
                 break;
-            
+
             case 'helpdesk':
                 $helpdesk = HelpDesk::find($id);
                 $attachments = $helpdesk->getMedia('helpdesk_attachment');
