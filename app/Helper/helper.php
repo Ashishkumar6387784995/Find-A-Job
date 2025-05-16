@@ -3,9 +3,6 @@
 use \Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Google\Client as Google_Client;
-use Symfony\Component\HttpFoundation\Session\Session;
-use Illuminate\Support\Facades\DB; 
-
 function authSession($force=false){
     $session = new \App\Models\User;
     if($force){
