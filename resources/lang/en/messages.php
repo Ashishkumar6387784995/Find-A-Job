@@ -258,6 +258,7 @@
     'is_verify' => 'Verification',
     'verified' => 'Verified',
     'unverified' => 'Unverified Users',
+    'store_option' => 'Store Option',
     'upload_document' => 'Upload Document',
     'required_docs' => 'Please upload all required documenets',
     'review' => 'Review',
