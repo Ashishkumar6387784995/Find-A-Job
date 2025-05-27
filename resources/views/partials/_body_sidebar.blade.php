@@ -1181,8 +1181,9 @@
     <div class="data-scrollbar" data-scroll="1">
         <div class="user-profile">
             <div class="avatar">
+                <!-- changed -->
                 <img class="avatar-50 rounded-circle bg-light" alt="user-icon"
-                    src="{{ getSingleMedia(auth()->user(), 'profile_image', null) }}">
+                    src="{{ asset('images/user/user.png') }}">
             </div>
             <div class="user-info">
                 <h5 class="user-email">{{ optional(auth()->user())->email ?? '--' }}</h5>

@@ -85,8 +85,9 @@
                         </li>
 
                         <li class="nav-item nav-icon dropdown">
+                            <!-- changed -->
                             <a href="#" class="nav-item nav-icon dropdown-toggle search-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="{{ getSingleMedia(auth()->user(),'profile_image') }}" class="img-fluid avatar-rounded bg-light" alt="user">
+                                <img src="{{ asset('images/user/user.png') }}" class="img-fluid avatar-rounded bg-light" alt="user">
                                 <span class="mb-0  user-name">{{ auth()->user()->first_name." ".auth()->user()->last_name }}</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right user-dropdown shadow" aria-labelledby="dropdownMenuButton">

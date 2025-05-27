@@ -135,27 +135,7 @@
                         <h4 class="fw-bold">{{ __('messages.recent_provider') }} ({{$data['dashboard']['count_total_provider']}})</h4>
                             <a href="{{ route('provider.index') }}" class="btn-link btn-link-hover"><u>{{__('messages.view_all')}} </u></a>
                     </div>
-                    <div class="card-body p-0">
-                        <ul class="common-list list-unstyled">
-                            @foreach($data['dashboard']['new_provider'] as $provider)
-                            <li style="pointer-events:none;">
-                                <div class="media gap-3">
-                                    <div class="h-avatar is-medium h-5">
-                                        <img class="avatar-50 rounded-circle bg-light" alt="user-icon" src="{{ getSingleMedia($provider,'profile_image', null) }}">
-                                    </div>
-
-                                    <div class="media-body ">
-                                        <h5 class="mb-1"><span class="fw-bold">{{!empty($provider->display_name) ? $provider->display_name : '-'}}</span> </h5>
-                                            <span class="common-list_rating d-flex gap-1">
-                                                <i class="ri-star-s-fill"></i>
-                                                {{round($provider->getServiceRating->avg('rating'), 1)}}
-                                            </span>
-                                    </div>
-                                </div>
-                            </li>
-                            @endforeach
-                        </ul>
-                    </div>
+                    
                 </div>
             </div>
             <div class="col-xl-4 col-sm-6">
