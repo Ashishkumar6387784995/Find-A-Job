@@ -880,14 +880,14 @@
 		
 		 
 		   <div class="row">
-								<div class="col">
+								<div class="col-lg-2 col-md-3  col-sm-4 ">
 								    <div class="service_box">
 									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid"/></div>
 										 
 									</div>
 									 
 								</div>
-								<div class="col">
+								<div class="col-lg-2 col-md-3  col-sm-4 ">
 								    <div class="service_box">
 									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid"/></div>
 										 
@@ -895,7 +895,7 @@
 									 
 								</div>
 								
-								<div class="col">
+								<div class="col-lg-2 col-md-3  col-sm-4 ">
 								    <div class="service_box">
 									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid"/></div>
 										 
@@ -903,7 +903,7 @@
 									 
 								</div>
 								
-								<div class="col">
+								<div class="col-lg-2 col-md-3  col-sm-4 ">
 								    <div class="service_box">
 									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid"/></div>
 										 
@@ -911,7 +911,7 @@
 									 
 								</div>
 								
-								<div class="col">
+								<div class="col-lg-2 col-md-3  col-sm-4 ">
 								    <div class="service_box">
 									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/moving-truck.png" class="img-fluid"/></div>
 										 
@@ -919,7 +919,7 @@
 									 
 								</div>
 								
-								<div class="col">
+								<div class="col-lg-2 col-md-3  col-sm-4 ">
 								    <div class="service_box">
 									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
 										 
@@ -928,7 +928,7 @@
 								</div>
 					
 		
-								<div class="col">
+								<div class="col-lg-2 col-md-3  col-sm-4 ">
 								    <div class="service_box">
 									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid"/></div>
 										 
@@ -936,7 +936,7 @@
 									 
 								</div>
 								 
-								<div class="col">
+								<div class="col-lg-2 col-md-3  col-sm-4 ">
 								    <div class="service_box">
 									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid"/></div>
 										 
@@ -957,8 +957,173 @@
 </div>
 
 
+
+
+<div class="section-padding-custom ">
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-center flex-wrap gap-2 mb-4">
+            <div class="iq-title-box mb-0">
+                <h3 class="text-capitalize line-count-1">Residential
+                    <div class="highlighted-text">
+                        <span class="highlighted-text-swipe"></span>
+                        <span class="highlighted-image">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="155" height="12" viewBox="0 0 155 12"
+                                fill="none">
+                                <path d="M2.5 9.5C3.16964 9.26081 78.8393 -2.45948 152.5 4.9554" stroke="currentColor"
+                                    stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </div>
+                </h3>
+            </div>
+             
+        </div>
+		
+		
+		 
+		   <div class="row">
+								
+								<div class="col-lg-2 col-md-3  col-sm-4 ">
+								    <div class="service_box">
+									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/construction.png" class="img-fluid"/></div>
+										 <h5><a href="#">Residential Cleaning</a></h5> 
+									</div>
+									 
+								</div>
+								
+								<div class="col-lg-2 col-md-3  col-sm-4 ">
+								    <div class="service_box">
+									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/property.png" class="img-fluid"/></div>
+										<h5><a href="#">Residential for Rent</a></h5> 
+										 
+									</div>
+									 
+								</div>
+								<div class="col-lg-2 col-md-3  col-sm-4 ">
+								    <div class="service_box">
+									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/marketplace.png" class="img-fluid"/></div>
+										 <h5><a href="#">Commercial for Sale</a></h5> 
+									</div>
+									 
+								</div>
+								<div class="col-lg-2 col-md-3  col-sm-4 ">
+								    <div class="service_box">
+									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/machine.png" class="img-fluid"/></div>
+										 <h5><a href="#">Lawn Mowing</a></h5> 
+									</div>
+									 
+								</div>
+								
+								
+								
+								<div class="col-lg-2 col-md-3  col-sm-4 ">
+								    <div class="service_box">
+									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/washing-machine.png" class="img-fluid"/></div>
+										 <h5><a href="#">Laundry Washing</a></h5> 
+									</div>
+									 
+								</div>
+								
+								
+								
+								<div class="col-lg-2 col-md-3  col-sm-4 ">
+								    <div class="service_box">
+									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
+										<h5><a href="#">Residential for Rent</a></h5> 
+									</div>
+									 
+								</div>
+					
+		
+								 
+								 
+								
+								 
+								
+								
+								
+							</div>
+		    
+		
+		 
+         
+    </div>
+</div>
+
+
+
+
+<section class="newsletter-section">
+    <div class="container my-4">
+	  <div class="airmail-border d-flex flex-wrap align-items-center justify-content-between">
+		<p class="mb-2 mb-md-0 fw-bold flex-grow-1">Subscribe to get the best deals right in your inbox!</p>
+		<div class="input-group" style="max-width: 400px;">
+		  <input type="email" class="form-control" placeholder="Enter email to stay updated">
+		  <button class="btn subscribe-btn">Subscribe</button>
+		</div>
+	  </div>
+	</div>
+</section>
+
+
+
+<section class="stats-bar">
+<div class="container">
+  <div class="container">
+    <div class="row text-center justify-content-center">
+      
+      <div class="col-6 col-sm-3 mb-3 mb-sm-0">
+	    <div class="stats-item">
+			<div class="stats-icon mb-1"><i class="fas fa-shield-alt"></i></div>
+			<div class="stats-content">
+		    	<div class="stats-number">100%</div>
+			    <div class="stats-label">Verified Deals</div>
+			</div>
+		</div>
+      </div>
+
+      <div class="col-6 col-sm-3 mb-3 mb-sm-0">
+	    <div class="stats-item">
+			<div class="stats-icon mb-1"><i class="fas fa-store-alt"></i></div>
+			<div class="stats-content">
+		    	<div class="stats-number">360+</div>
+			    <div class="stats-label">Online Stores</div>
+			</div>
+		</div>
+	  
+         
+      </div>
+
+      <div class="col-6 col-sm-3 stats-item mb-3 mb-sm-0">
+	     <div class="stats-item">
+			<div class="stats-icon mb-1"><i class="fas fa-box-open"></i></div>
+			<div class="stats-content">
+		    	<div class="stats-number">691320+</div>
+			    <div class="stats-label">Deals listed</div>
+			</div>
+		</div>
+	    
+      </div>
+
+      <div class="col-6 col-sm-3 stats-item">
+	    <div class="stats-item">
+			<div class="stats-icon mb-1"><i class="fas fa-smile"></i></div>
+			<div class="stats-content">
+		    	<div class="stats-number">115315+</div>
+			    <div class="stats-label">Happy Members</div>
+			</div>
+		</div>
+         
+      </div>
+
+    </div>
+  </div>
+</div>
+</section>
+
+
 <!-- Categories -->
-@if ($sectionData && isset($sectionData['section_2']) && $sectionData['section_2']['section_2'] == 1)
+<!--@if ($sectionData && isset($sectionData['section_2']) && $sectionData['section_2']['section_2'] == 1)
 <div class="section-padding">
     <div class="container">
         <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
@@ -982,11 +1147,11 @@
         <category-section></category-section>
     </div>
 </div>
-@endif
+@endif -->
 
 
 <!-- Service -->
-@if ((isset($sectionData['section_3']) && $sectionData['section_3']['section_3'] == 1) || (isset($sectionData['section_4']) && $sectionData['section_4']['section_4'] == 1))
+<!-- @if ((isset($sectionData['section_3']) && $sectionData['section_3']['section_3'] == 1) || (isset($sectionData['section_4']) && $sectionData['section_4']['section_4'] == 1))
  <div class="section-padding bg-light our-service">
     <div class="container">
         @if ($sectionData && isset($sectionData['section_3']) && $sectionData['section_3']['section_3'] == 1)
@@ -1039,7 +1204,7 @@
 </div>
 @endif
 @if($auth_user_id)
-<!-- Recently Viewed Service -->
+ 
 @if ($sectionData && isset($sectionData['section_8']) && $sectionData['section_8']['section_8'] == 1)
 @php
 $recentlyViewed = session()->get('recently_viewed:' . $auth_user_id, []);
@@ -1080,11 +1245,11 @@ session(['recently_viewed:' . $auth_user_id => $recentlyViewed]);
             </div>
         @endif
     @endif
-@endif
+@endif   -->
 
 <!-- Provider -->
 
-@if ($sectionData && isset($sectionData['section_5']) && $sectionData['section_5']['section_5'] == 1)
+<!--@if ($sectionData && isset($sectionData['section_5']) && $sectionData['section_5']['section_5'] == 1)
 <div class="bg-primary-subtle overflow-hidden">
     <div class="container provider-section position-relative">
         @php
@@ -1141,9 +1306,9 @@ session(['recently_viewed:' . $auth_user_id => $recentlyViewed]);
         @endif
     </div>
 </div>
-@endif
+@endif -->
 
-@if ($sectionData && isset($sectionData['section_9']) && $sectionData['section_9']['section_9'] == 1)
+<!--@if ($sectionData && isset($sectionData['section_9']) && $sectionData['section_9']['section_9'] == 1)
 <div class="section-padding bg-light px-0">
     <div class="container-fluid px-xxl-3">
        <div class="row">
@@ -1151,7 +1316,7 @@ session(['recently_viewed:' . $auth_user_id => $recentlyViewed]);
                 <div class="iq-title-box text-center center mb-2">
                     <h3 class="text-capitalize line-count-1">{{ $sectionData['section_9']['title'] }}
                     <span class="highlighted-text">
-                        <!-- <span class="highlighted-text-swipe">our trusted clients</span> -->
+                         
                         <span class="highlighted-image">
                             <svg xmlns="http://www.w3.org/2000/svg" width="130" height="11" viewBox="0 0 130 11"
                                 fill="none">
@@ -1184,9 +1349,9 @@ session(['recently_viewed:' . $auth_user_id => $recentlyViewed]);
        </div>
     </div>
 </div>
-@endif
+@endif-->
 
-@if ($sectionData && isset($sectionData['section_6']) && $sectionData['section_6']['section_6'] == 1)
+<!--@if ($sectionData && isset($sectionData['section_6']) && $sectionData['section_6']['section_6'] == 1)
 <div class="section-padding">
     <div class="container">
        <div class="row align-items-center">
@@ -1247,9 +1412,9 @@ session(['recently_viewed:' . $auth_user_id => $recentlyViewed]);
        </div>
     </div>
  </div>
-@endif
+@endif -->
 
-@if ($sectionData && isset($sectionData['section_7']) && $sectionData['section_7']['section_7'] == 1)
+<!--@if ($sectionData && isset($sectionData['section_7']) && $sectionData['section_7']['section_7'] == 1)
  <div class="section-padding pt-0">
     <div class="container">
         <div class="row align-items-center">
@@ -1304,7 +1469,7 @@ session(['recently_viewed:' . $auth_user_id => $recentlyViewed]);
     </div>
  </div>
 @endif
-
+ -->
 
 @endsection
 @section('bottom_script')
@@ -1428,4 +1593,6 @@ session(['recently_viewed:' . $auth_user_id => $recentlyViewed]);
       }
    });
 </script>
+
+
 @endsection

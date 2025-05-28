@@ -406,14 +406,14 @@
                 policies, warranties, and liability limitations. Cancellations within 24 hours of the service may
                 incur
                 a fee. Any issues with workmanship are covered under our 30-day warranty. Contact us for details at
-                <a href="#" style="text-decoration: none; color: #5F60B9;">support@handyman.com.</a>
+                <a href="#" style="text-decoration: none; color: #5F60B9;">support@findajob.com.</a>
             </p>
         </div>
         <footer style="margin-top: 8px;">
             <div style="display: inline; vertical-align: middle; margin-right: 10px;">
                 <h5 style="display: inline;">For more information, visit our website:</h5>
                 <a href="{{$generaldata->website}}" style="color: #5F60B9;">{{ $generaldata->website}}</a>
-                <h5 style="display: block; margin: 8px 0 0;">© 2024 All Rights Reserved by IQONIC Design</h5>
+                <h5 style="display: block; margin: 8px 0 0;">© 2024 All Rights Reserved by Find a Job</h5>
             </div>
         </footer>
     </div>

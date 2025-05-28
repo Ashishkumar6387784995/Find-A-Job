@@ -1,5 +1,98 @@
 
 
+
+
+<footer class="footer pb-0">
+  <div class="container">
+    <div class="row">
+      
+      <!-- About -->
+      <div class="col-6 col-md-2">
+        <h6>About</h6>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Advertising</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">News & Articles</a></li>
+          <li><a href="#">Webstory</a></li>
+          <li><a href="#">Refer and Earn</a></li>
+        </ul>
+      </div>
+
+      <!-- Festival Deals -->
+      <div class="col-6 col-md-2">
+        <h6>Festival Deals</h6>
+        <ul>
+          <li><a href="#">Christmas Offers</a></li>
+          <li><a href="#">New Year Offers</a></li>
+          <li><a href="#">Republic Day Offers</a></li>
+          <li><a href="#">Diwali Offers</a></li>
+          <li><a href="#">Rakhi Offers</a></li>
+          <li><a href="#">Independence Day</a></li>
+          <li><a href="#">Flipkart Big Billion Sale</a></li>
+        </ul>
+      </div>
+
+      <!-- Top Stores -->
+      <div class="col-6 col-md-2">
+        <h6>Top Stores</h6>
+        <ul>
+          <li><a href="#">Flipkart</a></li>
+          <li><a href="#">Myntra</a></li>
+          <li><a href="#">Amazon</a></li>
+          <li><a href="#">Ajio</a></li>
+          <li><a href="#">Pepperfry</a></li>
+          <li><a href="#">Nykaa</a></li>
+          <li><a href="#">Lenskart</a></li>
+        </ul>
+      </div>
+
+      <!-- Need Help -->
+      <div class="col-6 col-md-2">
+        <h6>Need Help</h6>
+        <ul>
+          <li><a href="#">Getting Started</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Feed</a></li>
+        </ul>
+      </div>
+
+      <!-- Download App and QR -->
+      <div class="col-md-4 mt-4 mt-md-0">
+        <h6>Download App</h6>
+		
+		<div class="combine-playstore">
+        <div class="playstore-btn">
+          <img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/play-icon.png" alt="Google Play" style="width: 150px;">
+        </div>
+        <div class="mobile-input mb-3">
+          <input type="text" placeholder="Enter Mobile Number">
+          <button><i class="fas fa-arrow-circle-right"></i></button>
+        </div>
+		</div>
+        <h6>Follow Us</h6>
+        <div class="social-icons mb-2">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-youtube"></i>
+          <i class="fab fa-linkedin"></i>
+        </div>
+        <small class="text-white">Scan This QR Code to get our App</small><br>
+        <img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/qr.png" alt="QR Code" class="qr-img">
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+
+
+
 <footer class="footer text-white">
 @php
         $footerSettings = getFooterSettings();
@@ -28,7 +121,7 @@
         $is_help_support_active = checkIfActive($settings->get('help_support'));
         $is_refund_cancellation_policy_active = checkIfActive($settings->get('refund_cancellation_policy'));
 @endphp
-    <div class="footer-top">
+    <!--<div class="footer-top">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
@@ -234,19 +327,19 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <div class="footer-bottom py-3 position-relative">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-6 text-md-start text-center">
+                <div class="col-md-4 text-md-start text-center">
                    {{-- <p class="mb-0 text-white">{{ $appsetting->site_copyright }}
                     </p> --}}
-                    <p class="mb-0 text-white">{{ $copyright['first_part'] ?? '© 2024 All Rights Reserved by'}}
-                    <a target="_blank" href="{{ optional($generalsetting)->website }}">{{ $copyright['second_part'] ?? 'IQONIC Design'}} </a>
+                    <p class="mb-0 text-white">{{ $copyright['first_part'] ?? '© 2025 All Rights Reserved by'}}
+                    <a target="_blank" href="{{ optional($generalsetting)->website }}">{{ $copyright['second_part'] ?? 'Find a Job'}} </a>
                     </p>
                 </div>
-                {{-- <div class="col-md-6 text-md-end text-center">
-                    @if($is_active)  <!-- Only show the links if status is active -->
+                <!--{{-- <div class="col-md-6 text-md-end text-center">
+                    @if($is_active)   
                         <span class="d-inline-flex align-items-center gap-3 flex-wrap">
                             <a target="_blank" href="{{ route('user.term_conditions') }}" class="text-body link-primary">{{__('landingpage.terms_conditions')}}</a>
                             <a target="_blank" href="{{ route('user.privacy_policy') }}" class="text-body link-primary">{{__('landingpage.privacy_policy')}}</a>
@@ -255,8 +348,8 @@
                             <a target="_blank" href="{{ route('user.data_deletion_request') }}" class="text-body link-primary">{{__('landingpage.data_deletion_request')}}</a>
                         </span>
                     @endif
-                </div> --}}
-                <div class="col-md-6 text-md-end text-center">
+                </div> --}}-->
+                <div class="col-md-8 text-md-end text-center">
                     <span class="d-inline-flex align-items-center gap-3 flex-wrap">
                     @if($is_terms_condition_active) 
                         <a target="_blank" href="{{ route('user.term_conditions') }}" class="text-body link-primary">{{__('landingpage.terms_conditions')}}</a>
@@ -276,8 +369,8 @@
                     @if($is_about_us_active) 
                         <a target="_blank" href="{{ route('user.about_us') }}" class="text-body link-primary">{{__('landingpage.about_us')}}</a>
                     @endif
-                </span>
-                </div>
+                    </span>
+                </div> 
             </div>
         </div>
     </div>
@@ -355,9 +448,10 @@
  <script>
 document.addEventListener("DOMContentLoaded", function () {
   var swiper = new Swiper(".topSwiper", {
-    slidesPerView: 3,
+    slidesPerView: 7,
     spaceBetween: 20,
     centeredSlides: true,
+	loop: true,
     autoplay: {
       delay: 2500,
       disableOnInteraction: false,
@@ -391,7 +485,7 @@ document.addEventListener("DOMContentLoaded", function () {
       width: 100%;
       max-width: 1200px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 15px 20px;
     }
 
     .slick-slide {
@@ -418,13 +512,15 @@ document.addEventListener("DOMContentLoaded", function () {
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <script>
-  $('.topSlider').slick({
+ /* $('.topSlider').slick({
     dots: true,
     infinite: true,
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
+	autoplay: true,
+    autoplaySpeed: 1000,
     responsive: [
       {
         breakpoint: 1024,
@@ -445,7 +541,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     ]
-  });
+  }); */
 </script>
 
 
