@@ -46,7 +46,7 @@
 							<div class="mt-5 justify-content-center service-slide-items-4">
 								<div class="col">
 									<div class="iq-banner-img position-relative">
-										<img src="/images/user/plumber.png" alt="provider-image" class="img-fluid border-radius-12 position-relative">
+										<img src="{{asset('images/user/plumber.png')}}" alt="provider-image" class="img-fluid border-radius-12 position-relative">
 										<div class="position-relative d-flex justify-content-center card-box">
 											<div class="card-description d-inline-block text-center rounded-3">
 												<div class="cart-content">
@@ -68,7 +68,7 @@
 							<div class="mt-5 justify-content-center service-slide-items-4">
 								<div class="col">
 									<div class="iq-banner-img position-relative">
-										<img src="/images/user/store.png" alt="provider-image" class="img-fluid border-radius-12 position-relative">
+										<img src="{{asset('images/user/store.png')}}" alt="provider-image" class="img-fluid border-radius-12 position-relative">
 										<div class="position-relative d-flex justify-content-center card-box">
 											<div class="card-description d-inline-block text-center rounded-3">
 												<div class="cart-content">
@@ -91,7 +91,7 @@
 							<div class="mt-5 justify-content-center service-slide-items-4">
 								<div class="col">
 									<div class="iq-banner-img position-relative">
-										<img src="/images/user/category.png" alt="provider-image" class="img-fluid border-radius-12 position-relative">
+										<img src="{{asset('images/user/category.png')}}" alt="provider-image" class="img-fluid border-radius-12 position-relative">
 										<div class="position-relative d-flex justify-content-center card-box">
 											<div class="card-description d-inline-block text-center rounded-3">
 												<div class="cart-content">
@@ -113,7 +113,7 @@
 							<div class="mt-5 justify-content-center service-slide-items-4">
 								<div class="col">
 									<div class="iq-banner-img position-relative">
-										<img src="/images/user/electronic.png" alt="provider-image" class="img-fluid border-radius-12 position-relative">
+										<img src="{{asset('images/user/electronic.png')}}" alt="provider-image" class="img-fluid border-radius-12 position-relative">
 										<div class="position-relative d-flex justify-content-center card-box">
 											<div class="card-description d-inline-block text-center rounded-3">
 												<div class="cart-content">
@@ -217,10 +217,11 @@
 								
 									@php 
 										$attchments = $services->getMedia('service_attachment');
+										$filePath = 'storage/'.$attchments[0]->id .'/'.$attchments[0]->file_name;
 									@endphp
 									<div class="col-lg-2 col-md-3 col-sm-4">
 										<div class="service_box">
-											<div class="img-box img-box1"><img src="{{ $attchments[0]->getFullUrl() }}" class="img-fluid"/></div>
+											<div class="img-box img-box1"><img src="{{asset($filePath) }}" class="img-fluid"/></div>
 											<h5><a href="#">{{$services->name}}</a></h5>
 										</div>	
 									</div>
@@ -365,7 +366,23 @@
 					<!-- Automotive Tab -->
 					<div class="tab-pane fade" id="services" role="tabpanel">
 						<div class="row">
-							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+							@foreach($servicesList as $services)
+								@if(getMediaFileExit($services, 'service_attachment'))
+								
+									@php 
+										$attchments = $services->getMedia('service_attachment');
+										$filePath = 'storage/'.$attchments[0]->id .'/'.$attchments[0]->file_name;
+									@endphp
+									<div class="col-lg-2 col-md-3 col-sm-4">
+										<div class="service_box">
+											<div class="img-box img-box1"><img src="{{asset($filePath) }}" class="img-fluid"/></div>
+											<h5><a href="#">{{$services->name}}</a></h5>
+										</div>	
+									</div>
+								@endif
+							@endforeach
+
+							{{--<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 								<div class="service_box">
 									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
 									<h5><a href="#">Window Tinting</a></h5>
@@ -426,7 +443,7 @@
 									<h5><a href="#">Fencing and deck Repaire</a></h5>
 								</div>
 
-							</div>
+							</div>--}}
 
 
 
@@ -832,7 +849,23 @@
 
 
 		<div class="row">
-			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+			@foreach($servicesList as $services)
+				@if(getMediaFileExit($services, 'service_attachment'))
+				
+					@php 
+						$attchments = $services->getMedia('service_attachment');
+						$filePath = 'storage/'.$attchments[0]->id .'/'.$attchments[0]->file_name;
+					@endphp
+					<div class="col-lg-2 col-md-3 col-sm-4">
+						<div class="service_box">
+							<div class="img-box img-box1"><img src="{{asset($filePath) }}" class="img-fluid"/></div>
+							<h5><a href="#">{{$services->name}}</a></h5>
+						</div>	
+					</div>
+				@endif
+			@endforeach
+
+			{{--<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 				<div class="service_box">
 					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
 					<h5><a href="#">Window Tinting</a></h5>
@@ -915,7 +948,7 @@
 					<h5><a href="#">Genral House Maintenance</a></h5>
 				</div>
 
-			</div>
+			</div>--}}
 
 
 
