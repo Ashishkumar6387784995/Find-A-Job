@@ -29,7 +29,7 @@
     z-index: 10;
 }
 .find-job{
-  color:rgb(228, 160, 33);
+  color:rgb(255 192 15);
 }
 .find-job:hover{
   color:#ffd700;
@@ -41,6 +41,10 @@
 .login-btn:hover{
    color: #e0a52d;
     border: 1px solid #b37f1a;
+}
+.footer-bottom a:hover{
+  color: #ffd700 !important;
+  text-decoration: underline;
 }
  .star::before {
   color: #ffc700;
