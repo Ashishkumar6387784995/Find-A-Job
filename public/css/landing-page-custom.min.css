@@ -46,6 +46,25 @@
   color: #ffd700 !important;
   text-decoration: underline;
 }
+.swiper-wrapperr {
+    box-sizing: content-box;
+    display: flex;
+    gap: 15px;
+    height: 100%;
+    position: relative;
+    /* transition-property: transform; */
+    width: 100%;
+    z-index: 1;
+}
+.swiper-slidee {
+    flex-shrink: 0;
+    width: 150px !important;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    width: 100%;
+}
+
  .star::before {
   color: #ffc700;
  
