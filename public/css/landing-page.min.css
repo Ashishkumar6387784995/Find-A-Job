@@ -18509,6 +18509,20 @@ footer .footer-bottom {
   width: 30px
 }
 
+.swiper-button-next, .swiper-button-prev {
+    align-items: center;
+    color: var(--swiper-navigation-color, var(--swiper-theme-color));
+    cursor: pointer;
+    display: flex;
+    height: var(--swiper-navigation-size);
+    justify-content: center;
+    margin-top: calc(0px - var(--swiper-navigation-size) / 2);
+    position: absolute;
+    top: 50%;
+    width: calc(var(--swiper-navigation-size) / 27 * 27) !important;
+    z-index: 10;
+}
+
 .swiper-button-next:after,
 .swiper-button-prev:after {
   font-size: 12px !important
