@@ -11,7 +11,23 @@
  * Copyright 2011-2023 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+.service_box .img-box1 img {
+    height: 90px;
+    width: 90px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
 
+.swiper-pagination {
+    position: absolute;
+    display: none;
+    text-align: center;
+    transform: translateZ(0);
+    transition: opacity .3s;
+    z-index: 10;
+}
 
  .star::before {
   color: #ffc700;

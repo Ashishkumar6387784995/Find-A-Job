@@ -218,13 +218,13 @@
 									@php 
 										$attchments = $services->getMedia('service_attachment');
 									@endphp
+									<div class="col-lg-2 col-md-3 col-sm-4">
+										<div class="service_box">
+											<div class="img-box img-box1"><img src="{{ $attchments[0]->getFullUrl() }}" class="img-fluid"/></div>
+											<h5><a href="#">{{$services->name}}</a></h5>
+										</div>	
+									</div>
 								@endif
-								<div class="col-lg-2 col-md-3 col-sm-4">
-									<div class="service_box">
-										<div class="img-box"><img src="{{ $attchments[0]->getFullUrl() }}" class="img-fluid"/></div>
-										<h5><a href="#">{{$services->name}}</a></h5>
-									</div>	
-								</div>
 							@endforeach
 							<div class="col-lg-2 col-md-3 col-sm-4 col-4 col-4">
 								<div class="service_box">
