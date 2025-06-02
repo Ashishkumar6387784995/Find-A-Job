@@ -42,7 +42,7 @@ class CreateFrontendSettingsTable extends Migration
                     'type' => 'landing-page-setting',
                     'key' => 'section_1',
                     'status' => '1',
-                    'value' => '{"section_1":1,"title":"Your Instant Connection To Right Handyman Service","description":"Get things done with our reliable handyman service. From repairs to installations, weve got you covered. Your go-to solution for household tasks.","current_location":"on","enable_search":"on","enable_post_job":"on","enable_popular_services":"on","category_id":'.json_encode($categoryIds).',"enable_popular_provider":"on","provider_id":'.json_encode($providerIds).'}',
+                    'value' => '{"section_1":1,"title":"Your Instant Connection To Right Find A Job","description":"Get things done with our reliable Find A Job. From repairs to installations, weve got you covered. Your go-to solution for household tasks.","current_location":"on","enable_search":"on","enable_post_job":"on","enable_popular_services":"on","category_id":'.json_encode($categoryIds).',"enable_popular_provider":"on","provider_id":'.json_encode($providerIds).'}',
                 ],
                 [
                     'type' => 'landing-page-setting',
@@ -96,7 +96,7 @@ class CreateFrontendSettingsTable extends Migration
                     'type' => 'landing-page-setting',
                     'key' => 'section_8',
                     'status' => '1',
-                    'value' => '{"section_8":1,"title":"Recently Viewed & More","description":"Reliable handyman service for all your repairs, renovations, and maintenance needs. Skilled professionals, timely solutions, and customer satisfaction guaranteed"}',
+                    'value' => '{"section_8":1,"title":"Recently Viewed & More","description":"Reliable Find A Job for all your repairs, renovations, and maintenance needs. Skilled professionals, timely solutions, and customer satisfaction guaranteed"}',
                 ],
                 [
                     'type' => 'landing-page-setting',
@@ -108,7 +108,7 @@ class CreateFrontendSettingsTable extends Migration
                     'type' => 'login-register-setting',
                     'key' => 'login-register-setting',
                     'status' => '1',
-                    'value' => '{"login_register":1,"title":"Welcome To Our Handyman","description":"Skilled handyman services like Fixing, repairing, and improving your space with expertise, making life easier, one project at a time."}',
+                    'value' => '{"login_register":1,"title":"Welcome To Our Handyman","description":"Skilled Find A Jobs like Fixing, repairing, and improving your space with expertise, making life easier, one project at a time."}',
                 ],
 
             ];

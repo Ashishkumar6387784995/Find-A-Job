@@ -3,1184 +3,1197 @@
 
 <!-- Banner -->
 <div class="padding-top-bottom-90 bg-light">
-    <div class="container-fluid">
-       <div class="row align-items-center">
-          <div class="col-xl-6">
-             <div class="me-0 pe-0 me-xl-5 pe-xl-5">
-               @if ($sectionData && isset($sectionData['section_1']) && $sectionData['section_1']['section_1'] == 1)
-                <div class="iq-title-box mb-5">
-                    <div class="iq-title-box">
-                        <h2 class="text-capitalize line-count-3">
-                            {{ $sectionData['section_1']['title']}}
-                            <!-- Your Instant Connection to Right -->
-                            <span class="highlighted-text">
-                            <span class="highlighted-text-swipe"></span>
-                            <span class="highlighted-image">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="254" height="11" viewBox="0 0 254 11" fill="none">
-                                <path
-                                    d="M2 9C3.11607 8.76081 129.232 -2.95948 252 4.4554"
-                                    stroke="currentColor"
-                                    stroke-width="4"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                                </svg>
-                            </span>
-                            </span>
-                        </h2>
-                        <p class="iq-title-desc line-count-3 text-body mt-3 mb-0">
-                            {{ $sectionData['section_1']['description'] ?? null }}
-                        </p>
-                    </div>
-                </div>
-                <location-search :user_id="{{json_encode($auth_user_id)}}" :postjobservice="{{$postjobservice}}"></location-search>
-               @endif
+	<div class="container-fluid">
+		<div class="row align-items-center">
+			<div class="col-xl-6">
+				<div class="me-0 pe-0 me-xl-5 pe-xl-5">
+					@if ($sectionData && isset($sectionData['section_1']) && $sectionData['section_1']['section_1'] == 1)
+					<div class="iq-title-box mb-5">
+						<div class="iq-title-box">
+							<h2 class="text-capitalize line-count-3">
+								{{ $sectionData['section_1']['title']}}
+								<!-- Your Instant Connection to Right -->
+								<span class="highlighted-text">
+									<span class="highlighted-text-swipe"></span>
+									<span class="highlighted-image">
+										<svg xmlns="http://www.w3.org/2000/svg" width="254" height="11" viewBox="0 0 254 11" fill="none">
+											<path
+												d="M2 9C3.11607 8.76081 129.232 -2.95948 252 4.4554"
+												stroke="currentColor"
+												stroke-width="4"
+												stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+									</span>
+								</span>
+							</h2>
+							<p class="iq-title-desc line-count-3 text-body mt-3 mb-0">
+								{{ $sectionData['section_1']['description'] ?? null }}
+							</p>
+						</div>
+					</div>
+					<location-search :user_id="{{json_encode($auth_user_id)}}" :postjobservice="{{$postjobservice}}"></location-search>
+					@endif
 
-             </div>
-          </div>
-        @if($sectionData['section_1']['enable_popular_provider'] == "on")
-          <div class="col-xl-6 px-xl-0 mt-xl-0 mt-5">
-            <div class="position-relative swiper iq-team-slider overflow-hidden mySwiper">
-               <div class="swiper-wrapper">
-                    
-                     <div class="swiper-slide">
-                        <div class="mt-5 justify-content-center service-slide-items-4">
-                           <div class="col">
-                                 <div class="iq-banner-img position-relative">
-                                    <img src="/images/user/plumber.png" alt="provider-image" class="img-fluid border-radius-12 position-relative">
-                                    <div class="position-relative d-flex justify-content-center card-box">
-                                       <div class="card-description d-inline-block text-center rounded-3">
-                                             <div class="cart-content">
-                                             <h6 class="heading text-capitalize fw-500">Plumbers</h6>
-                                                <span class="desc d-flex align-items-center justify-content-center mt-2">
-                                                   <div class="d-flex align-items-center gap-1 flex-wrap">
-                                                        <span class="star" data-rating="5"></span>
-													</div>
-                                                </span>
-                                             </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                            </div>
-                        </div>
-                     </div>
+				</div>
+			</div>
+			@if($sectionData['section_1']['enable_popular_provider'] == "on")
+			<div class="col-xl-6 px-xl-0 mt-xl-0 mt-5">
+				<div class="position-relative swiper iq-team-slider overflow-hidden mySwiper">
+					<div class="swiper-wrapper">
 
-					 <div class="swiper-slide">
-                        <div class="mt-5 justify-content-center service-slide-items-4">
-                           <div class="col">
-                                  <div class="iq-banner-img position-relative">
-                                    <img src="/images/user/store.png" alt="provider-image" class="img-fluid border-radius-12 position-relative">
-                                    <div class="position-relative d-flex justify-content-center card-box">
-                                       <div class="card-description d-inline-block text-center rounded-3">
-                                             <div class="cart-content">
-                                             <h6 class="heading text-capitalize fw-500">Stores</h6>
-                                                <span class="desc text-white d-flex align-items-center justify-content-center mt-2">
-                                                   <div class="d-flex align-items-center gap-1 flex-wrap">
-                                                         <span class="star" data-rating="5"></span>
-                                                         
-                                                   </div>
-                                                </span>
-                                             </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                            </div>
-                        </div>
-                     </div>
+						<div class="swiper-slide">
+							<div class="mt-5 justify-content-center service-slide-items-4">
+								<div class="col">
+									<div class="iq-banner-img position-relative">
+										<img src="/images/user/plumber.png" alt="provider-image" class="img-fluid border-radius-12 position-relative">
+										<div class="position-relative d-flex justify-content-center card-box">
+											<div class="card-description d-inline-block text-center rounded-3">
+												<div class="cart-content">
+													<h6 class="heading text-capitalize fw-500">Plumbers</h6>
+													<span class="desc d-flex align-items-center justify-content-center mt-2">
+														<div class="d-flex align-items-center gap-1 flex-wrap">
+															<span class="star" data-rating="5"></span>
+														</div>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-					 <div class="swiper-slide">
-                        <div class="mt-5 justify-content-center service-slide-items-4">
-                           <div class="col">
-                                 <div class="iq-banner-img position-relative">
-                                    <img src="/images/user/category.png" alt="provider-image" class="img-fluid border-radius-12 position-relative">
-                                    <div class="position-relative d-flex justify-content-center card-box">
-                                       <div class="card-description d-inline-block text-center rounded-3">
-                                             <div class="cart-content">
-                                             <h6 class="heading text-capitalize fw-500">Categories</h6>
-                                                <span class="desc text-white d-flex align-items-center justify-content-center mt-2">
-                                                   <div class="d-flex align-items-center gap-1 flex-wrap">
-                                                         <span class="star" data-rating="5"></span>
-                                                   </div>
-                                                </span>
-                                             </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                            </div>
-                        </div>
-                     </div>
+						<div class="swiper-slide">
+							<div class="mt-5 justify-content-center service-slide-items-4">
+								<div class="col">
+									<div class="iq-banner-img position-relative">
+										<img src="/images/user/store.png" alt="provider-image" class="img-fluid border-radius-12 position-relative">
+										<div class="position-relative d-flex justify-content-center card-box">
+											<div class="card-description d-inline-block text-center rounded-3">
+												<div class="cart-content">
+													<h6 class="heading text-capitalize fw-500">Stores</h6>
+													<span class="desc text-white d-flex align-items-center justify-content-center mt-2">
+														<div class="d-flex align-items-center gap-1 flex-wrap">
+															<span class="star" data-rating="5"></span>
 
-					 <div class="swiper-slide">
-                        <div class="mt-5 justify-content-center service-slide-items-4">
-                           <div class="col">
-                                 <div class="iq-banner-img position-relative">
-                                    <img src="/images/user/electronic.png" alt="provider-image" class="img-fluid border-radius-12 position-relative">
-                                    <div class="position-relative d-flex justify-content-center card-box">
-                                       <div class="card-description d-inline-block text-center rounded-3">
-                                             <div class="cart-content">
-                                             <h6 class="heading text-capitalize fw-500">Electronics</h6>
-                                                <span class="desc text-white d-flex align-items-center justify-content-center mt-2">
-                                                   <div class="d-flex align-items-center gap-1 flex-wrap">
-                                                         {{-- <div class="star-rating">
+														</div>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="swiper-slide">
+							<div class="mt-5 justify-content-center service-slide-items-4">
+								<div class="col">
+									<div class="iq-banner-img position-relative">
+										<img src="/images/user/category.png" alt="provider-image" class="img-fluid border-radius-12 position-relative">
+										<div class="position-relative d-flex justify-content-center card-box">
+											<div class="card-description d-inline-block text-center rounded-3">
+												<div class="cart-content">
+													<h6 class="heading text-capitalize fw-500">Categories</h6>
+													<span class="desc text-white d-flex align-items-center justify-content-center mt-2">
+														<div class="d-flex align-items-center gap-1 flex-wrap">
+															<span class="star" data-rating="5"></span>
+														</div>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="swiper-slide">
+							<div class="mt-5 justify-content-center service-slide-items-4">
+								<div class="col">
+									<div class="iq-banner-img position-relative">
+										<img src="/images/user/electronic.png" alt="provider-image" class="img-fluid border-radius-12 position-relative">
+										<div class="position-relative d-flex justify-content-center card-box">
+											<div class="card-description d-inline-block text-center rounded-3">
+												<div class="cart-content">
+													<h6 class="heading text-capitalize fw-500">Electronics</h6>
+													<span class="desc text-white d-flex align-items-center justify-content-center mt-2">
+														<div class="d-flex align-items-center gap-1 flex-wrap">
+															{{-- <div class="star-rating">
                                                             <rating-component :readonly="true" :showrating="false" :ratingvalue="{{ $providers_service_rating }}" />
-                                                         </div> 
-                                                         <h6 class="m-0 font-size-12 rating-text lh-1">5</h6> --}}
-														  <span class="star" data-rating="5"></span>
-                                                   </div>
-                                                </span>
-                                             </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                            </div>
-                        </div>
-                     </div>
-                    
-               </div>
-            </div>
-          </div>
-        @endif
-       </div>
-    </div>
+														</div>
+														<h6 class="m-0 font-size-12 rating-text lh-1">5</h6> --}}
+														<span class="star" data-rating="5"></span>
+												</div>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		@endif
+	</div>
+</div>
 </div>
 
- 
+
 
 <div class="section-padding-custom">
-    <div class="container">
-	     
-	
-	   <div class="row"> 
-	      <div class="col-md-12"> 
-		       <!-- Tabs Navigation -->
-					<ul class="nav nav-tabs custom-tabs justify-content-center" id="myTab" role="tablist">
-						<li class="nav-item" role="presentation">
-							<button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button">
-								<i class="bi bi-house-door me-2"></i>All
-							</button>
-						</li>
-						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="services-tab" data-bs-toggle="tab" data-bs-target="#services" type="button">
-								<i class="bi bi-car-front me-2"></i>Services
-							</button>
-						</li>
-						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="deals-tab" data-bs-toggle="tab" data-bs-target="#deals" type="button">
-								<i class="bi bi-gear-wide-connected me-2"></i>Deals
-							</button>
-						</li>
-						
-						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="jobs-tab" data-bs-toggle="tab" data-bs-target="#jobs" type="button">
-								<i class="bi bi-gear-wide-connected me-2"></i>Jobs
-							</button>
-						</li>
-						
-						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="property-tab" data-bs-toggle="tab" data-bs-target="#property" type="button">
-								<i class="bi bi-gear-wide-connected me-2"></i>Property
-							</button>
-						</li>
-						
-						
-						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="ecommerce-tab" data-bs-toggle="tab" data-bs-target="#ecommerce" type="button">
-								<i class="bi bi-gear-wide-connected me-2"></i>Ecommerce
-							</button>
-						</li>
-						
-						
-						
-						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="marketplace-tab" data-bs-toggle="tab" data-bs-target="#marketplace" type="button">
-								<i class="bi bi-gear-wide-connected me-2"></i>Marketplace
-							</button>
-						</li>
-						
-						
-						
+	<div class="container">
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<!-- Tabs Navigation -->
+				<ul class="nav nav-tabs custom-tabs justify-content-center" id="myTab" role="tablist">
+					<li class="nav-item" role="presentation">
+						<button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button">
+							<i class="bi bi-house-door me-2"></i>All
+						</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="services-tab" data-bs-toggle="tab" data-bs-target="#services" type="button">
+							<i class="bi bi-car-front me-2"></i>Services
+						</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="deals-tab" data-bs-toggle="tab" data-bs-target="#deals" type="button">
+							<i class="bi bi-gear-wide-connected me-2"></i>Deals
+						</button>
+					</li>
+
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="jobs-tab" data-bs-toggle="tab" data-bs-target="#jobs" type="button">
+							<i class="bi bi-gear-wide-connected me-2"></i>Jobs
+						</button>
+					</li>
+
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="property-tab" data-bs-toggle="tab" data-bs-target="#property" type="button">
+							<i class="bi bi-gear-wide-connected me-2"></i>Property
+						</button>
+					</li>
+
+
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="ecommerce-tab" data-bs-toggle="tab" data-bs-target="#ecommerce" type="button">
+							<i class="bi bi-gear-wide-connected me-2"></i>Ecommerce
+						</button>
+					</li>
+
+
+
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="marketplace-tab" data-bs-toggle="tab" data-bs-target="#marketplace" type="button">
+							<i class="bi bi-gear-wide-connected me-2"></i>Marketplace
+						</button>
+					</li>
 
 
 
 
 
 
-					</ul>
 
-					<!-- Tab Content -->
-					<div class="tab-content mt-5" id="myTabContent">
-						<!-- Home Services Tab -->
-						<div class="tab-pane fade show active" id="all" role="tabpanel">
-							 
-							<div class="row">
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid"/></div>
-										<h5><a href="#">Window Tinting</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid"/></div>
-										<h5><a href="#">Water Blasting</a></h5>
-									</div>
-									 
-								</div>
+
+
+				</ul>
+
+				<!-- Tab Content -->
+				<div class="tab-content mt-5" id="myTabContent">
+					<!-- Home Services Tab -->
+					<div class="tab-pane fade show active" id="all" role="tabpanel">
+
+						<div class="row">
+							@foreach($servicesList as $services)
+								@if(getMediaFileExit($services, 'service_attachment'))
 								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid"/></div>
-										<h5><a href="#">Plastering</a></h5>
-									</div>
-									 
+									@php 
+										$attchments = $services->getMedia('service_attachment');
+									@endphp
+								@endif
+								<div class="col-lg-2 col-md-3 col-sm-4">
+									<div class="service_box">
+										<div class="img-box"><img src="{{ $attchments[0]->getFullUrl() }}" class="img-fluid"/></div>
+										<h5><a href="#">{{$services->name}}</a></h5>
+									</div>	
 								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid"/></div>
-										<h5><a href="#">Painting</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/moving-truck.png" class="img-fluid"/></div>
-										<h5><a href="#">Furniture Moving</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
-										<h5><a href="#">Rubbish Removal</a></h5>
-									</div>
-									 
-								</div>
-					
-		
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid"/></div>
-										<h5><a href="#">CCTV Camera Installation</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/desk.png" class="img-fluid"/></div>
-										<h5><a href="#">Fencing and deck Repaire</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/car1.png" class="img-fluid"/></div>
-										<h5><a href="#">Car Stereo System Installation</a></h5>
-									</div>
-									 
+							@endforeach
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+									<h5><a href="#">Window Tinting</a></h5>
 								</div>
 
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/tinted-glass1.png" class="img-fluid"/></div>
-										<h5><a href="#">Car window</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/savings.png" class="img-fluid"/></div>
-										<h5><a href="#">Genral House Maintenance</a></h5>
-									</div>
-									 
-								</div>
-								
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/vaccum-cleaner.png" class="img-fluid"/></div>
-										<h5><a href="#">Carpet Cleaning</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/construction.png" class="img-fluid"/></div>
-										<h5><a href="#">Residential Cleaning</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/washing-machine.png" class="img-fluid"/></div>
-										<h5><a href="#">Laundary Washing</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/machine.png" class="img-fluid"/></div>
-										<h5><a href="#">Lawn Moving</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/trash-bin.png" class="img-fluid"/></div>
-										<h5><a href="#">Rubbish Cleaning</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/car.png" class="img-fluid"/></div>
-										<h5><a href="#">Car Cleaning</a></h5>
-									</div>
-									 
-								</div>
-								
-								
-								
 							</div>
-						</div>
-
-						<!-- Automotive Tab -->
-						<div class="tab-pane fade" id="services" role="tabpanel">
-							 <div class="row">
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid"/></div>
-										<h5><a href="#">Window Tinting</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid"/></div>
-										<h5><a href="#">Water Blasting</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid"/></div>
-										<h5><a href="#">Plastering</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid"/></div>
-										<h5><a href="#">Painting</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/moving-truck.png" class="img-fluid"/></div>
-										<h5><a href="#">Furniture Moving</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
-										<h5><a href="#">Rubbish Removal</a></h5>
-									</div>
-									 
-								</div>
-					
-		
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid"/></div>
-										<h5><a href="#">CCTV Camera Installation</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/desk.png" class="img-fluid"/></div>
-										<h5><a href="#">Fencing and deck Repaire</a></h5>
-									</div>
-									 
-								</div>
-							 
-								
-								
-								
-							</div>
-						</div>
-
-						<!-- Technical Tab -->
-						<div class="tab-pane fade" id="deals" role="tabpanel">
-							 
-							<div class="row">
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid"/></div>
-										<h5><a href="#">Window Tinting</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid"/></div>
-										<h5><a href="#">Water Blasting</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid"/></div>
-										<h5><a href="#">Plastering</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid"/></div>
-										<h5><a href="#">Painting</a></h5>
-									</div>
-									 
-								</div>
-								
-								 
-								
-								
-								
-							</div> 
-							 
-							 
-							 
-						</div>
-						
-						
-						<!-- jobs Tab -->
-						<div class="tab-pane fade" id="jobs" role="tabpanel">
-							
-							
-							<div class="row">
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid"/></div>
-										<h5><a href="#">Window Tinting</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid"/></div>
-										<h5><a href="#">Water Blasting</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid"/></div>
-										<h5><a href="#">Plastering</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid"/></div>
-										<h5><a href="#">Painting</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/moving-truck.png" class="img-fluid"/></div>
-										<h5><a href="#">Furniture Moving</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
-										<h5><a href="#">Rubbish Removal</a></h5>
-									</div>
-									 
-								</div>
-					
-		
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid"/></div>
-										<h5><a href="#">CCTV Camera Installation</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/desk.png" class="img-fluid"/></div>
-										<h5><a href="#">Fencing and deck Repaire</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/car1.png" class="img-fluid"/></div>
-										<h5><a href="#">Car Stereo System Installation</a></h5>
-									</div>
-									 
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+									<h5><a href="#">Water Blasting</a></h5>
 								</div>
 
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/tinted-glass1.png" class="img-fluid"/></div>
-										<h5><a href="#">Car window</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/savings.png" class="img-fluid"/></div>
-										<h5><a href="#">Genral House Maintenance</a></h5>
-									</div>
-									 
-								</div>
-								
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/vaccum-cleaner.png" class="img-fluid"/></div>
-										<h5><a href="#">Carpet Cleaning</a></h5>
-									</div>
-									 
-								</div>
-								  
-								
-								
 							</div>
-							
-							
-						
-						</div>
-						
-						<!-- property Tab -->
-						<div class="tab-pane fade" id="property" role="tabpanel">
-							<div class="row">
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid"/></div>
-										<h5><a href="#">Window Tinting</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid"/></div>
-										<h5><a href="#">Water Blasting</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid"/></div>
-										<h5><a href="#">Plastering</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid"/></div>
-										<h5><a href="#">Painting</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/moving-truck.png" class="img-fluid"/></div>
-										<h5><a href="#">Furniture Moving</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
-										<h5><a href="#">Rubbish Removal</a></h5>
-									</div>
-									 
-								</div>
-					
-		
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid"/></div>
-										<h5><a href="#">CCTV Camera Installation</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/desk.png" class="img-fluid"/></div>
-										<h5><a href="#">Fencing and deck Repaire</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/car1.png" class="img-fluid"/></div>
-										<h5><a href="#">Car Stereo System Installation</a></h5>
-									</div>
-									 
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid" /></div>
+									<h5><a href="#">Plastering</a></h5>
 								</div>
 
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/tinted-glass1.png" class="img-fluid"/></div>
-										<h5><a href="#">Car window</a></h5>
-									</div>
-									 
-								</div>
-								 
-								
-								
-								
 							</div>
-						
-						</div>
-						
-						<!-- Ecommerce Tab -->
-						<div class="tab-pane fade" id="ecommerce" role="tabpanel">
-							<div class="row">
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid"/></div>
-										<h5><a href="#">Window Tinting</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid"/></div>
-										<h5><a href="#">Water Blasting</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid"/></div>
-										<h5><a href="#">Plastering</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid"/></div>
-										<h5><a href="#">Painting</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/moving-truck.png" class="img-fluid"/></div>
-										<h5><a href="#">Furniture Moving</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
-										<h5><a href="#">Rubbish Removal</a></h5>
-									</div>
-									 
-								</div>
-					
-		
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid"/></div>
-										<h5><a href="#">CCTV Camera Installation</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/desk.png" class="img-fluid"/></div>
-										<h5><a href="#">Fencing and deck Repaire</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/car1.png" class="img-fluid"/></div>
-										<h5><a href="#">Car Stereo System Installation</a></h5>
-									</div>
-									 
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid" /></div>
+									<h5><a href="#">Painting</a></h5>
 								</div>
 
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/tinted-glass1.png" class="img-fluid"/></div>
-										<h5><a href="#">Car window</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/savings.png" class="img-fluid"/></div>
-										<h5><a href="#">Genral House Maintenance</a></h5>
-									</div>
-									 
-								</div>
-								
-								
-								 
-								
-								
-								
 							</div>
-						
-						</div>
-						
-						
-						<!-- marketplace Tab -->
-						<div class="tab-pane fade" id="marketplace" role="tabpanel">
-							 <div class="row">
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid"/></div>
-										<h5><a href="#">Window Tinting</a></h5>
-									</div>
-									 
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/moving-truck.png" class="img-fluid" /></div>
+									<h5><a href="#">Furniture Moving</a></h5>
 								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid"/></div>
-										<h5><a href="#">Water Blasting</a></h5>
-									</div>
-									 
-								</div>
-								
-								 
-								
-								
-								
+
 							</div>
-						
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
+									<h5><a href="#">Rubbish Removal</a></h5>
+								</div>
+
+							</div>
+
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid" /></div>
+									<h5><a href="#">CCTV Camera Installation</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/desk.png" class="img-fluid" /></div>
+									<h5><a href="#">Fencing and deck Repaire</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/car1.png" class="img-fluid" /></div>
+									<h5><a href="#">Car Stereo System Installation</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/tinted-glass1.png" class="img-fluid" /></div>
+									<h5><a href="#">Car window</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/savings.png" class="img-fluid" /></div>
+									<h5><a href="#">Genral House Maintenance</a></h5>
+								</div>
+
+							</div>
+
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/vaccum-cleaner.png" class="img-fluid" /></div>
+									<h5><a href="#">Carpet Cleaning</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/construction.png" class="img-fluid" /></div>
+									<h5><a href="#">Residential Cleaning</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/washing-machine.png" class="img-fluid" /></div>
+									<h5><a href="#">Laundary Washing</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/machine.png" class="img-fluid" /></div>
+									<h5><a href="#">Lawn Moving</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/trash-bin.png" class="img-fluid" /></div>
+									<h5><a href="#">Rubbish Cleaning</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/car.png" class="img-fluid" /></div>
+									<h5><a href="#">Car Cleaning</a></h5>
+								</div>
+
+							</div>
+
+
+
 						</div>
-						
-						
 					</div>
-		  
-		  </div>
-		   
-	   </div>
+
+					<!-- Automotive Tab -->
+					<div class="tab-pane fade" id="services" role="tabpanel">
+						<div class="row">
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+									<h5><a href="#">Window Tinting</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+									<h5><a href="#">Water Blasting</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid" /></div>
+									<h5><a href="#">Plastering</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid" /></div>
+									<h5><a href="#">Painting</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/moving-truck.png" class="img-fluid" /></div>
+									<h5><a href="#">Furniture Moving</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
+									<h5><a href="#">Rubbish Removal</a></h5>
+								</div>
+
+							</div>
+
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid" /></div>
+									<h5><a href="#">CCTV Camera Installation</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/desk.png" class="img-fluid" /></div>
+									<h5><a href="#">Fencing and deck Repaire</a></h5>
+								</div>
+
+							</div>
+
+
+
+
+						</div>
+					</div>
+
+					<!-- Technical Tab -->
+					<div class="tab-pane fade" id="deals" role="tabpanel">
+
+						<div class="row">
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+									<h5><a href="#">Window Tinting</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+									<h5><a href="#">Water Blasting</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid" /></div>
+									<h5><a href="#">Plastering</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid" /></div>
+									<h5><a href="#">Painting</a></h5>
+								</div>
+
+							</div>
+
+
+
+
+
+						</div>
+
+
+
+					</div>
+
+
+					<!-- jobs Tab -->
+					<div class="tab-pane fade" id="jobs" role="tabpanel">
+
+
+						<div class="row">
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+									<h5><a href="#">Window Tinting</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+									<h5><a href="#">Water Blasting</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid" /></div>
+									<h5><a href="#">Plastering</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid" /></div>
+									<h5><a href="#">Painting</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/moving-truck.png" class="img-fluid" /></div>
+									<h5><a href="#">Furniture Moving</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
+									<h5><a href="#">Rubbish Removal</a></h5>
+								</div>
+
+							</div>
+
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid" /></div>
+									<h5><a href="#">CCTV Camera Installation</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/desk.png" class="img-fluid" /></div>
+									<h5><a href="#">Fencing and deck Repaire</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/car1.png" class="img-fluid" /></div>
+									<h5><a href="#">Car Stereo System Installation</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/tinted-glass1.png" class="img-fluid" /></div>
+									<h5><a href="#">Car window</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/savings.png" class="img-fluid" /></div>
+									<h5><a href="#">Genral House Maintenance</a></h5>
+								</div>
+
+							</div>
+
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/vaccum-cleaner.png" class="img-fluid" /></div>
+									<h5><a href="#">Carpet Cleaning</a></h5>
+								</div>
+
+							</div>
+
+
+
+						</div>
+
+
+
+					</div>
+
+					<!-- property Tab -->
+					<div class="tab-pane fade" id="property" role="tabpanel">
+						<div class="row">
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+									<h5><a href="#">Window Tinting</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+									<h5><a href="#">Water Blasting</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid" /></div>
+									<h5><a href="#">Plastering</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid" /></div>
+									<h5><a href="#">Painting</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/moving-truck.png" class="img-fluid" /></div>
+									<h5><a href="#">Furniture Moving</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
+									<h5><a href="#">Rubbish Removal</a></h5>
+								</div>
+
+							</div>
+
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid" /></div>
+									<h5><a href="#">CCTV Camera Installation</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/desk.png" class="img-fluid" /></div>
+									<h5><a href="#">Fencing and deck Repaire</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/car1.png" class="img-fluid" /></div>
+									<h5><a href="#">Car Stereo System Installation</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/tinted-glass1.png" class="img-fluid" /></div>
+									<h5><a href="#">Car window</a></h5>
+								</div>
+
+							</div>
+
+
+
+
+						</div>
+
+					</div>
+
+					<!-- Ecommerce Tab -->
+					<div class="tab-pane fade" id="ecommerce" role="tabpanel">
+						<div class="row">
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+									<h5><a href="#">Window Tinting</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+									<h5><a href="#">Water Blasting</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid" /></div>
+									<h5><a href="#">Plastering</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid" /></div>
+									<h5><a href="#">Painting</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/moving-truck.png" class="img-fluid" /></div>
+									<h5><a href="#">Furniture Moving</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
+									<h5><a href="#">Rubbish Removal</a></h5>
+								</div>
+
+							</div>
+
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid" /></div>
+									<h5><a href="#">CCTV Camera Installation</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/desk.png" class="img-fluid" /></div>
+									<h5><a href="#">Fencing and deck Repaire</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/car1.png" class="img-fluid" /></div>
+									<h5><a href="#">Car Stereo System Installation</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/tinted-glass1.png" class="img-fluid" /></div>
+									<h5><a href="#">Car window</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/savings.png" class="img-fluid" /></div>
+									<h5><a href="#">Genral House Maintenance</a></h5>
+								</div>
+
+							</div>
+
+
+
+
+
+
+						</div>
+
+					</div>
+
+
+					<!-- marketplace Tab -->
+					<div class="tab-pane fade" id="marketplace" role="tabpanel">
+						<div class="row">
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+									<h5><a href="#">Window Tinting</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+									<h5><a href="#">Water Blasting</a></h5>
+								</div>
+
+							</div>
+
+
+
+
+
+						</div>
+
+					</div>
+
+
+				</div>
+
+			</div>
+
+		</div>
 	</div>
-</div>	
+</div>
 
 
 <div class="section-padding-custom bg-light">
-    <div class="container">
-        <div class="d-flex align-items-center justify-content-center flex-wrap gap-2 mb-4">
-            <div class="iq-title-box mb-0">
-                <h3 class="text-capitalize line-count-1">Services
-                    <div class="highlighted-text">
-                        <span class="highlighted-text-swipe"></span>
-                        <span class="highlighted-image">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="155" height="12" viewBox="0 0 155 12"
-                                fill="none">
-                                <path d="M2.5 9.5C3.16964 9.26081 78.8393 -2.45948 152.5 4.9554" stroke="currentColor"
-                                    stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </span>
-                    </div>
-                </h3>
-            </div>
-             
-        </div>
-		
-		
-		 
-		   <div class="row">
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid"/></div>
-										<h5><a href="#">Window Tinting</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid"/></div>
-										<h5><a href="#">Water Blasting</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid"/></div>
-										<h5><a href="#">Plastering</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid"/></div>
-										<h5><a href="#">Painting</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/moving-truck.png" class="img-fluid"/></div>
-										<h5><a href="#">Furniture Moving</a></h5>
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
-										<h5><a href="#">Rubbish Removal</a></h5>
-									</div>
-									 
-								</div>
-					
-		
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid"/></div>
-										<h5><a href="#">CCTV Camera Installation</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/desk.png" class="img-fluid"/></div>
-										<h5><a href="#">Fencing and deck Repaire</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/car1.png" class="img-fluid"/></div>
-										<h5><a href="#">Car Stereo System Installation</a></h5>
-									</div>
-									 
-								</div>
+	<div class="container">
+		<div class="d-flex align-items-center justify-content-center flex-wrap gap-2 mb-4">
+			<div class="iq-title-box mb-0">
+				<h3 class="text-capitalize line-count-1">Services
+					<div class="highlighted-text">
+						<span class="highlighted-text-swipe"></span>
+						<span class="highlighted-image">
+							<svg xmlns="http://www.w3.org/2000/svg" width="155" height="12" viewBox="0 0 155 12"
+								fill="none">
+								<path d="M2.5 9.5C3.16964 9.26081 78.8393 -2.45948 152.5 4.9554" stroke="currentColor"
+									stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</span>
+					</div>
+				</h3>
+			</div>
 
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/tinted-glass1.png" class="img-fluid"/></div>
-										<h5><a href="#">Car window</a></h5>
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/savings.png" class="img-fluid"/></div>
-										<h5><a href="#">Genral House Maintenance</a></h5>
-									</div>
-									 
-								</div>
-								
-								
-								 
-								
-								
-								
-							</div>
-		    
-		
-		 
-         
-    </div>
+		</div>
+
+
+
+		<div class="row">
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+					<h5><a href="#">Window Tinting</a></h5>
+				</div>
+
+			</div>
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+					<h5><a href="#">Water Blasting</a></h5>
+				</div>
+
+			</div>
+
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid" /></div>
+					<h5><a href="#">Plastering</a></h5>
+				</div>
+
+			</div>
+
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid" /></div>
+					<h5><a href="#">Painting</a></h5>
+				</div>
+
+			</div>
+
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/moving-truck.png" class="img-fluid" /></div>
+					<h5><a href="#">Furniture Moving</a></h5>
+				</div>
+
+			</div>
+
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
+					<h5><a href="#">Rubbish Removal</a></h5>
+				</div>
+
+			</div>
+
+
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid" /></div>
+					<h5><a href="#">CCTV Camera Installation</a></h5>
+				</div>
+
+			</div>
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/desk.png" class="img-fluid" /></div>
+					<h5><a href="#">Fencing and deck Repaire</a></h5>
+				</div>
+
+			</div>
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/car1.png" class="img-fluid" /></div>
+					<h5><a href="#">Car Stereo System Installation</a></h5>
+				</div>
+
+			</div>
+
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/tinted-glass1.png" class="img-fluid" /></div>
+					<h5><a href="#">Car window</a></h5>
+				</div>
+
+			</div>
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/savings.png" class="img-fluid" /></div>
+					<h5><a href="#">Genral House Maintenance</a></h5>
+				</div>
+
+			</div>
+
+
+
+
+
+
+		</div>
+
+
+
+
+	</div>
 </div>
 
 
 
 <div class="section-padding-custom ">
-    <div class="container">
-        <div class="d-flex align-items-center justify-content-center flex-wrap gap-2 mb-4">
-            <div class="iq-title-box mb-0">
-                <h3 class="text-capitalize line-count-1">Deals
-                    <div class="highlighted-text">
-                        <span class="highlighted-text-swipe"></span>
-                        <span class="highlighted-image">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="155" height="12" viewBox="0 0 155 12"
-                                fill="none">
-                                <path d="M2.5 9.5C3.16964 9.26081 78.8393 -2.45948 152.5 4.9554" stroke="currentColor"
-                                    stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </span>
-                    </div>
-                </h3>
-            </div>
-             
-        </div>
-		
-		
-		 
-		   <div class="row">
-								<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid"/></div>
-										 
-									</div>
-									 
-								</div>
-								<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid"/></div>
-										 
-									</div>
-									 
-								</div>
-								
-								<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid"/></div>
-										 
-									</div>
-									 
-								</div>
-								
-								<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid"/></div>
-										 
-									</div>
-									 
-								</div>
-								
-								<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/moving-truck.png" class="img-fluid"/></div>
-										 
-									</div>
-									 
-								</div>
-								
-								<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
-										 
-									</div>
-									 
-								</div>
-					
-		
-								<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid"/></div>
-										 
-									</div>
-									 
-								</div>
-								 
-								<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid"/></div>
-										 
-									</div>
-									 
-								</div>
-								
-								 
-								
-								
-								
-							</div>
-		    
-		
-		 
-         
-    </div>
+	<div class="container">
+		<div class="d-flex align-items-center justify-content-center flex-wrap gap-2 mb-4">
+			<div class="iq-title-box mb-0">
+				<h3 class="text-capitalize line-count-1">Deals
+					<div class="highlighted-text">
+						<span class="highlighted-text-swipe"></span>
+						<span class="highlighted-image">
+							<svg xmlns="http://www.w3.org/2000/svg" width="155" height="12" viewBox="0 0 155 12"
+								fill="none">
+								<path d="M2.5 9.5C3.16964 9.26081 78.8393 -2.45948 152.5 4.9554" stroke="currentColor"
+									stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</span>
+					</div>
+				</h3>
+			</div>
+
+		</div>
+
+
+
+		<div class="row">
+			<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+
+				</div>
+
+			</div>
+			<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+
+				</div>
+
+			</div>
+
+			<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid" /></div>
+
+				</div>
+
+			</div>
+
+			<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid" /></div>
+
+				</div>
+
+			</div>
+
+			<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/moving-truck.png" class="img-fluid" /></div>
+
+				</div>
+
+			</div>
+
+			<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
+
+				</div>
+
+			</div>
+
+
+			<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid" /></div>
+
+				</div>
+
+			</div>
+
+			<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid" /></div>
+
+				</div>
+
+			</div>
+
+
+
+
+
+		</div>
+
+
+
+
+	</div>
 </div>
 
 
 
 
 <div class="section-padding-custom ">
-    <div class="container">
-        <div class="d-flex align-items-center justify-content-center flex-wrap gap-2 mb-4">
-            <div class="iq-title-box mb-0">
-                <h3 class="text-capitalize line-count-1">Residential
-                    <div class="highlighted-text">
-                        <span class="highlighted-text-swipe"></span>
-                        <span class="highlighted-image">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="155" height="12" viewBox="0 0 155 12"
-                                fill="none">
-                                <path d="M2.5 9.5C3.16964 9.26081 78.8393 -2.45948 152.5 4.9554" stroke="currentColor"
-                                    stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </span>
-                    </div>
-                </h3>
-            </div>
-             
-        </div>
-		
-		
-		 
-		   <div class="row">
-								
-								<div class="col-lg-2 col-md-4  col-sm-3 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/construction.png" class="img-fluid"/></div>
-										 <h5><a href="#">Residential Cleaning</a></h5> 
-									</div>
-									 
-								</div>
-								
-								<div class="col-lg-2 col-md-4  col-sm-3 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/property.png" class="img-fluid"/></div>
-										<h5><a href="#">Residential for Rent</a></h5> 
-										 
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-4  col-sm-3 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/marketplace.png" class="img-fluid"/></div>
-										 <h5><a href="#">Commercial for Sale</a></h5> 
-									</div>
-									 
-								</div>
-								<div class="col-lg-2 col-md-4  col-sm-3 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/machine.png" class="img-fluid"/></div>
-										 <h5><a href="#">Lawn Mowing</a></h5> 
-									</div>
-									 
-								</div>
-								
-								
-								
-								<div class="col-lg-2 col-md-4  col-sm-3 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/washing-machine.png" class="img-fluid"/></div>
-										 <h5><a href="#">Laundry Washing</a></h5> 
-									</div>
-									 
-								</div>
-								
-								
-								
-								<div class="col-lg-2 col-md-4  col-sm-3 col-4">
-								    <div class="service_box">
-									    <div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
-										<h5><a href="#">Residential for Rent</a></h5> 
-									</div>
-									 
-								</div>
-					
-		
-								 
-								 
-								
-								 
-								
-								
-								
-							</div>
-		    
-		
-		 
-         
-    </div>
+	<div class="container">
+		<div class="d-flex align-items-center justify-content-center flex-wrap gap-2 mb-4">
+			<div class="iq-title-box mb-0">
+				<h3 class="text-capitalize line-count-1">Residential
+					<div class="highlighted-text">
+						<span class="highlighted-text-swipe"></span>
+						<span class="highlighted-image">
+							<svg xmlns="http://www.w3.org/2000/svg" width="155" height="12" viewBox="0 0 155 12"
+								fill="none">
+								<path d="M2.5 9.5C3.16964 9.26081 78.8393 -2.45948 152.5 4.9554" stroke="currentColor"
+									stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</span>
+					</div>
+				</h3>
+			</div>
+
+		</div>
+
+
+
+		<div class="row">
+
+			<div class="col-lg-2 col-md-4  col-sm-3 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/construction.png" class="img-fluid" /></div>
+					<h5><a href="#">Residential Cleaning</a></h5>
+				</div>
+
+			</div>
+
+			<div class="col-lg-2 col-md-4  col-sm-3 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/property.png" class="img-fluid" /></div>
+					<h5><a href="#">Residential for Rent</a></h5>
+
+				</div>
+
+			</div>
+			<div class="col-lg-2 col-md-4  col-sm-3 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/marketplace.png" class="img-fluid" /></div>
+					<h5><a href="#">Commercial for Sale</a></h5>
+				</div>
+
+			</div>
+			<div class="col-lg-2 col-md-4  col-sm-3 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/machine.png" class="img-fluid" /></div>
+					<h5><a href="#">Lawn Mowing</a></h5>
+				</div>
+
+			</div>
+
+
+
+			<div class="col-lg-2 col-md-4  col-sm-3 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/washing-machine.png" class="img-fluid" /></div>
+					<h5><a href="#">Laundry Washing</a></h5>
+				</div>
+
+			</div>
+
+
+
+			<div class="col-lg-2 col-md-4  col-sm-3 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
+					<h5><a href="#">Residential for Rent</a></h5>
+				</div>
+
+			</div>
+
+
+
+
+
+
+
+
+
+		</div>
+
+
+
+
+	</div>
 </div>
 
 
 
 
 <section class="newsletter-section">
-    <div class="container my-4">
-	  <div class="airmail-border d-flex flex-wrap align-items-center justify-content-between">
-		<p class="mb-2 mb-md-0 fw-bold flex-grow-1">Subscribe to get the best deals right in your inbox!</p>
-		<div class="input-group" style="max-width: 400px;">
-		  <input type="email" class="form-control" placeholder="Enter email to stay updated">
-		  <button class="btn subscribe-btn">Subscribe</button>
+	<div class="container my-4">
+		<div class="airmail-border d-flex flex-wrap align-items-center justify-content-between">
+			<p class="mb-2 mb-md-0 fw-bold flex-grow-1">Subscribe to get the best deals right in your inbox!</p>
+			<div class="input-group" style="max-width: 400px;">
+				<input type="email" class="form-control" placeholder="Enter email to stay updated">
+				<button class="btn subscribe-btn">Subscribe</button>
+			</div>
 		</div>
-	  </div>
 	</div>
 </section>
 
 
 
 <section class="stats-bar">
- 
-  <div class="container">
-    <div class="row text-center justify-content-center">
-      
-      <div class="col-6 col-sm-3 mb-3 mb-sm-0">
-	    <div class="stats-item">
-			<div class="stats-icon mb-1"><i class="fas fa-shield-alt"></i></div>
-			<div class="stats-content">
-		    	<div class="stats-number">100%</div>
-			    <div class="stats-label">Verified Deals</div>
-			</div>
-		</div>
-      </div>
 
-      <div class="col-6 col-sm-3 mb-3 mb-sm-0">
-	    <div class="stats-item">
-			<div class="stats-icon mb-1"><i class="fas fa-store-alt"></i></div>
-			<div class="stats-content">
-		    	<div class="stats-number">360+</div>
-			    <div class="stats-label">Online Stores</div>
-			</div>
-		</div>
-	  
-         
-      </div>
+	<div class="container">
+		<div class="row text-center justify-content-center">
 
-      <div class="col-6 col-sm-3 stats-item mb-3 mb-sm-0">
-	     <div class="stats-item">
-			<div class="stats-icon mb-1"><i class="fas fa-box-open"></i></div>
-			<div class="stats-content">
-		    	<div class="stats-number">691320+</div>
-			    <div class="stats-label">Deals listed</div>
+			<div class="col-6 col-sm-3 mb-3 mb-sm-0">
+				<div class="stats-item">
+					<div class="stats-icon mb-1"><i class="fas fa-shield-alt"></i></div>
+					<div class="stats-content">
+						<div class="stats-number">100%</div>
+						<div class="stats-label">Verified Deals</div>
+					</div>
+				</div>
 			</div>
-		</div>
-	    
-      </div>
 
-      <div class="col-6 col-sm-3 stats-item">
-	    <div class="stats-item">
-			<div class="stats-icon mb-1"><i class="fas fa-smile"></i></div>
-			<div class="stats-content">
-		    	<div class="stats-number">115315+</div>
-			    <div class="stats-label">Happy Members</div>
+			<div class="col-6 col-sm-3 mb-3 mb-sm-0">
+				<div class="stats-item">
+					<div class="stats-icon mb-1"><i class="fas fa-store-alt"></i></div>
+					<div class="stats-content">
+						<div class="stats-number">360+</div>
+						<div class="stats-label">Online Stores</div>
+					</div>
+				</div>
+
+
 			</div>
-		</div>
-         
-      </div>
 
-    </div>
-  </div>
- 
+			<div class="col-6 col-sm-3 stats-item mb-3 mb-sm-0">
+				<div class="stats-item">
+					<div class="stats-icon mb-1"><i class="fas fa-box-open"></i></div>
+					<div class="stats-content">
+						<div class="stats-number">691320+</div>
+						<div class="stats-label">Deals listed</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col-6 col-sm-3 stats-item">
+				<div class="stats-item">
+					<div class="stats-icon mb-1"><i class="fas fa-smile"></i></div>
+					<div class="stats-content">
+						<div class="stats-number">115315+</div>
+						<div class="stats-label">Happy Members</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
 </section>
 
 
@@ -1537,122 +1550,122 @@ session(['recently_viewed:' . $auth_user_id => $recentlyViewed]);
 @section('bottom_script')
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
-   document.addEventListener("DOMContentLoaded", function () {
-      var $sliders = jQuery(document).find('.iq-team-slider');
-      if ($sliders.length > 0) {
-         $sliders.each(function () {
-            let slider = jQuery(this);
-            var navNext = (slider.data('navnext')) ? "#" + slider.data('navnext') : "";
-            var navPrev = (slider.data('navprev')) ? "#" + slider.data('navprev') : "";
-            var pagination = (slider.data('pagination')) ? "#" + slider.data('pagination') : "";
-            var sliderAutoplay = slider.data('autoplay');
-            if (sliderAutoplay) {
-            sliderAutoplay = {
-               delay: slider.data('autoplay')
-            };
-            } else {
-            sliderAutoplay = false;
-            }
-            var iqonicPagination = {
-            el: pagination,
-            clickable: true,
-            dynamicBullets: true,
-            };
-            var swSpace = {
-            1200: 30,
-            1500: 30
-            };
-            var breakpoint = {
-            0: {
-               slidesPerView: 1,
-               centeredSlides: false,
-               virtualTranslate: false
-            },
-            576: {
-               slidesPerView: 1,
-               centeredSlides: false,
-               virtualTranslate: false
-            },
-            768: {
-               slidesPerView: 2,
-               centeredSlides: false,
-               virtualTranslate: false
-            },
-            1200: {
-               slidesPerView: 3,
-               spaceBetween: swSpace["1200"],
-            },
-            1500: {
-               slidesPerView: 3,
-               spaceBetween: swSpace["1500"],
-            },
-            };
-            var sw_config = {
-            loop: true,
-            speed: 1000,
-            loopedSlides: 3,
-            spaceBetween: 30,
-            slidesPerView: 3,
-            centeredSlides: false,
-            autoplay: true,
-            virtualTranslate: false,
-            navigation: {
-               nextEl: navNext,
-               prevEl: navPrev
-            },
-            on: {
-               slideChangeTransitionStart: function () {
-                  var currentElement = jQuery(this.el);
-                  var lastBullet = currentElement.find(".swiper-pagination-bullet:last");
-                  if (this.slides.length - (this.loopedSlides + 1) === this.activeIndex) {
-                  lastBullet.addClass("js_prefix-disable-bullate");
-                  } else {
-                  lastBullet.removeClass("js_prefix-disable-bullate");
-                  }
-                  if (jQuery(window).width() > 1199) {
-                  var innerTranslate = -(160 + swSpace[this.currentBreakpoint]) * (this.activeIndex);
-                  currentElement.find(".swiper-wrapper").css({
-                     "transform": "translate3d(" + innerTranslate + "px, 0, 0)"
-                  });
-                  currentElement.find('.swiper-slide:not(.swiper-slide-active)').css({
-                     width: "160px"
-                  });
-                  currentElement.find('.swiper-slide.swiper-slide-active').css({
-                     width: "476px"
-                  });
-                  }
-               },
-               resize: function () {
-                  var currentElement = jQuery(this.el);
-                  if (jQuery(window).width() > 1199) {
-                  if (currentElement.data("loop")) {
-                     var innerTranslate = -(160 + swSpace[this.currentBreakpoint]) * this.loopedSlides;
-                     currentElement.find(".swiper-wrapper").css({
-                        "transform": "translate3d(" + innerTranslate + "px, 0, 0)"
-                     });
-                  }
-                  currentElement.find('.swiper-slide:not(.swiper-slide-active)').css({
-                     width: "160px"
-                  });
-                  currentElement.find('.swiper-slide.swiper-slide-active').css({
-                     width: "476px"
-                  });
-                  }
-               },
-               init: function () {
-                  var currentElement = jQuery(this.el);
-                  currentElement.find('.swiper-slide').css({
-                  'max-width': 'auto'
-                  });
-               }
-            },
-            pagination: (slider.data('pagination')) ? iqonicPagination : "",
-            breakpoints: breakpoint,
-            };
-            var swiper = new Swiper(slider[0], sw_config);
-         });
-         jQuery(document).trigger('after_slider_init');
-      }
-   });
+	document.addEventListener("DOMContentLoaded", function() {
+		var $sliders = jQuery(document).find('.iq-team-slider');
+		if ($sliders.length > 0) {
+			$sliders.each(function() {
+				let slider = jQuery(this);
+				var navNext = (slider.data('navnext')) ? "#" + slider.data('navnext') : "";
+				var navPrev = (slider.data('navprev')) ? "#" + slider.data('navprev') : "";
+				var pagination = (slider.data('pagination')) ? "#" + slider.data('pagination') : "";
+				var sliderAutoplay = slider.data('autoplay');
+				if (sliderAutoplay) {
+					sliderAutoplay = {
+						delay: slider.data('autoplay')
+					};
+				} else {
+					sliderAutoplay = false;
+				}
+				var iqonicPagination = {
+					el: pagination,
+					clickable: true,
+					dynamicBullets: true,
+				};
+				var swSpace = {
+					1200: 30,
+					1500: 30
+				};
+				var breakpoint = {
+					0: {
+						slidesPerView: 1,
+						centeredSlides: false,
+						virtualTranslate: false
+					},
+					576: {
+						slidesPerView: 1,
+						centeredSlides: false,
+						virtualTranslate: false
+					},
+					768: {
+						slidesPerView: 2,
+						centeredSlides: false,
+						virtualTranslate: false
+					},
+					1200: {
+						slidesPerView: 3,
+						spaceBetween: swSpace["1200"],
+					},
+					1500: {
+						slidesPerView: 3,
+						spaceBetween: swSpace["1500"],
+					},
+				};
+				var sw_config = {
+					loop: true,
+					speed: 1000,
+					loopedSlides: 3,
+					spaceBetween: 30,
+					slidesPerView: 3,
+					centeredSlides: false,
+					autoplay: true,
+					virtualTranslate: false,
+					navigation: {
+						nextEl: navNext,
+						prevEl: navPrev
+					},
+					on: {
+						slideChangeTransitionStart: function() {
+							var currentElement = jQuery(this.el);
+							var lastBullet = currentElement.find(".swiper-pagination-bullet:last");
+							if (this.slides.length - (this.loopedSlides + 1) === this.activeIndex) {
+								lastBullet.addClass("js_prefix-disable-bullate");
+							} else {
+								lastBullet.removeClass("js_prefix-disable-bullate");
+							}
+							if (jQuery(window).width() > 1199) {
+								var innerTranslate = -(160 + swSpace[this.currentBreakpoint]) * (this.activeIndex);
+								currentElement.find(".swiper-wrapper").css({
+									"transform": "translate3d(" + innerTranslate + "px, 0, 0)"
+								});
+								currentElement.find('.swiper-slide:not(.swiper-slide-active)').css({
+									width: "160px"
+								});
+								currentElement.find('.swiper-slide.swiper-slide-active').css({
+									width: "476px"
+								});
+							}
+						},
+						resize: function() {
+							var currentElement = jQuery(this.el);
+							if (jQuery(window).width() > 1199) {
+								if (currentElement.data("loop")) {
+									var innerTranslate = -(160 + swSpace[this.currentBreakpoint]) * this.loopedSlides;
+									currentElement.find(".swiper-wrapper").css({
+										"transform": "translate3d(" + innerTranslate + "px, 0, 0)"
+									});
+								}
+								currentElement.find('.swiper-slide:not(.swiper-slide-active)').css({
+									width: "160px"
+								});
+								currentElement.find('.swiper-slide.swiper-slide-active').css({
+									width: "476px"
+								});
+							}
+						},
+						init: function() {
+							var currentElement = jQuery(this.el);
+							currentElement.find('.swiper-slide').css({
+								'max-width': 'auto'
+							});
+						}
+					},
+					pagination: (slider.data('pagination')) ? iqonicPagination : "",
+					breakpoints: breakpoint,
+				};
+				var swiper = new Swiper(slider[0], sw_config);
+			});
+			jQuery(document).trigger('after_slider_init');
+		}
+	});
 </script>
 @endsection

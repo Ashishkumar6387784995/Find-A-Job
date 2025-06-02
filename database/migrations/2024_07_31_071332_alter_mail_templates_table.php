@@ -1158,7 +1158,7 @@ class AlterMailTemplatesTable extends Migration
      'status' => 1,
      'subject' => 'New User Registration',
      'template_detail' => '<p>Hello [[ provider_name ]],</p>
-                           <p>Thank you for registering with Handyman Services. We have received your registration request and will review your information shortly. You will receive an email with further instructions once your registration is approved.</p>
+                           <p>Thank you for registering with Find A Jobs. We have received your registration request and will review your information shortly. You will receive an email with further instructions once your registration is approved.</p>
                            <p>&nbsp;</p>
                            <p>Best regards,<br />[[ company_name ]]</p>',
  ]);
@@ -1170,7 +1170,7 @@ class AlterMailTemplatesTable extends Migration
      'status' => 1,
      'subject' => 'New User Registration',
      'template_detail' => '<p>Hello [[ handyman_name ]],&nbsp;</p>
-                           <p>Thank you for registering with Handyman Services.&nbsp;</p>
+                           <p>Thank you for registering with Find A Jobs.&nbsp;</p>
                            <p>We have received your registration request and will review your information shortly. You will receive an email with further instructions once your registration is approved.</p>
                            <p>&nbsp;</p>
                            <p>Best regards,<br />[[ company_name ]]</p>',

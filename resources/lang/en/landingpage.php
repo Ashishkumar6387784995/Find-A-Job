@@ -33,7 +33,7 @@
   'your_rating' => 'Your Rating',
   'review_for' => 'Review For',
   'forgot_title' => 'welcome to our handyman',
-  'forgot_description' => 'Skilled handyman services like Fixing, repairing, and improving your space with expertise, making life easier, one project at a time.',
+  'forgot_description' => 'Skilled Find A Jobs like Fixing, repairing, and improving your space with expertise, making life easier, one project at a time.',
   'email' => 'Email Address',
   'overall_rating' => 'Overall Rating',
   'your' => 'Your',
