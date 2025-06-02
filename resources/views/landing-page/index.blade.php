@@ -42,38 +42,100 @@
           <div class="col-xl-6 px-xl-0 mt-xl-0 mt-5">
             <div class="position-relative swiper iq-team-slider overflow-hidden mySwiper">
                <div class="swiper-wrapper">
-                     @foreach($sectionData['section_1']['provider_id'] as $providerId)
-                     @php
-                        $user = App\Models\User::with('getServiceRating')->where('user_type', 'provider')->where('id',$providerId)->where('status',1)->first();
-                        $providers_service_rating = (isset($user->getServiceRating) && count($user->getServiceRating) > 0 ) ? (float) number_format(max($user->getServiceRating->avg('rating'),0), 2) : 0;
-                     @endphp
-                     @if($user)
+                    
                      <div class="swiper-slide">
                         <div class="mt-5 justify-content-center service-slide-items-4">
                            <div class="col">
                                  <div class="iq-banner-img position-relative">
-                                    <img src="{{ getSingleMedia($user, 'profile_image',null) }}" alt="provider-image" class="img-fluid border-radius-12 position-relative">
+                                    <img src="/images/user/plumber.png" alt="provider-image" class="img-fluid border-radius-12 position-relative">
                                     <div class="position-relative d-flex justify-content-center card-box">
                                        <div class="card-description d-inline-block text-center rounded-3">
                                              <div class="cart-content">
-                                             <h6 class="heading text-capitalize fw-500">{{ $user->display_name ?? null }}</h6>
+                                             <h6 class="heading text-capitalize fw-500">Plumbers</h6>
+                                                <span class="desc d-flex align-items-center justify-content-center mt-2">
+                                                   <div class="d-flex align-items-center gap-1 flex-wrap">
+                                                        <span class="star" data-rating="5"></span>
+													</div>
+                                                </span>
+                                             </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                     </div>
+
+					 <div class="swiper-slide">
+                        <div class="mt-5 justify-content-center service-slide-items-4">
+                           <div class="col">
+                                  <div class="iq-banner-img position-relative">
+                                    <img src="/images/user/store.png" alt="provider-image" class="img-fluid border-radius-12 position-relative">
+                                    <div class="position-relative d-flex justify-content-center card-box">
+                                       <div class="card-description d-inline-block text-center rounded-3">
+                                             <div class="cart-content">
+                                             <h6 class="heading text-capitalize fw-500">Stores</h6>
                                                 <span class="desc text-white d-flex align-items-center justify-content-center mt-2">
                                                    <div class="d-flex align-items-center gap-1 flex-wrap">
-                                                         <div class="star-rating">
-                                                            <rating-component :readonly="true" :showrating="false" :ratingvalue="{{ $providers_service_rating }}" />
-                                                         </div>
-                                                         <h6 class="m-0 font-size-12 rating-text lh-1">({{ round($providers_service_rating,1) }})</h6>
+                                                         <span class="star" data-rating="5"></span>
+                                                         
                                                    </div>
                                                 </span>
                                              </div>
                                        </div>
                                     </div>
                                  </div>
-                           </div>
+                            </div>
                         </div>
                      </div>
-                     @endif
-                     @endforeach
+
+					 <div class="swiper-slide">
+                        <div class="mt-5 justify-content-center service-slide-items-4">
+                           <div class="col">
+                                 <div class="iq-banner-img position-relative">
+                                    <img src="/images/user/category.png" alt="provider-image" class="img-fluid border-radius-12 position-relative">
+                                    <div class="position-relative d-flex justify-content-center card-box">
+                                       <div class="card-description d-inline-block text-center rounded-3">
+                                             <div class="cart-content">
+                                             <h6 class="heading text-capitalize fw-500">Categories</h6>
+                                                <span class="desc text-white d-flex align-items-center justify-content-center mt-2">
+                                                   <div class="d-flex align-items-center gap-1 flex-wrap">
+                                                         <span class="star" data-rating="5"></span>
+                                                   </div>
+                                                </span>
+                                             </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                     </div>
+
+					 <div class="swiper-slide">
+                        <div class="mt-5 justify-content-center service-slide-items-4">
+                           <div class="col">
+                                 <div class="iq-banner-img position-relative">
+                                    <img src="/images/user/electronic.png" alt="provider-image" class="img-fluid border-radius-12 position-relative">
+                                    <div class="position-relative d-flex justify-content-center card-box">
+                                       <div class="card-description d-inline-block text-center rounded-3">
+                                             <div class="cart-content">
+                                             <h6 class="heading text-capitalize fw-500">Electronics</h6>
+                                                <span class="desc text-white d-flex align-items-center justify-content-center mt-2">
+                                                   <div class="d-flex align-items-center gap-1 flex-wrap">
+                                                         {{-- <div class="star-rating">
+                                                            <rating-component :readonly="true" :showrating="false" :ratingvalue="{{ $providers_service_rating }}" />
+                                                         </div> 
+                                                         <h6 class="m-0 font-size-12 rating-text lh-1">5</h6> --}}
+														  <span class="star" data-rating="5"></span>
+                                                   </div>
+                                                </span>
+                                             </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                     </div>
+                    
                </div>
             </div>
           </div>
