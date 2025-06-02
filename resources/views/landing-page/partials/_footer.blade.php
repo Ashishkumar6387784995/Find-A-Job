@@ -464,6 +464,23 @@ document.addEventListener("DOMContentLoaded", function () {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+	
+	breakpoints: {
+      0: {
+        slidesPerView: 3,
+      },
+      576: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      992: {
+        slidesPerView: 7,
+      }
+    }
+	
+	
   });
 });
 
