@@ -352,22 +352,22 @@
                 <div class="col-md-8 text-md-end text-center">
                     <span class="d-inline-flex align-items-center gap-3 flex-wrap">
                     @if($is_terms_condition_active) 
-                        <a target="_blank" href="{{ route('user.term_conditions') }}" class="text-body link-primary">{{__('landingpage.terms_conditions')}}</a>
+                        <a target="_blank" href="{{ route('user.term_conditions') }}" class="text-body ">{{__('landingpage.terms_conditions')}}</a>
                     @endif
                     @if($is_privacy_policy_active) 
-                        <a target="_blank" href="{{ route('user.privacy_policy') }}" class="text-body link-primary">{{__('landingpage.privacy_policy')}}</a>
+                        <a target="_blank" href="{{ route('user.privacy_policy') }}" class="text-body ">{{__('landingpage.privacy_policy')}}</a>
                     @endif
                     @if($is_help_support_active)
-                        <a target="_blank" href="{{ route('user.help_support') }}" class="text-body link-primary">{{__('landingpage.help_support')}}</a>
+                        <a target="_blank" href="{{ route('user.help_support') }}" class="text-body ">{{__('landingpage.help_support')}}</a>
                     @endif
                     @if($is_refund_cancellation_policy_active) 
-                        <a target="_blank" href="{{ route('user.refund_policy') }}" class="text-body link-primary">{{__('landingpage.refund_policy')}}</a>
+                        <a target="_blank" href="{{ route('user.refund_policy') }}" class="text-body ">{{__('landingpage.refund_policy')}}</a>
                     @endif
                     @if($is_data_deletion_request_active) 
-                        <a target="_blank" href="{{ route('user.data_deletion_request') }}" class="text-body link-primary">{{__('landingpage.data_deletion_request')}}</a>
+                        <a target="_blank" href="{{ route('user.data_deletion_request') }}" class="text-body ">{{__('landingpage.data_deletion_request')}}</a>
                     @endif
                     @if($is_about_us_active) 
-                        <a target="_blank" href="{{ route('user.about_us') }}" class="text-body link-primary">{{__('landingpage.about_us')}}</a>
+                        <a target="_blank" href="{{ route('user.about_us') }}" class="text-body ">{{__('landingpage.about_us')}}</a>
                     @endif
                     </span>
                 </div> 
