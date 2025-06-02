@@ -335,7 +335,7 @@
                    {{-- <p class="mb-0 text-white">{{ $appsetting->site_copyright }}
                     </p> --}}
                     <p class="mb-0 text-white">{{ $copyright['first_part'] ?? '© 2025 All Rights Reserved by'}}
-                    <a target="_blank" href="{{ optional($generalsetting)->website }}">{{ $copyright['second_part'] ?? 'Find A Job'}} </a>
+                    <a class="find-job" target="_blank" href="{{ optional($generalsetting)->website }}">{{ $copyright['second_part'] ?? 'Find A Job'}} </a>
                     </p>
                 </div>
                 <!--{{-- <div class="col-md-6 text-md-end text-center">

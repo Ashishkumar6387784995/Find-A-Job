@@ -28,9 +28,23 @@
     transition: opacity .3s;
     z-index: 10;
 }
-
+.find-job{
+  color:rgb(228, 160, 33);
+}
+.find-job:hover{
+  color:#ffd700;
+}
+.login-btn{
+   color: #b37f1a;
+    border: 1px solid #b37f1a;
+}
+.login-btn:hover{
+   color: #e0a52d;
+    border: 1px solid #b37f1a;
+}
  .star::before {
   color: #ffc700;
+ 
 }
 .star::after {
   color: #dddad7;
@@ -2757,12 +2771,14 @@ table.provider-detail-info td h6 {
 
 .custom-tabs .nav-link.active {
   color: #fff;
-  background: #86ad14;
+  background: #d29c49;
 }
 
 .custom-tabs .nav-link:hover {
   color: #fff;
-  background: #86ad14;
+  /* background: #86ad14; */
+   background: #d29c49;
+
   transform: translateY(-2px);
 }
 
