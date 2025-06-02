@@ -5,7 +5,8 @@
 <div class="my-5 privacy-policy">
    <h4 class="text-center text-capitalize fw-bold my-5">{{__('messages.privacy_policy')}}</h4>
    <div class="container">
-      {!! $privacy_content !!}
+      {{--{!! $privacy_content !!}--}}
+      <h5 style="text-align: center;">Comming Soon</h5>
    </div>
  </div>
 

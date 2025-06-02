@@ -59,7 +59,24 @@ class FrontendController extends Controller
         $ratings = BookingRating::pluck('rating')->toArray();
         $averageRating = count($ratings) > 0 ? array_sum($ratings) / count($ratings) : 0;
         $totalRating = number_format($averageRating, 2);
-        return view('landing-page.index',compact('sectionData','postjobservice','auth_user_id','favourite','totalRating','status'));
+        $servicesList = Service::get()->take('18');
+
+
+        // @foreach($servicesList as $services)
+        //     @if(getMediaFileExit($services, 'service_attachment'))
+            
+        //         @php 
+        //             $attchments = $services->getMedia('service_attachment');
+        //         @endphp
+        //     @endif
+        //     <div class="col-lg-2 col-md-3 col-sm-4">
+        //         <div class="service_box">
+        //             <div class="img-box"><img src="{{ $attchments[0]->getFullUrl() }}" class="img-fluid"/></div>
+        //             <h5><a href="#">{{$services->name}}</a></h5>
+        //         </div>	
+        //     </div>
+        // @endforeach
+        return view('landing-page.index',compact('sectionData','postjobservice','auth_user_id','favourite','totalRating','status', 'servicesList'));
     }
 
     public function userLoginView(Request $request){
