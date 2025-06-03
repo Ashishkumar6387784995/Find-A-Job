@@ -1183,7 +1183,7 @@
             <div class="avatar">
                 <!-- changed -->
                 <img class="avatar-50 rounded-circle bg-light" alt="user-icon"
-                    src="{{ asset('images/user/user.png') }}">
+                    src="{{ getSingleMedia(auth()->user(),'profile_image') }}">
             </div>
             <div class="user-info">
                 <h5 class="user-email">{{ optional(auth()->user())->email ?? '--' }}</h5>
