@@ -221,13 +221,17 @@
 									@endphp
 									<div class="col-lg-2 col-md-3 col-sm-4">
 										<div class="service_box">
-											<div class="img-box img-box1"><img src="{{asset($filePath) }}" class="img-fluid"/></div>
-											<h5><a href="#">{{$services->name}}</a></h5>
+											<div class="img-box img-box1">
+												<a href="{{url('/service-detail/'.$services->id)}}">
+													<img src="{{asset($filePath) }}" class="img-fluid"/>
+												</a>
+											</div>
+											<h5><a href="{{url('/service-detail/'.$services->id)}}">{{$services->name}}</a></h5>
 										</div>	
 									</div>
 								@endif
 							@endforeach
-							<div class="col-lg-2 col-md-3 col-sm-4 col-4 col-4">
+							{{--<div class="col-lg-2 col-md-3 col-sm-4 col-4 col-4">
 								<div class="service_box">
 									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
 									<h5><a href="#">Window Tinting</a></h5>
@@ -356,7 +360,7 @@
 									<h5><a href="#">Car Cleaning</a></h5>
 								</div>
 
-							</div>
+							</div>--}}
 
 
 
@@ -375,9 +379,13 @@
 									@endphp
 									<div class="col-lg-2 col-md-3 col-sm-4">
 										<div class="service_box">
-											<div class="img-box img-box1"><img src="{{asset($filePath) }}" class="img-fluid"/></div>
-											<h5><a href="#">{{$services->name}}</a></h5>
-										</div>	
+											<div class="img-box img-box1">
+												<a href="{{url('/service-detail/'.$services->id)}}">
+													<img src="{{asset($filePath) }}" class="img-fluid"/>
+												</a>
+											</div>
+											<h5><a href="{{url('/service-detail/'.$services->id)}}">{{$services->name}}</a></h5>
+										</div>
 									</div>
 								@endif
 							@endforeach
@@ -858,8 +866,12 @@
 					@endphp
 					<div class="col-lg-2 col-md-3 col-sm-4">
 						<div class="service_box">
-							<div class="img-box img-box1"><img src="{{asset($filePath) }}" class="img-fluid"/></div>
-							<h5><a href="#">{{$services->name}}</a></h5>
+							<div class="img-box img-box1">
+								<a href="{{url('/service-detail/'.$services->id)}}">
+									<img src="{{asset($filePath) }}" class="img-fluid"/>
+								</a>
+							</div>
+							<h5><a href="{{url('/service-detail/'.$services->id)}}">{{$services->name}}</a></h5>
 						</div>	
 					</div>
 				@endif
