@@ -215,23 +215,25 @@
                                     <div class="ms-2 my-3">
                                             <div class="row">
                                                 @foreach($attchments as $attchment )
+                                                @php 
+                                                    $filePath = 'storage/'.$attchment->id .'/'.$attchment->file_name;
+                                                @endphp
                                                 <?php
                                                 $extention = in_array(strtolower(imageExtention($attchment->getFullUrl())), $file_extention);
-                                                ?>
-    
+                                                ?>   
                                             <div class="col-md-2 pe-10 text-center galary file-gallary-{{$servicedata->id}} position-relative"
                                                     data-gallery=".file-gallary-{{$servicedata->id}}"
                                                     id="service_attachment_preview_{{$attchment->id}}">
                                                     @if($extention)
-                                                    <a id="attachment_files" href="{{ $attchment->getFullUrl() }}"
+                                                    <a id="attachment_files" href="{{asset($filePath) }}"
                                                         class="list-group-item-action attachment-list" target="_blank">
-                                                        <img src="{{ $attchment->getFullUrl() }}" class="attachment-image"
+                                                        <img src="{{asset($filePath) }}" class="attachment-image"
                                                             alt="">
                                                     </a>
                                                     @else
                                                     <a id="attachment_files"
                                                         class="video list-group-item-action attachment-list"
-                                                        href="{{ $attchment->getFullUrl() }}">
+                                                        href="{{asset($filePath) }}">
                                                         <img src="{{ asset('images/file.png') }}" class="attachment-file">
                                                     </a>
                                                     @endif

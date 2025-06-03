@@ -59,7 +59,7 @@ class FrontendController extends Controller
         $ratings = BookingRating::pluck('rating')->toArray();
         $averageRating = count($ratings) > 0 ? array_sum($ratings) / count($ratings) : 0;
         $totalRating = number_format($averageRating, 2);
-        $servicesList = Service::get()->take('18');
+        $servicesList = Service::orderby('created_at', 'desc')->get()->take('18');
 
 
         // @foreach($servicesList as $services)
