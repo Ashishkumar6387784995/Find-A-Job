@@ -980,7 +980,8 @@ div.dataTables_processing>div:last-child>div {
 
 .tab-slider .swiper-content .swiper-slide img {
   height: 520px;
-  width: 100%
+  width: 100%;
+  object-fit:contain;
 }
 
 .tab-slider .swiper-thumb .swiper-slide {
@@ -995,7 +996,8 @@ div.dataTables_processing>div:last-child>div {
 
 .tab-slider .swiper-thumb .thumb-wrapper img {
   height: 76px;
-  width: 100%
+  width: 100%;
+  object-fit:contain;
 }
 
 .tab-slider .swiper-thumb .swiper-slide-thumb-active .thumb-wrapper {
@@ -2326,7 +2328,8 @@ table.provider-detail-info td h6 {
 }
 
 .service-img {
-  height: 17.5rem
+  height: 17.5rem;
+  object-fit: contain;
 }
 
 @media (max-width:575px) {

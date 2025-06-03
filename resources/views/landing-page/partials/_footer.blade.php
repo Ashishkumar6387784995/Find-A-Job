@@ -75,11 +75,11 @@
 		</div>
         <h6>Follow Us</h6>
         <div class="social-icons mb-2">
-          <i class="fab fa-facebook"></i>
-          <i class="fab fa-twitter"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-youtube"></i>
-          <i class="fab fa-linkedin"></i>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
         <small class="text-white">Scan This QR Code to get our App</small><br>
         <img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/qr.png" alt="QR Code" class="qr-img">
