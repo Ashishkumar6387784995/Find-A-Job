@@ -377,7 +377,7 @@
 										$attchments = $services->getMedia('service_attachment');
 										$filePath = 'storage/'.$attchments[0]->id .'/'.$attchments[0]->file_name;
 									@endphp
-									<div class="col-lg-2 col-md-3 col-sm-4">
+									<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 										<div class="service_box">
 											<div class="img-box img-box1">
 												<a href="{{url('/service-detail/'.$services->id)}}">
