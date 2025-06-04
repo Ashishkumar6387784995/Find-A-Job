@@ -219,7 +219,7 @@
 										$attchments = $services->getMedia('service_attachment');
 										$filePath = 'storage/'.$attchments[0]->id .'/'.$attchments[0]->file_name;
 									@endphp
-									<div class="col-lg-2 col-md-3 col-sm-4">
+									<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 										<div class="service_box">
 											<div class="img-box img-box1">
 												<a href="{{url('/service-detail/'.$services->id)}}">
@@ -864,7 +864,7 @@
 						$attchments = $services->getMedia('service_attachment');
 						$filePath = 'storage/'.$attchments[0]->id .'/'.$attchments[0]->file_name;
 					@endphp
-					<div class="col-lg-2 col-md-3 col-sm-4">
+					<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 						<div class="service_box">
 							<div class="img-box img-box1">
 								<a href="{{url('/service-detail/'.$services->id)}}">
@@ -1000,14 +1000,14 @@
 
 
 		<div class="row">
-			<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 				<div class="service_box">
 					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
 
 				</div>
 
 			</div>
-			<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 				<div class="service_box">
 					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
 
@@ -1015,7 +1015,7 @@
 
 			</div>
 
-			<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 				<div class="service_box">
 					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid" /></div>
 
@@ -1023,7 +1023,7 @@
 
 			</div>
 
-			<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 				<div class="service_box">
 					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid" /></div>
 
@@ -1031,7 +1031,7 @@
 
 			</div>
 
-			<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 				<div class="service_box">
 					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/moving-truck.png" class="img-fluid" /></div>
 
@@ -1039,7 +1039,7 @@
 
 			</div>
 
-			<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 				<div class="service_box">
 					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
 
@@ -1048,7 +1048,7 @@
 			</div>
 
 
-			<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 				<div class="service_box">
 					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid" /></div>
 
@@ -1056,7 +1056,7 @@
 
 			</div>
 
-			<div class="col-4  col-sm-3 col-lg-1-5 col-md-3">
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 				<div class="service_box">
 					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid" /></div>
 
@@ -1103,7 +1103,7 @@
 
 		<div class="row">
 
-			<div class="col-lg-2 col-md-4  col-sm-3 col-4">
+			<div class="col-lg-2 col-md-3  col-sm-3 col-4">
 				<div class="service_box">
 					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/construction.png" class="img-fluid" /></div>
 					<h5><a href="#">Residential Cleaning</a></h5>
@@ -1111,7 +1111,7 @@
 
 			</div>
 
-			<div class="col-lg-2 col-md-4  col-sm-3 col-4">
+			<div class="col-lg-2 col-md-3  col-sm-3 col-4">
 				<div class="service_box">
 					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/property.png" class="img-fluid" /></div>
 					<h5><a href="#">Residential for Rent</a></h5>
@@ -1119,14 +1119,14 @@
 				</div>
 
 			</div>
-			<div class="col-lg-2 col-md-4  col-sm-3 col-4">
+			<div class="col-lg-2 col-md-3  col-sm-3 col-4">
 				<div class="service_box">
 					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/marketplace.png" class="img-fluid" /></div>
 					<h5><a href="#">Commercial for Sale</a></h5>
 				</div>
 
 			</div>
-			<div class="col-lg-2 col-md-4  col-sm-3 col-4">
+			<div class="col-lg-2 col-md-3  col-sm-3 col-4">
 				<div class="service_box">
 					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/machine.png" class="img-fluid" /></div>
 					<h5><a href="#">Lawn Mowing</a></h5>
@@ -1136,7 +1136,7 @@
 
 
 
-			<div class="col-lg-2 col-md-4  col-sm-3 col-4">
+			<div class="col-lg-2 col-md-3  col-sm-3 col-4">
 				<div class="service_box">
 					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/washing-machine.png" class="img-fluid" /></div>
 					<h5><a href="#">Laundry Washing</a></h5>
@@ -1146,7 +1146,7 @@
 
 
 
-			<div class="col-lg-2 col-md-4  col-sm-3 col-4">
+			<div class="col-lg-2 col-md-3  col-sm-3 col-4">
 				<div class="service_box">
 					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
 					<h5><a href="#">Residential for Rent</a></h5>

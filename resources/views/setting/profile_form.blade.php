@@ -122,7 +122,7 @@
                     <div class="form-group col-md-6">
                         <label for="mobile" class="form-control-label">{{ __('messages.contact_number') }} <span class="text-danger">*</span></label>
                         <div class="input-group mb-3">
-                            <span class="input-group-text px-0"><i class="ph ph-phone"></i></span>
+                            <!-- <span class="input-group-text px-0"><i class="ph ph-phone"></i></span> -->
                             {{ html()->text('contact_number', old('contact_number', $user_data->contact_number))
                                 ->id('contact_number')
                                 ->class('form-control')
