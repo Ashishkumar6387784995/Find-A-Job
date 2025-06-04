@@ -75,7 +75,7 @@
 
 .star::before,
 .star::after {
-  font-size: 2rem;
+  font-size: 1.4rem;
   letter-spacing: -1px;
   text-shadow: 0 1px 2px rgba(100, 100, 100, 0.1);
 }
@@ -721,7 +721,8 @@ body.uikit .btn-download {
 }
 
 .iq-team-slider.swiper .swiper-slide .iq-banner-img img {
-  height: 622px;
+  /* height: 622px; */
+  height: 500px;
   -o-object-fit: cover;
   object-fit: cover;
   width: 100%
@@ -762,17 +763,19 @@ body.uikit .btn-download {
 }
 
 .iq-team-slider.swiper .swiper-slide.swiper-slide-active .card-box {
-  margin-top: -70px
+  /* margin-top: -70px; */
+  margin-top: -58px
 }
 
 .iq-team-slider.swiper .swiper-slide.swiper-slide-active .card-box .card-description {
   background-color: var(--bs-secondary);
-  padding: 24px 32px
+  /* padding: 24px 32px; */
+  padding: 9px 19px;
 }
 
 .iq-team-slider.swiper .swiper-slide.swiper-slide-active .card-box .card-description .cart-content .heading {
   color: var(--bs-white);
-  font-size: 1.777rem
+  font-size: 1.477rem
 }
 
 .iq-team-slider.swiper .swiper-slide.swiper-slide-active .card-box .card-description .cart-content .desc {

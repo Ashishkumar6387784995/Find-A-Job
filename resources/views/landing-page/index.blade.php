@@ -51,7 +51,7 @@
 											<div class="card-description d-inline-block text-center rounded-3">
 												<div class="cart-content">
 													<h6 class="heading text-capitalize fw-500">Plumbers</h6>
-													<span class="desc d-flex align-items-center justify-content-center mt-2">
+													<span class="desc d-flex align-items-center justify-content-center">
 														<div class="d-flex align-items-center gap-1 flex-wrap">
 															<span class="star" data-rating="5"></span>
 														</div>
@@ -73,7 +73,7 @@
 											<div class="card-description d-inline-block text-center rounded-3">
 												<div class="cart-content">
 													<h6 class="heading text-capitalize fw-500">Stores</h6>
-													<span class="desc text-white d-flex align-items-center justify-content-center mt-2">
+													<span class="desc text-white d-flex align-items-center justify-content-center">
 														<div class="d-flex align-items-center gap-1 flex-wrap">
 															<span class="star" data-rating="5"></span>
 
@@ -96,7 +96,7 @@
 											<div class="card-description d-inline-block text-center rounded-3">
 												<div class="cart-content">
 													<h6 class="heading text-capitalize fw-500">Categories</h6>
-													<span class="desc text-white d-flex align-items-center justify-content-center mt-2">
+													<span class="desc text-white d-flex align-items-center justify-content-center">
 														<div class="d-flex align-items-center gap-1 flex-wrap">
 															<span class="star" data-rating="5"></span>
 														</div>
@@ -118,7 +118,7 @@
 											<div class="card-description d-inline-block text-center rounded-3">
 												<div class="cart-content">
 													<h6 class="heading text-capitalize fw-500">Electronics</h6>
-													<span class="desc text-white d-flex align-items-center justify-content-center mt-2">
+													<span class="desc text-white d-flex align-items-center justify-content-center">
 														<div class="d-flex align-items-center gap-1 flex-wrap">
 															{{-- <div class="star-rating">
                                                             <rating-component :readonly="true" :showrating="false" :ratingvalue="{{ $providers_service_rating }}" />
