@@ -81,6 +81,8 @@ Route::get('/post-job-datatable', [FrontendController::class, 'postJobDatatable'
 Route::get('/favouriteservice-datatable', [FrontendController::class, 'favouriteServiceDatatable'])->name('favouriteservice.data');
 Route::get('/rating-datatable', [FrontendController::class, 'ratingDatatable'])->name('rating.data');
 Route::post('/user-subscribe', [FrontendController::class, 'userSubscribe'])->name('user.subscribe');
+Route::post('/all-orders', [FrontendController::class, 'allOrders'])->name('user.allOrders');
+Route::post('/orders', [FrontendController::class, 'Orders'])->name('user.orders');
 
 
 

@@ -981,5 +981,14 @@
     'whatsapp_template' => 'Whatsapp Template',
     'data_reset' => 'Data Reset And simple Data ',
     'data_reset_btn' => 'Reset Database',
-    'load_simple_data' => 'Load Simple Data'
+    'load_simple_data' => 'Load Simple Data',
+    'orders' => 'Orders',
+    'all_orders' => 'All Orders',
+    'allorders' => 'All Orders',
+    'pending_orders' => 'Pending Orders',
+    'progress_orders' => 'Progress Orders',
+    'delivered_orders' => 'Delivered Orders',
+    'completed_orders' => 'Completed Orders',
+    'declined_orders' => 'Declined Orders',
+    'cash_on_delivery' => "Cash On Delivery"
 );
