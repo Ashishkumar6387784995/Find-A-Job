@@ -571,13 +571,9 @@
 
 
 
-
-
-
-             $menu
-            ->add(
+        $menu->add(
                 '<span>' .
-                    __('messages.orders') .
+                    trans('messages.orders') .
                     '</span><span class="custom-tooltip"><span class="tooltip-text">' .
                     __('messages.orders') .
                     '</span></span>',
@@ -585,117 +581,289 @@
             )
             ->prepend(
                 '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="currentColor" stroke-width="1.5"/>
-<path d="M7 17H11.9846M7 7.03078H16.9692M7 12.0154H16.9692" stroke="currentColor" stroke-width="1.66154" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>',
+                    <path d="M2.5 6.5C2.5 4.29086 4.29086 2.5 6.5 2.5C8.70914 2.5 10.5 4.29086 10.5 6.5V9.16667C10.5 9.47666 10.5 9.63165 10.4659 9.75882C10.3735 10.1039 10.1039 10.3735 9.75882 10.4659C9.63165 10.5 9.47666 10.5 9.16667 10.5H6.5C4.29086 10.5 2.5 8.70914 2.5 6.5Z" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M13.5 14.8333C13.5 14.5233 13.5 14.3683 13.5341 14.2412C13.6265 13.8961 13.8961 13.6265 14.2412 13.5341C14.3683 13.5 14.5233 13.5 14.8333 13.5H17.5C19.7091 13.5 21.5 15.2909 21.5 17.5C21.5 19.7091 19.7091 21.5 17.5 21.5C15.2909 21.5 13.5 19.7091 13.5 17.5V14.8333Z" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M2.5 17.5C2.5 15.2909 4.29086 13.5 6.5 13.5H8.9C9.46005 13.5 9.74008 13.5 9.95399 13.609C10.1422 13.7049 10.2951 13.8578 10.391 14.046C10.5 14.2599 10.5 14.5399 10.5 15.1V17.5C10.5 19.7091 8.70914 21.5 6.5 21.5C4.29086 21.5 2.5 19.7091 2.5 17.5Z" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M13.5 6.5C13.5 4.29086 15.2909 2.5 17.5 2.5C19.7091 2.5 21.5 4.29086 21.5 6.5C21.5 8.70914 19.7091 10.5 17.5 10.5H14.6429C14.5102 10.5 14.4438 10.5 14.388 10.4937C13.9244 10.4415 13.5585 10.0756 13.5063 9.61196C13.5 9.55616 13.5 9.48982 13.5 9.35714V6.5Z" stroke="currentColor" stroke-width="1.5"/>
+                </svg>',
             )
-            ->nickname('document')
-            ->data('permission', 'document list')
+            ->nickname('orders')
+            ->data('permission', '')
             ->link->attr(['class' => ''])
             ->href('#orders');
 
+        $menu->orders
+                ->add('<span>' . trans('messages.all_form_title', ['form' => trans('messages.orders')]) . '</span>', [
+                    'class' => 'sidebar-layout',
+                    'route' => 'store.order.all-order',
+                ])
+                ->prepend(
+                    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="#currentColor" stroke-width="1.5"/>
+                    <path d="M6 15.8L7.14286 17L10 14" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 8.8L7.14286 10L10 7" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13 9L18 9" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M13 16L18 16" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>',
+            )
+            ->data('permission', '')
+            ->link->attr(['class' => '']);
 
 
-             $menu
-            ->add(
+
+        $menu->orders
+                ->add('<span>' . trans('messages.pending_orders') . '</span>', [
+                    'class' => 'sidebar-layout',
+                    'route' => 'store.order.pending',
+                ])
+                ->prepend(
+                    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="#currentColor" stroke-width="1.5"/>
+                    <path d="M6 15.8L7.14286 17L10 14" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 8.8L7.14286 10L10 7" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13 9L18 9" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M13 16L18 16" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>',
+            )
+            ->data('permission', '')
+            ->link->attr(['class' => '']);
+
+
+        $menu->orders
+                ->add('<span>' . trans('messages.progress_orders') . '</span>', [
+                    'class' => 'sidebar-layout',
+                    'route' => 'store.order.progress',
+                ])
+                ->prepend(
+                    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="#currentColor" stroke-width="1.5"/>
+                    <path d="M6 15.8L7.14286 17L10 14" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 8.8L7.14286 10L10 7" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13 9L18 9" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M13 16L18 16" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>',
+            )
+            ->data('permission', '')
+            ->link->attr(['class' => '']);
+
+
+        $menu->orders
+                ->add('<span>' . trans('messages.delivered_orders') . '</span>', [
+                    'class' => 'sidebar-layout',
+                    'route' => 'store.order.delivered',
+                ])
+                ->prepend(
+                    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="#currentColor" stroke-width="1.5"/>
+                    <path d="M6 15.8L7.14286 17L10 14" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 8.8L7.14286 10L10 7" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13 9L18 9" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M13 16L18 16" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>',
+            )
+            ->data('permission', '')
+            ->link->attr(['class' => '']);
+
+
+        $menu->orders
+                ->add('<span>' . trans('messages.completed_orders') . '</span>', [
+                    'class' => 'sidebar-layout',
+                    'route' => 'store.order.completed',
+                ])
+                ->prepend(
+                    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="#currentColor" stroke-width="1.5"/>
+                    <path d="M6 15.8L7.14286 17L10 14" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 8.8L7.14286 10L10 7" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13 9L18 9" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M13 16L18 16" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>',
+            )
+            ->data('permission', '')
+            ->link->attr(['class' => '']);
+
+
+        $menu->orders
+                ->add('<span>' . trans('messages.declined_orders') . '</span>', [
+                    'class' => 'sidebar-layout',
+                    'route' => 'store.order.completed',
+                ])
+                ->prepend(
+                    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="#currentColor" stroke-width="1.5"/>
+                    <path d="M6 15.8L7.14286 17L10 14" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 8.8L7.14286 10L10 7" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13 9L18 9" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M13 16L18 16" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>',
+            )
+            ->data('permission', '')
+            ->link->attr(['class' => '']);
+
+
+        $menu->orders
+                ->add('<span>' . trans('messages.cash_on_delivery') . '</span>', [
+                    'class' => 'sidebar-layout',
+                    'route' => 'store.order.cash_on_delivery',
+                ])
+                ->prepend(
+                    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="#currentColor" stroke-width="1.5"/>
+                    <path d="M6 15.8L7.14286 17L10 14" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 8.8L7.14286 10L10 7" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13 9L18 9" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M13 16L18 16" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>',
+            )
+            ->data('permission', '')
+            ->link->attr(['class' => '']);
+
+
+
+        $menu->add(
                 '<span>' .
-                    __('messages.all_orders') .
+                    trans('messages.manage_categories') .
                     '</span><span class="custom-tooltip"><span class="tooltip-text">' .
-                    __('messages.all_orders') .
+                    __('messages.manage_categories') .
                     '</span></span>',
-                ['url' => 'all_orders'],
+                ['class' => ''],
             )
             ->prepend(
                 '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12V14C22 17.7712 22 19.6569 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V12Z" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M18 16L16 16M16 16L14 16M16 16L16 14M16 16L16 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M7 4V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M17 4V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M2.5 9H21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M2.5 6.5C2.5 4.29086 4.29086 2.5 6.5 2.5C8.70914 2.5 10.5 4.29086 10.5 6.5V9.16667C10.5 9.47666 10.5 9.63165 10.4659 9.75882C10.3735 10.1039 10.1039 10.3735 9.75882 10.4659C9.63165 10.5 9.47666 10.5 9.16667 10.5H6.5C4.29086 10.5 2.5 8.70914 2.5 6.5Z" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M13.5 14.8333C13.5 14.5233 13.5 14.3683 13.5341 14.2412C13.6265 13.8961 13.8961 13.6265 14.2412 13.5341C14.3683 13.5 14.5233 13.5 14.8333 13.5H17.5C19.7091 13.5 21.5 15.2909 21.5 17.5C21.5 19.7091 19.7091 21.5 17.5 21.5C15.2909 21.5 13.5 19.7091 13.5 17.5V14.8333Z" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M2.5 17.5C2.5 15.2909 4.29086 13.5 6.5 13.5H8.9C9.46005 13.5 9.74008 13.5 9.95399 13.609C10.1422 13.7049 10.2951 13.8578 10.391 14.046C10.5 14.2599 10.5 14.5399 10.5 15.1V17.5C10.5 19.7091 8.70914 21.5 6.5 21.5C4.29086 21.5 2.5 19.7091 2.5 17.5Z" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M13.5 6.5C13.5 4.29086 15.2909 2.5 17.5 2.5C19.7091 2.5 21.5 4.29086 21.5 6.5C21.5 8.70914 19.7091 10.5 17.5 10.5H14.6429C14.5102 10.5 14.4438 10.5 14.388 10.4937C13.9244 10.4415 13.5585 10.0756 13.5063 9.61196C13.5 9.55616 13.5 9.48982 13.5 9.35714V6.5Z" stroke="currentColor" stroke-width="1.5"/>
                 </svg>',
             )
-            ->nickname('orders')
-            ->data('permission', 'orders list');
+            ->nickname('manage_categories')
+            ->data('permission', '')
+            ->link->attr(['class' => ''])
+            ->href('#manage_categories');
 
-            
-            $menu
-            ->add(
+        $menu->manage_categories
+                ->add('<span>' . trans('messages.categories') . '</span>', [
+                    'class' => 'sidebar-layout',
+                    'route' => 'service.index',
+                ])
+                ->prepend(
+                    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="#currentColor" stroke-width="1.5"/>
+                    <path d="M6 15.8L7.14286 17L10 14" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 8.8L7.14286 10L10 7" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13 9L18 9" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M13 16L18 16" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>',
+            )
+            ->data('permission', '')
+            ->link->attr(['class' => '']);
+
+        $menu->manage_categories
+                ->add('<span>' . trans('messages.sub_categories') . '</span>', [
+                    'class' => 'sidebar-layout',
+                    'route' => 'service.index',
+                ])
+                ->prepend(
+                    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="#currentColor" stroke-width="1.5"/>
+                    <path d="M6 15.8L7.14286 17L10 14" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 8.8L7.14286 10L10 7" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13 9L18 9" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M13 16L18 16" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>',
+            )
+            ->data('permission', '')
+            ->link->attr(['class' => '']);
+
+
+        $menu->manage_categories
+                ->add('<span>' . trans('messages.child_categories') . '</span>', [
+                    'class' => 'sidebar-layout',
+                    'route' => 'service.index',
+                ])
+                ->prepend(
+                    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="#currentColor" stroke-width="1.5"/>
+                    <path d="M6 15.8L7.14286 17L10 14" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 8.8L7.14286 10L10 7" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13 9L18 9" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M13 16L18 16" stroke="#currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>',
+            )
+            ->data('permission', '')
+            ->link->attr(['class' => '']);
+
+
+
+
+
+        $menu->add(
                 '<span>' .
-                    __('messages.pending_orders') .
+                    trans('messages.manage_products') .
                     '</span><span class="custom-tooltip"><span class="tooltip-text">' .
-                    __('messages.pending_orders') .
+                    __('messages.manage_products') .
                     '</span></span>',
-                ['url' => 'pending_orders'],
+                ['class' => ''],
             )
             ->prepend(
                 '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12V14C22 17.7712 22 19.6569 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V12Z" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M18 16L16 16M16 16L14 16M16 16L16 14M16 16L16 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M7 4V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M17 4V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M2.5 9H21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M3 3H21V5H3V3ZM3 7H21V9H3V7ZM3 11H21V13H3V11ZM3 15H21V17H3V15ZM3 19H21V21H3V19Z" fill="currentColor"/>
                 </svg>',
             )
-            ->nickname('orders')
-            ->data('permission', 'orders list');
+            ->nickname('manage_products')
+            ->data('permission', '')
+            ->link->attr(['class' => ''])
+            ->href('#manage_products');
 
-            $menu
-            ->add(
-                '<span>' .
-                    __('messages.progress_orders') .
-                    '</span><span class="custom-tooltip"><span class="tooltip-text">' .
-                    __('messages.progress_orders') .
-                    '</span></span>',
-                ['url' => 'progress_orders'],
-            )
-            ->prepend(
-                '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12V14C22 17.7712 22 19.6569 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V12Z" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M18 16L16 16M16 16L14 16M16 16L16 14M16 16L16 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M7 4V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M17 4V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M2.5 9H21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>',
-            )
-            ->nickname('orders')
-            ->data('permission', 'orders list');
+            // Submenus under "Manage Products"
+            $menu->manage_products
+                ->add('<span>' . trans('messages.brands') . '</span>', [
+                    'class' => 'sidebar-layout',
+                    'route' => 'store.product.brands',
+                ])
+                ->prepend('<i class="fas fa-tags"></i>');
 
-            $menu
-            ->add(
-                '<span>' .
-                    __('messages.delivered_orders') .
-                    '</span><span class="custom-tooltip"><span class="tooltip-text">' .
-                    __('messages.delivered_orders') .
-                    '</span></span>',
-                ['url' => 'delivered_orders'],
-            )
-            ->prepend(
-                '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12V14C22 17.7712 22 19.6569 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V12Z" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M18 16L16 16M16 16L14 16M16 16L16 14M16 16L16 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M7 4V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M17 4V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    <path d="M2.5 9H21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>',
-            )
-            ->nickname('orders')
-            ->data('permission', 'orders list');
+            $menu->manage_products
+                ->add('<span>' . trans('messages.create_product') . '</span>', [
+                    'class' => 'sidebar-layout',
+                    'route' => 'store.product.create',
+                ])
+                ->prepend('<i class="fas fa-plus-square"></i>');
 
-       
-         
+            $menu->manage_products
+                ->add('<span>' . trans('messages.products') . '</span>', [
+                    'class' => 'sidebar-layout',
+                    'route' => 'store.product.all',
+                ])
+                ->prepend('<i class="fas fa-box-open"></i>');
 
-            
+            $menu->manage_products
+                ->add('<span>' . trans('messages.seller_products') . '</span>', [
+                    'class' => 'sidebar-layout',
+                    'route' => 'store.product.seller',
+                ])
+                ->prepend('<i class="fas fa-store"></i>');
 
+            $menu->manage_products
+                ->add('<span>' . trans('messages.seller_pending_products') . '</span>', [
+                    'class' => 'sidebar-layout',
+                    'route' => 'store.product.seller_pending',
+                ])
+                ->prepend('<i class="fas fa-hourglass-half"></i>');
 
+            $menu->manage_products
+                ->add('<span>' . trans('messages.product_reviews') . '</span>', [
+                    'class' => 'sidebar-layout',
+                    'route' => 'store.product.reviews',
+                ])
+                ->prepend('<i class="fas fa-star"></i>');
 
-
-
-
-
-
-
-
-
+            $menu->manage_products
+                ->add('<span>' . trans('messages.product_report') . '</span>', [
+                    'class' => 'sidebar-layout',
+                    'route' => 'store.product.reports',
+                ])
+                ->prepend('<i class="fas fa-flag"></i>');
 
 
         $menu

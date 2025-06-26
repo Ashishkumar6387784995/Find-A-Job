@@ -52,6 +52,8 @@ use App\Http\Controllers\Installer\PermissionsController;
 use App\Http\Controllers\Installer\EnvironmentController;
 use App\Http\Controllers\Installer\DatabaseController;
 use App\Http\Controllers\Installer\FinalController;
+use App\Http\Controllers\Store\OrderController;
+
 
 
 
@@ -510,6 +512,30 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::get('save-wallet-stripe-payment/{id}', [App\Http\Controllers\WalletController::class, 'saveWalletStripePayment']);
     Route::get('check-image/{id}', [App\Http\Controllers\HomeController::class, 'checkImage'])->name('check-image');
+
+
+    Route::prefix('store')->name('store.')->group(function () {
+        Route::prefix('order')->name('order.')->group(function () {
+            Route::get('/all-order', [OrderController::class, 'index'])->name('all-order');
+            Route::get('/pending', [OrderController::class, 'index'])->name('pending');
+            Route::get('/progress', [OrderController::class, 'index'])->name('progress');
+            Route::get('/delivered', [OrderController::class, 'index'])->name('delivered');
+            Route::get('/completed', [OrderController::class, 'index'])->name('completed');
+            Route::get('/declined', [OrderController::class, 'index'])->name('declined');
+            Route::get('/cash-on-delivery', [OrderController::class, 'index'])->name('cash_on_delivery');
+        });
+
+
+        Route::prefix('product')->name('product.')->group(function () {
+            Route::get('/brands', [OrderController::class, 'index'])->name('brands');
+            Route::get('/create', [OrderController::class, 'index'])->name('create');
+            Route::get('/all', [OrderController::class, 'index'])->name('all');
+            Route::get('/seller', [OrderController::class, 'index'])->name('seller');
+            Route::get('/seller/pending', [OrderController::class, 'index'])->name('seller_pending');
+            Route::get('/reviews', [OrderController::class, 'index'])->name('reviews');
+            Route::get('/reports', [OrderController::class, 'index'])->name('reports');
+        });
+    });
 });
 Route::get('/ajax-list', [HomeController::class, 'getAjaxList'])->name('ajax-list');
 Route::post('/service-list', [HomeController::class, 'getAjaxServiceList'])->name('service-list');

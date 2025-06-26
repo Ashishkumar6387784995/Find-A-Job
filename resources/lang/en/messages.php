@@ -982,6 +982,7 @@
     'data_reset' => 'Data Reset And simple Data ',
     'data_reset_btn' => 'Reset Database',
     'load_simple_data' => 'Load Simple Data',
+    
     'orders' => 'Orders',
     'all_orders' => 'All Orders',
     'allorders' => 'All Orders',
@@ -990,5 +991,20 @@
     'delivered_orders' => 'Delivered Orders',
     'completed_orders' => 'Completed Orders',
     'declined_orders' => 'Declined Orders',
-    'cash_on_delivery' => "Cash On Delivery"
+    'cash_on_delivery' => "Cash On Delivery",
+
+    'manage_categories' => "Manage Categories",
+    'categories' => "Categories",
+    'sub_categories' => "Sub Categories",
+    'child_categories' => "Child Categories",
+
+
+    'manage_products' => "Manage Products",
+    "brands"=> "Brands",
+    "create_product"=> "Create Product",
+    "products"=> "Products",
+    "seller_products"=> "Seller Products",
+    "seller_pending_products"=> "Seller Pending Products",
+    "product_reviews"=> "Product Reviews",
+    "product_report"=> "Product Report",
 );
