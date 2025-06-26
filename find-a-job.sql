@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 26, 2025 at 09:29 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Host: 127.0.0.1:3306
+-- Generation Time: Jun 26, 2025 at 07:38 AM
+-- Server version: 10.11.10-MariaDB
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `find-a-job`
+-- Database: `u104097785_Devdailycleans`
 --
 
 -- --------------------------------------------------------
@@ -416,7 +416,7 @@ INSERT INTO `categories` (`id`, `name`, `description`, `color`, `status`, `is_fe
 (14, 'Salon', 'The Salon category is a hub of beauty and grooming expertise, offering insights into hairstyling, skincare, and personal care routines for a confident and polished you. ✂️', '#000000', 1, 0, NULL, '2023-09-04 07:28:27', '2023-09-04 07:28:27'),
 (15, 'Photography', 'The Photography category captures the essence of visual storytelling, offering tips on composition, editing, and equipment to help you create captivating images. 📸', '#000000', 1, 0, NULL, '2023-09-04 07:28:53', '2023-09-04 07:28:53'),
 (16, 'Pest Control', 'The Pest Control category equips you with effective strategies to manage and eliminate pests, ensuring a pest-free environment and peace of mind. 🪲🪳', '#000000', 1, 0, NULL, '2023-09-04 07:29:13', '2023-09-04 07:29:13'),
-(17, 'Pandit', 'The Pandit category offers spiritual guidance, rituals, and insights rooted in ancient traditions, assisting individuals in their journey towards deeper understanding and connection.🔥', '#000000', 1, 0, NULL, '2023-09-04 07:29:31', '2023-09-04 07:29:31'),
+(17, 'Pandit', 'The Pandit category offers spiritual guidance, rituals, and insights rooted in ancient traditions, assisting individuals in their journey towards deeper understanding and connection.🔥', '#000000', 1, 0, NULL, '2023-09-04 07:29:31', '2025-06-03 09:43:59'),
 (18, 'Painter', 'The Painter category celebrates the world of colors and creativity, offering guidance on techniques, styles, and mediums for both aspiring and seasoned artists.🖌️🎨', '#000000', 1, 1, NULL, '2023-09-04 07:30:04', '2025-05-16 06:57:29'),
 (19, 'Laundry', 'Experience the convenience of pristine garments with our comprehensive Laundry services, ensuring freshness and care for your clothing.🧼', '#000000', 1, 0, NULL, '2023-09-04 07:30:26', '2023-09-04 07:30:26'),
 (20, 'Gardener', 'The Gardener category cultivates a wealth of knowledge on plant care, landscaping, and sustainable gardening practices to help enthusiasts foster thriving green spaces. 🏡⛏️', '#000000', 1, 0, NULL, '2023-09-04 07:30:55', '2023-09-04 07:35:54'),
@@ -49817,7 +49817,6 @@ INSERT INTO `media` (`id`, `model_type`, `model_id`, `uuid`, `collection_name`, 
 (132, 'App\\Models\\Service', 17, '4994d60a-8c7e-440c-bba8-1f5bcdea2f56', 'service_attachment', 'beam_and_column_installation_1', 'beam_and_column_installation_1.png', 'image/png', 'public', 'public', 712013, '[]', '[]', '[]', '[]', 1, '2025-04-11 00:39:48', '2025-04-11 00:39:48'),
 (133, 'App\\Models\\Service', 18, '256a61ba-275c-4ccc-aa2d-19ef290c8343', 'service_attachment', 'full_house_cleaning_1', 'full_house_cleaning_1.jpeg', 'image/jpeg', 'public', 'public', 77787, '[]', '[]', '[]', '[]', 1, '2025-04-11 00:39:48', '2025-04-11 00:39:48'),
 (134, 'App\\Models\\Service', 19, '943c8099-89cb-4b43-a7ad-b70967c9ab5e', 'service_attachment', 'ceiling_and_wall_cleaning', 'ceiling_and_wall_cleaning.png', 'image/png', 'public', 'public', 351185, '[]', '[]', '[]', '[]', 1, '2025-04-11 00:39:49', '2025-04-11 00:39:49'),
-(135, 'App\\Models\\Service', 20, '6db3a7c2-d920-4480-b39f-bd419b386627', 'service_attachment', 'carpet_cleaning_1', 'carpet_cleaning_1.png', 'image/png', 'public', 'public', 673188, '[]', '[]', '[]', '[]', 1, '2025-04-11 00:39:49', '2025-04-11 00:39:49'),
 (136, 'App\\Models\\Service', 21, '79fceadf-3895-4330-bacb-19d29df7c160', 'service_attachment', 'curtain_cleaning_1', 'curtain_cleaning_1.png', 'image/png', 'public', 'public', 369270, '[]', '[]', '[]', '[]', 1, '2025-04-11 00:39:49', '2025-04-11 00:39:49'),
 (137, 'App\\Models\\Service', 22, '06814fb7-05df-464f-9be2-9c49d795f5e5', 'service_attachment', 'chimney_sweeping_1', 'chimney_sweeping_1.png', 'image/png', 'public', 'public', 602272, '[]', '[]', '[]', '[]', 1, '2025-04-11 00:39:49', '2025-04-11 00:39:49'),
 (138, 'App\\Models\\Service', 23, '43f16c1b-4e7a-412d-a6d0-9e7f250f7957', 'service_attachment', 'daily_meals_preparation_1', 'daily_meals_preparation_1.png', 'image/png', 'public', 'public', 724687, '[]', '[]', '[]', '[]', 1, '2025-04-11 00:39:49', '2025-04-11 00:39:49'),
@@ -50000,7 +49999,28 @@ INSERT INTO `media` (`id`, `model_type`, `model_id`, `uuid`, `collection_name`, 
 (314, 'App\\Models\\ServiceAddon', 24, 'bd1bd812-d289-4593-a61d-6ffdaa2bdc7f', 'serviceaddon_image', 'artwork_cleaning_and_restoration', 'artwork_cleaning_and_restoration.png', 'image/png', 'public', 'public', 783479, '[]', '[]', '[]', '[]', 1, '2025-04-11 00:39:57', '2025-04-11 00:39:57'),
 (315, 'App\\Models\\ServiceAddon', 25, '7d844f8c-f8e5-4c91-8b03-a061c8d0dd1f', 'serviceaddon_image', 'custom_stitching', 'custom_stitching.png', 'image/png', 'public', 'public', 486415, '[]', '[]', '[]', '[]', 1, '2025-04-11 00:39:57', '2025-04-11 00:39:57'),
 (316, 'App\\Models\\ServiceAddon', 26, 'fd378f90-75f7-439a-bbdb-7d9f91fccde0', 'serviceaddon_image', 'anti_wrinkle_finish', 'anti_wrinkle_finish.png', 'image/png', 'public', 'public', 541557, '[]', '[]', '[]', '[]', 1, '2025-04-11 00:39:57', '2025-04-11 00:39:57'),
-(317, 'App\\Models\\Service', 44, 'e864b82d-2320-4570-80f3-85525306c761', 'service_attachment', 'WhatsApp Image 2025-04-28 at 10.40.10 AM', 'WhatsApp-Image-2025-04-28-at-10.40.10-AM.jpeg', 'image/jpeg', 'public', 'public', 294100, '[]', '[]', '[]', '[]', 2, '2025-05-31 08:18:59', '2025-05-31 08:18:59');
+(317, 'App\\Models\\Service', 44, 'e864b82d-2320-4570-80f3-85525306c761', 'service_attachment', 'WhatsApp Image 2025-04-28 at 10.40.10 AM', 'WhatsApp-Image-2025-04-28-at-10.40.10-AM.jpeg', 'image/jpeg', 'public', 'public', 294100, '[]', '[]', '[]', '[]', 2, '2025-05-31 08:18:59', '2025-05-31 08:18:59'),
+(318, 'App\\Models\\Service', 123, '7df07209-b623-41ad-9c09-773aa4d16dcf', 'service_attachment', 'windows', 'windows.png', 'image/png', 'public', 'public', 17192, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:05:50', '2025-06-03 06:05:50'),
+(319, 'App\\Models\\Service', 124, 'c5e34cfe-34a9-45d0-be12-876bfecdac16', 'service_attachment', 'water', 'water.png', 'image/png', 'public', 'public', 33067, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:11:11', '2025-06-03 06:11:11'),
+(320, 'App\\Models\\Service', 125, '00e50a13-7617-4cb9-97a6-e9c44d011090', 'service_attachment', 'plastering', 'plastering.png', 'image/png', 'public', 'public', 18482, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:15:45', '2025-06-03 06:15:45'),
+(321, 'App\\Models\\Service', 126, 'd843bf35-ce6d-475b-a454-1d7877685922', 'service_attachment', 'paint', 'paint.png', 'image/png', 'public', 'public', 35358, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:17:18', '2025-06-03 06:17:18'),
+(322, 'App\\Models\\Service', 127, 'ecd29c15-b179-4897-99cb-1da8f939511b', 'service_attachment', 'moving-truck', 'moving-truck.png', 'image/png', 'public', 'public', 27798, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:19:11', '2025-06-03 06:19:11'),
+(323, 'App\\Models\\Service', 128, 'dfa9fe64-67d7-4647-aeb5-a0590be9aebc', 'service_attachment', 'delete1', 'delete1.png', 'image/png', 'public', 'public', 17507, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:21:19', '2025-06-03 06:21:19'),
+(324, 'App\\Models\\Service', 129, 'a84c97dc-2d9f-4b20-ae8c-27f44c97d955', 'service_attachment', 'cctv', 'cctv.png', 'image/png', 'public', 'public', 30416, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:26:23', '2025-06-03 06:26:23'),
+(325, 'App\\Models\\Service', 130, 'b0c10396-88ba-48d0-a596-546091eaaa2b', 'service_attachment', 'desk', 'desk.png', 'image/png', 'public', 'public', 16465, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:27:52', '2025-06-03 06:27:52'),
+(326, 'App\\Models\\Service', 131, 'b221cb50-af62-4027-93e9-eee6655f9cbf', 'service_attachment', 'car1', 'car1.png', 'image/png', 'public', 'public', 22020, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:31:27', '2025-06-03 06:31:27'),
+(327, 'App\\Models\\Service', 132, '0b3f5093-fa50-4e21-8309-6f1ab0122f1c', 'service_attachment', 'tinted-glass1', 'tinted-glass1.png', 'image/png', 'public', 'public', 25614, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:32:39', '2025-06-03 06:32:39'),
+(328, 'App\\Models\\Service', 133, 'fbb9b5a8-a589-46a3-b7c7-644de758f0c9', 'service_attachment', 'savings', 'savings.png', 'image/png', 'public', 'public', 28666, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:34:41', '2025-06-03 06:34:41'),
+(329, 'App\\Models\\Service', 20, 'd0fa5d7d-5bf5-460a-8de3-4731c59f62f5', 'service_attachment', 'vaccum-cleaner', 'vaccum-cleaner.png', 'image/png', 'public', 'public', 10292, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:38:23', '2025-06-03 06:38:23'),
+(330, 'App\\Models\\Service', 134, 'f7f13175-4447-48a9-8906-45267133bcde', 'service_attachment', 'construction', 'construction.png', 'image/png', 'public', 'public', 8697, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:39:37', '2025-06-03 06:39:37'),
+(331, 'App\\Models\\Service', 135, 'd9ffaf68-3e45-4c86-a76d-9f32ee8014eb', 'service_attachment', 'washing-machine', 'washing-machine.png', 'image/png', 'public', 'public', 14695, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:41:05', '2025-06-03 06:41:05'),
+(332, 'App\\Models\\Service', 136, 'a71f04ec-c147-42f2-89d1-a238a3b72356', 'service_attachment', 'machine', 'machine.png', 'image/png', 'public', 'public', 12139, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:42:28', '2025-06-03 06:42:28'),
+(333, 'App\\Models\\Service', 137, '7d3cfac1-65ea-497e-910f-124eb5328c68', 'service_attachment', 'trash-bin', 'trash-bin.png', 'image/png', 'public', 'public', 14164, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:43:25', '2025-06-03 06:43:25'),
+(334, 'App\\Models\\Service', 138, 'a1770d0e-88a9-4a38-8ba6-6fc09b13a2d5', 'service_attachment', 'car', 'car.png', 'image/png', 'public', 'public', 13361, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:44:10', '2025-06-03 06:44:10'),
+(335, 'App\\Models\\Service', 139, '8f6c216b-1df4-4b03-a947-4d6efcf430fd', 'service_attachment', 'mop-230x230-1', 'mop-230x230-1.png', 'image/png', 'public', 'public', 10535, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:48:58', '2025-06-03 06:48:58'),
+(342, 'App\\Models\\Service', 139, '32c7bcb7-ed85-423b-9697-92b0d8b5c3d7', 'service_attachment', 'WhatsApp Image 2025-04-28 at 10.40.11 AM', 'WhatsApp-Image-2025-04-28-at-10.40.11-AM.jpeg', 'image/jpeg', 'public', 'public', 276963, '[]', '[]', '[]', '[]', 2, '2025-06-03 11:19:34', '2025-06-03 11:19:34'),
+(343, 'App\\Models\\Service', 139, '1420ce8a-370f-4da0-91a6-41a78d055b03', 'service_attachment', 'WhatsApp Image 2025-04-28 at 10.40.12 AM (1)', 'WhatsApp-Image-2025-04-28-at-10.40.12-AM-(1).jpeg', 'image/jpeg', 'public', 'public', 444101, '[]', '[]', '[]', '[]', 3, '2025-06-03 11:19:34', '2025-06-03 11:19:34'),
+(344, 'App\\Models\\Service', 139, '9132825e-e63e-4c2e-a7c4-cbb571edef36', 'service_attachment', 'WhatsApp Image 2025-04-28 at 10.40.08 AM', 'WhatsApp-Image-2025-04-28-at-10.40.08-AM.jpeg', 'image/jpeg', 'public', 'public', 338816, '[]', '[]', '[]', '[]', 4, '2025-06-03 12:21:29', '2025-06-03 12:21:29');
 
 -- --------------------------------------------------------
 
@@ -50828,7 +50848,6 @@ CREATE TABLE `post_job_requests` (
 --
 
 INSERT INTO `post_job_requests` (`id`, `title`, `description`, `provider_id`, `customer_id`, `price`, `job_price`, `status`, `reason`, `date`, `created_at`, `updated_at`) VALUES
-(1, 'Face Massage', 'Indulge in relaxation and rejuvenation with our Face Massage service. Our expert therapists use gentle techniques to melt away tension and leave your skin glowing and refreshed. 💆🏻🧖‍♀️', NULL, 44, 20, NULL, 'requested', NULL, NULL, '2023-09-11 05:08:12', '2023-09-11 05:08:12'),
 (2, 'Green Plant Creation', 'Bring your space to life with our Green Plant Creation service. Our experts curate and install lush, vibrant plants to transform your environment into a green oasis. 🪴🥀', NULL, 47, 30, NULL, 'requested', NULL, NULL, '2023-09-11 05:24:30', '2023-09-11 05:24:30'),
 (3, 'Macaron Delights', 'Savor the exquisite with our Macaron Delights service. Indulge in a symphony of flavors and textures as we handcraft these sweet masterpieces, perfect for every occasion. 🍩🍪', NULL, 49, 40, NULL, 'requested', NULL, NULL, '2023-10-02 08:22:58', '2023-10-02 08:22:58'),
 (4, 'Hair Care', 'Indulge in ultimate hair relaxation with our Hair Spa service. Our skilled stylists pamper your locks, providing deep nourishment and rejuvenation, leaving your hair silky, smooth, and revitalized. 🧖‍♀️', NULL, 3, 36, NULL, 'requested', NULL, NULL, '2023-10-02 08:25:16', '2023-10-02 08:25:16'),
@@ -50858,7 +50877,6 @@ CREATE TABLE `post_job_service_mappings` (
 --
 
 INSERT INTO `post_job_service_mappings` (`id`, `post_request_id`, `service_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 111, NULL, NULL, NULL),
 (2, 2, 112, NULL, NULL, NULL),
 (3, 3, 114, NULL, NULL, NULL),
 (4, 4, 115, NULL, NULL, NULL),
@@ -51039,10 +51057,6 @@ INSERT INTO `provider_service_address_mappings` (`id`, `service_id`, `provider_a
 (14, 14, 26, NULL, NULL),
 (61, 19, 21, NULL, NULL),
 (62, 19, 20, NULL, NULL),
-(81, 20, 1, NULL, NULL),
-(82, 20, 5, NULL, NULL),
-(83, 20, 8, NULL, NULL),
-(84, 20, 10, NULL, NULL),
 (85, 21, 23, NULL, NULL),
 (86, 21, 24, NULL, NULL),
 (87, 22, 1, NULL, NULL),
@@ -51422,7 +51436,11 @@ INSERT INTO `provider_service_address_mappings` (`id`, `service_id`, `provider_a
 (857, 44, 2, NULL, NULL),
 (858, 44, 5, NULL, NULL),
 (859, 44, 10, NULL, NULL),
-(860, 44, 31, NULL, NULL);
+(860, 44, 31, NULL, NULL),
+(861, 20, 1, NULL, NULL),
+(862, 20, 5, NULL, NULL),
+(863, 20, 8, NULL, NULL),
+(864, 20, 10, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -52150,7 +52168,7 @@ INSERT INTO `services` (`id`, `name`, `category_id`, `provider_id`, `price`, `ty
 (17, 'Beam and Column Installation', 26, 4, 22, 'fixed', '00:15', NULL, 1, 'Experience superior structural support. Our experts install beams and columns with precision, enhancing load-bearing capacity and ensuring the stability of your building. 🪛🛠️', 0, 1, NULL, '2023-09-05 08:27:52', '2023-09-05 08:27:52', 6, 'service', 0, 0, NULL, 'on_site'),
 (18, 'Full House Cleaning', 24, 4, 33, 'hourly', '00:30', 5, 1, 'Our expert cleaners transform your home into a spotless haven. From dusting to mopping, every corner is meticulously cleaned, leaving you with a refreshed living environment. 🧽🧹🪣🧼', 0, 1, NULL, '2023-09-05 08:35:49', '2023-09-05 08:35:49', 7, 'service', 0, 0, NULL, 'on_site'),
 (19, 'Ceiling and Wall Cleaning', 24, 12, 26, 'fixed', '0:50', 4, 1, 'Renew your spaces with our Ceiling and Wall Cleaning service, restoring freshness and brightness to your interiors. 🧽🧹🧻', 0, 1, NULL, '2023-09-05 08:37:49', '2023-09-05 23:57:26', 7, 'service', 1, 0, NULL, 'on_site'),
-(20, 'Carpet Cleaning', 24, 4, 40, 'fixed', '00:19', NULL, 1, 'Renew your carpets\' vibrancy. Our specialized cleaning process removes stains and dirt, leaving your carpets soft, clean, and inviting. 🧽🧹🧼', 0, 1, NULL, '2023-09-06 04:48:58', '2023-09-06 04:48:58', 8, 'service', 0, 0, NULL, 'on_site'),
+(20, 'Carpet Cleaning', 24, 4, 40, 'fixed', '00:19', NULL, 1, 'Renew your carpets\' vibrancy. Our specialized cleaning process removes stains and dirt, leaving your carpets soft, clean, and inviting. 🧽🧹🧼', 0, 1, NULL, '2025-06-03 06:38:23', '2025-06-03 06:38:23', 8, 'service', 0, 0, NULL, 'ON_SITE'),
 (21, 'Curtain Cleaning', 24, 14, 0, 'free', '00:30', 0, 1, 'Revive your space with our Curtain Cleaning service, restoring freshness and cleanliness to your drapes. 🧽🧼', 0, 1, NULL, '2023-09-06 05:12:25', '2023-09-06 05:12:25', 8, 'service', 0, 0, NULL, 'on_site'),
 (22, 'Chimney Sweeping', 24, 4, 15, 'hourly', '00:30', 2, 1, 'Ensure fireplace safety and optimal performance with our Chimney Sweeping service, expertly removing debris and buildup. 🧼🧹🧻', 0, 1, NULL, '2023-09-06 05:13:58', '2023-09-06 05:13:58', 8, 'service', 0, 0, NULL, 'on_site'),
 (23, 'Daily Meals Preparation Cook', 22, 4, 23, 'fixed', '00:25', NULL, 1, 'Enjoy the convenience of homemade meals with our Daily Meals Preparation service. Our skilled home cooks curate a variety of nutritious and flavorful dishes tailored to your preferences. From breakfast to dinner, we ensure you\'re provided with well-balanced and delicious meals, freeing you from the kitchen and letting you savor homemade goodness. 🥪🍕🍜', 0, 1, NULL, '2023-09-06 05:18:04', '2023-10-02 07:52:29', 9, 'service', 0, 1, 5, 'on_site'),
@@ -52249,7 +52267,24 @@ INSERT INTO `services` (`id`, `name`, `category_id`, `provider_id`, `price`, `ty
 (117, 'Complete Home Cleaning', 24, 3, 0, 'fixed', '0', NULL, 1, 'Experience the ultimate home transformation with our Complete Home Cleaning service. Our dedicated team leaves no corner untouched, ensuring a spotless and refreshed living space. 🧽🧼🧹🪣', 0, 3, NULL, '2023-10-02 08:29:03', '2023-10-02 08:29:03', NULL, 'user_post_service', 0, 0, NULL, 'on_site'),
 (119, 'Interior Design', 18, 3, 0, 'fixed', '0', NULL, 1, 'Elevate your living spaces with our Interior Design service. Our talented designers create personalized environments that harmonize style, functionality, and comfort. 🧑🏻‍🎨', 0, 3, NULL, '2023-10-02 23:53:39', '2023-10-02 23:53:39', NULL, 'user_post_service', 0, 0, NULL, 'on_site'),
 (120, 'Canvas Artwork', 18, 3, 0, 'fixed', '0', NULL, 1, 'Transform your space with Canvas Artwork. Discover captivating and personalized art pieces that add elegance and character to your decor. 🧑🏻‍🎨🖌️🎨', 0, 3, NULL, '2023-10-02 23:55:36', '2023-10-02 23:55:36', NULL, 'user_post_service', 0, 0, NULL, 'on_site'),
-(122, 'Wire Repair', 25, 3, 0, 'fixed', '0', NULL, 1, 'Get your electrical systems back in top shape with our Wire Repair service. Our skilled technicians ensure safe and efficient wire repairs, restoring functionality to your home or business. 🔧🪛🛠️', 0, 3, NULL, '2023-10-03 00:23:21', '2023-10-03 00:23:21', NULL, 'user_post_service', 0, 0, NULL, 'on_site');
+(122, 'Wire Repair', 25, 3, 0, 'fixed', '0', NULL, 1, 'Get your electrical systems back in top shape with our Wire Repair service. Our skilled technicians ensure safe and efficient wire repairs, restoring functionality to your home or business. 🔧🪛🛠️', 0, 3, NULL, '2023-10-03 00:23:21', '2023-10-03 00:23:21', NULL, 'user_post_service', 0, 0, NULL, 'on_site'),
+(123, 'Window Tinting', 24, 4, 20, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:05:50', '2025-06-03 06:05:50', 7, 'service', 0, 0, NULL, 'ON_SITE'),
+(124, 'Water Blasting', 23, 6, 18, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:11:11', '2025-06-03 06:11:11', 23, 'service', 0, 0, NULL, 'ON_SITE'),
+(125, 'Plastering', 11, 7, 22, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:15:45', '2025-06-03 06:15:45', NULL, 'service', 0, 0, NULL, 'ON_SITE'),
+(126, 'Painting', 18, 8, 24, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:17:18', '2025-06-03 06:17:18', 15, 'service', 0, 0, NULL, 'ON_SITE'),
+(127, 'Furniture Moving', 26, 9, 25, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:19:11', '2025-06-03 06:19:11', 5, 'service', 0, 0, NULL, 'ON_SITE'),
+(128, 'Rubbish Removal', 24, 10, 17, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:21:19', '2025-06-03 06:21:19', NULL, 'service', 0, 0, NULL, 'ON_SITE'),
+(129, 'CCTV Camera Installation', 12, 6, 25, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:26:23', '2025-06-03 06:26:23', NULL, 'service', 0, 0, NULL, 'ON_SITE'),
+(130, 'Fencing and deck Repaire', 26, 4, 21, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:27:52', '2025-06-03 06:27:52', NULL, 'service', 0, 0, NULL, 'ON_SITE'),
+(131, 'Car Stereo System Installation', 21, 7, 40, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:31:27', '2025-06-03 06:31:27', 3, 'service', 0, 0, NULL, 'ON_SITE'),
+(132, 'Car window', 21, 8, 34, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:32:39', '2025-06-03 06:32:39', 4, 'service', 0, 0, NULL, 'ON_SITE'),
+(133, 'Genral House Maintenance', 11, 7, 30, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:34:41', '2025-06-03 06:34:41', NULL, 'service', 0, 0, NULL, 'ON_SITE'),
+(134, 'Residential Cleaning', 24, 10, 31, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:39:37', '2025-06-03 06:39:37', NULL, 'service', 0, 0, NULL, 'ON_SITE'),
+(135, 'Laundary Washing', 19, 10, 22, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:41:05', '2025-06-03 06:41:05', NULL, 'service', 0, 0, NULL, 'ON_SITE'),
+(136, 'Lawn Moving', 21, 6, 34, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:42:28', '2025-06-03 06:42:28', NULL, 'service', 0, 0, NULL, 'ON_SITE'),
+(137, 'Rubbish Cleaning', 24, 9, 32, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:43:25', '2025-06-03 06:43:25', NULL, 'service', 0, 0, NULL, 'ON_SITE'),
+(138, 'Car Cleaning', 24, 9, 31, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:44:10', '2025-06-03 06:44:10', NULL, 'service', 0, 0, NULL, 'ON_SITE'),
+(139, 'Commercial Cleaning', 24, 7, 24, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:48:58', '2025-06-03 06:48:58', NULL, 'service', 0, 0, NULL, 'ON_SITE');
 
 -- --------------------------------------------------------
 
@@ -57989,7 +58024,7 @@ ALTER TABLE `mail_template_content_mappings`
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=318;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=345;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -58103,7 +58138,7 @@ ALTER TABLE `provider_payouts`
 -- AUTO_INCREMENT for table `provider_service_address_mappings`
 --
 ALTER TABLE `provider_service_address_mappings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=861;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=865;
 
 --
 -- AUTO_INCREMENT for table `provider_slot_mappings`
@@ -58139,7 +58174,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
 
 --
 -- AUTO_INCREMENT for table `service_addons`
