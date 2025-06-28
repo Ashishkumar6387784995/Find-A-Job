@@ -84,15 +84,14 @@
          </li>
       @endif
    </ul> 
-   <div
-      class="mt-3">
-      <div class="d-flex align-items-center gap-2">
+   <div class="mt-3">
+      <div class="d-flex justify-content-center align-items-center gap-2">
          <img src="{{ getSingleMedia($data->providers,'profile_image', null) }}" alt="service" class="img-fluid rounded-3 object-cover avatar-24">
          <a href="{{ route('provider.detail', ($data->providers)->id) }}">
             <span class="font-size-14 service-user-name">{{ ($data->providers)->display_name }}</span>
          </a>
       </div>
-      <div class="d-flex align-items-center gap-1 f-none mt-2">
+      <div class="d-flex justify-content-center align-items-center gap-1 f-none mt-2">
          @if($totalRating > 0)
          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"
             class="service-rating">

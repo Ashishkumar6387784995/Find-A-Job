@@ -1,6 +1,8 @@
 @extends('landing-page.layouts.default')
 @section('content')
 
+
+
 <!-- Banner -->
 <div class="padding-top-bottom-90 bg-light">
 	<div class="container-fluid">
@@ -8,7 +10,7 @@
 			<div class="col-xl-6">
 				<div class="me-0 pe-0 me-xl-5 pe-xl-5">
 					@if ($sectionData && isset($sectionData['section_1']) && $sectionData['section_1']['section_1'] == 1)
-					<div class="iq-title-box mb-5">
+					{{--<div class="iq-title-box mb-5">
 						<div class="iq-title-box">
 							<h2 class="text-capitalize line-count-3">
 								{{ $sectionData['section_1']['title']}}
@@ -31,14 +33,14 @@
 								{{ $sectionData['section_1']['description'] ?? null }}
 							</p>
 						</div>
-					</div>
+					</div>--}}
 					<location-search :user_id="{{json_encode($auth_user_id)}}" :postjobservice="{{$postjobservice}}"></location-search>
 					@endif
 
 				</div>
 			</div>
 			@if($sectionData['section_1']['enable_popular_provider'] == "on")
-			<div class="col-xl-6 px-xl-0 mt-xl-0 mt-5">
+			<!-- <div class="col-xl-6 px-xl-0 mt-xl-0 mt-5">
 				<div class="position-relative swiper iq-team-slider overflow-hidden mySwiper">
 					<div class="swiper-wrapper">
 
@@ -137,7 +139,20 @@
 
 				</div>
 			</div>
+		</div> -->
+
+	<div class="col-xl-6 px-xl-0 mt-xl-0 mt-5">
+		<div class="sliderr" id="sliderr">
+		<div class="slidess" id="slidess">
+			<div class="slidee" >Plumbers</div>
+			<div class="slidee" >Stores</div>
+			<div class="slidee" >Categories</div>
+			<div class="slidee" >Electronics</div>
 		</div>
+		</div>
+	</div>
+
+
 		@endif
 	</div>
 </div>
@@ -1591,6 +1606,10 @@ session(['recently_viewed:' . $auth_user_id => $recentlyViewed]);
 @endif
  -->
 
+ <style>
+	
+   
+</style>
 @endsection
 @section('bottom_script')
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -1712,5 +1731,50 @@ session(['recently_viewed:' . $auth_user_id => $recentlyViewed]);
 			jQuery(document).trigger('after_slider_init');
 		}
 	});
+</script>
+
+<script>
+  const slides = document.getElementById('slidess');
+const slider = document.getElementById('sliderr');
+let index = 0;
+let interval;
+
+// Clone first slide and append it to the end
+const firstClone = slidess.children[0].cloneNode(true);
+slides.appendChild(firstClone);
+const totalSlides = slidess.children.length;
+
+function startSlider() {
+  interval = setInterval(() => {
+    index++;
+    updateSlidePosition();
+
+    // Reset to first slide (visually) after clone
+    if (index === totalSlides - 1) {
+      setTimeout(() => {
+        slidess.style.transition = 'none';
+        index = 0;
+        updateSlidePosition();
+        // Restore transition
+        setTimeout(() => {
+          slidess.style.transition = 'transform 0.5s ease-in-out';
+        }, 50);
+      }, 500); // Match slide transition duration
+    }
+  }, 3000);
+}
+
+function updateSlidePosition() {
+  slidess.style.transform = `translateX(-${index * 100}%)`;
+}
+
+// Hover to pause
+sliderr.addEventListener('mouseenter', () => clearInterval(interval));
+sliderr.addEventListener('mouseleave', startSlider);
+
+// Initialize slider
+slidess.style.transition = 'transform 0.5s ease-in-out';
+startSlider();
+
 </script>
 @endsection

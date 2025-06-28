@@ -981,10 +981,16 @@ div.dataTables_processing>div:last-child>div {
   display: none
 }
 
-.tab-slider .swiper-content .swiper-slide img {
+/* .tab-slider .swiper-content .swiper-slide img {
   height: 520px;
   width: 100%;
   object-fit:contain;
+} */
+ .tab-slider .swiper-content .swiper-slide img {
+    height: 286px !important;
+    border-radius: 50% !important;
+    width: 286px !important;
+    object-fit: fill;
 }
 
 .tab-slider .swiper-thumb .swiper-slide {
@@ -2326,13 +2332,27 @@ table.provider-detail-info td h6 {
   height: 13.5rem
 }
 
-.service-slide-items-4 .service-img {
+/* .service-slide-items-4 .service-img {
   height: 13.125rem
+} */
+ .service-slide-items-4 .service-img {
+    height: 13.125rem;
+    width: 13.125rem !important;
 }
 
-.service-img {
+/* .service-img {
   height: 17.5rem;
   object-fit: contain;
+} */
+ .service-img {
+    height: 15.5rem;
+    width: 15.5rem !important;
+    border-radius: 50% !important;
+    /* object-fit: contain; */
+}
+.service-box-card {
+    padding: .875rem .875rem 1.5rem;
+    text-align: center;
 }
 
 @media (max-width:575px) {
@@ -2409,9 +2429,9 @@ table.provider-detail-info td h6 {
   height: calc(100% - 2rem)
 }
 
-.service-card-table .service-box-card .service-img {
+/* .service-card-table .service-box-card .service-img {
   height: 13.5rem
-}
+} */
 
 .iq-testimonial {
   margin-top: 25px;
@@ -2566,11 +2586,18 @@ table.provider-detail-info td h6 {
   width: 100%
 }
 
-.booking-service-box .service-image img {
+/* .booking-service-box .service-image img {
   height: 240px;
   -o-object-fit: cover;
   object-fit: cover;
   width: 100%
+} */
+ .booking-service-box .service-image img {
+    height: 240px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 50% !important;
+    width: 240px;
 }
 
 .booking-service-box .rating-box {
@@ -2596,16 +2623,25 @@ table.provider-detail-info td h6 {
   font-size: 14px
 }
 
-.about-provider-box .provider-image-container {
+/* .about-provider-box .provider-image-container {
   width: 180px
+} */
+ .about-provider-box .provider-image-container {
+  width: 135px
 }
 
-.about-provider-box .provider-image-container img {
+/* .about-provider-box .provider-image-container img {
   -o-object-fit: cover;
   object-fit: cover;
   width: 100%
+} */
+.about-provider-box .provider-image-container img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    height: 135px;
+    border-radius: 50%;
+    width: 100% !important;
 }
-
 @media (max-width:400px) {
   .booking-service-box .service-image img {
     height: 180px
@@ -3004,3 +3040,4 @@ table.provider-detail-info td h6 {
     justify-content: center;
   }
 }
+ 
