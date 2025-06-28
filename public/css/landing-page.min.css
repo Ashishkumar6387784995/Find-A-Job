@@ -19692,3 +19692,17 @@ footer .footer-bottom {
     .sliderr:hover {
       cursor: pointer;
     }
+
+
+.wrapper-content-slider{
+  padding: 0px 0px !important;
+}
+.wrppaer-location{
+  padding-left: 50px;
+}
+@media (max-width:768px) {
+  .wrppaer-location{
+    /* padding-left: 0px; */
+     margin-left: -16px;
+  }
+}

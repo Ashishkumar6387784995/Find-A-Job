@@ -5,9 +5,9 @@
 
 <!-- Banner -->
 <div class="padding-top-bottom-90 bg-light">
-	<div class="container-fluid">
+	<div class="container-fluid wrapper-content-slider">
 		<div class="row align-items-center">
-			<div class="col-xl-6">
+			<div class="col-xl-6 wrppaer-location">
 				<div class="me-0 pe-0 me-xl-5 pe-xl-5">
 					@if ($sectionData && isset($sectionData['section_1']) && $sectionData['section_1']['section_1'] == 1)
 					{{--<div class="iq-title-box mb-5">
