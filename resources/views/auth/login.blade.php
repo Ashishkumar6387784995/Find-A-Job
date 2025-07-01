@@ -15,6 +15,12 @@
                      <!-- Session Status -->
                      <x-auth-session-status class="mb-4" :status="session('status')" />
 
+                     @if(session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                           {{ session('success') }}
+                        </div>
+                     @endif
+
                      <!-- Validation Errors -->
                      <x-auth-validation-errors class="mb-4" :errors="$errors" />
                      <form method="POST" action="{{ route('login') }}" data-bs-toggle="validator">

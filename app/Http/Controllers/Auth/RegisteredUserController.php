@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\VerificationEmail;
+use Illuminate\Support\Facades\DB;
 
 class RegisteredUserController extends Controller
 {
@@ -34,6 +35,7 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+        DB::beginTransaction();
         $request->validate([
             'username'  => 'required|string|max:255|unique:users',
             'first_name' => 'required|string|max:255',
@@ -81,13 +83,14 @@ class RegisteredUserController extends Controller
                 "handymantype_id" => $request->handymantype_id,
                 'status' => $request->status ?? 0,
             ]);
-            if ($user->user_type == 'user' || $user->user_type == 'provider' || $user->user_type == 'handyman') {
+            if ($user->user_type == 'user' || $user->user_type == 'company' || $user->user_type == 'provider' || $user->user_type == 'handyman' || $user->user_type == 'store') {
                 $id = $user->id;
                 $user->assignRole($user->user_type);
                 $verificationLink = route('verify',['id' => $id]);
                 Mail::to($user->email)->send(new VerificationEmail($verificationLink));
                 $message = 'Email Verification link has been sent to your email. Please Check your inbox';
-                return redirect(route('auth.login'));
+                DB::commit();
+                return redirect('login')->with('success', $message);
             }
         }
         event(new Registered($user));
@@ -101,7 +104,7 @@ class RegisteredUserController extends Controller
         if($request->register === 'user_register'){
             return redirect(RouteServiceProvider::FRONTEND);
         }else{
-            return redirect(route('auth.login'));
+            return redirect('login');
         }
     }
 }

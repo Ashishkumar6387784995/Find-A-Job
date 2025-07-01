@@ -59,6 +59,8 @@
     'password_change' => 'Your password has been changed successfully!',
     'password_sent' => 'Password has been sent successfully to your email address.',
     'site_name' => 'Site Name',
+    'company' => 'Company',
+    'store' => 'Store',
     'category' => 'Category',
     'service' => 'Service',
     'price' => 'Price',

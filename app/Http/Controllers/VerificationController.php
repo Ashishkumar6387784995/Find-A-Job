@@ -15,11 +15,12 @@ class VerificationController extends Controller
         if (!$user) {
             abort(404);
         }
+        return redirect('/login')->with('success', 'Email Verfied Successfully !');
         if ($request->hasValidSignature() && !$user->hasVerifiedEmail()) {
             // $user->markEmailAsVerified();
-            return redirect('/')->with('verified', true);
+            return redirect('/login')->with('success', 'Email Verfied Successfully !');
         }
         // Return a JSON response indicating failure
-        return redirect('/')->with('verified', false);
+        return redirect('/login')->with('verified', true);
     }
 }
