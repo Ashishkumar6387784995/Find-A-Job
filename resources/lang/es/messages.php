@@ -74,6 +74,7 @@
     'sequence' => 'Secuencia',
     'color' => 'Color',
     'description' => 'Descripción',
+    'created_by' => 'created_by',
     'check_delete_msg' => 'Lo siento, no puedes eliminarlo porque ya está en uso en algún lugar',
     'item' => 'Elemento',
     'sequence_form_title' => 'Secuencia de :form',

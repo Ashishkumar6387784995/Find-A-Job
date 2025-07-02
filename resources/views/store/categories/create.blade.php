@@ -7,7 +7,7 @@
                         <div class="d-flex justify-content-between align-items-center p-3 flex-wrap gap-3">
                             <h5 class="fw-bold">{{ $pageTitle ?? trans('messages.list') }}</h5>
                             @if($auth_user->can('category list'))
-                            <a href="{{ route('category.index') }}" class=" float-end btn btn-sm btn-primary"><i class="fa fa-angle-double-left"></i> {{ __('messages.back') }}</a>
+                            <a href="{{ route('store.category.index') }}" class=" float-end btn btn-sm btn-primary"><i class="fa fa-angle-double-left"></i> {{ __('messages.back') }}</a>
                             @endif
                         </div>
                     </div>
@@ -16,7 +16,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        {{ html()->form('POST', route('category.store'))
+                        {{ html()->form('POST', route('store.category.store'))
                         ->attribute('enctype', 'multipart/form-data')
                         ->attribute('data-toggle', 'validator')
                         ->id('category-form')
@@ -28,7 +28,7 @@
 
                     <!-- Loop through all languages -->
                     @foreach($language_array as $language)
-                    <div id="form-language-{{ $language['id'] }}" class="language-form" style="display: {{ $language['id'] == app()->getLocale() ? 'block' : 'none' }};">
+                    <div id="form-language-{{ $language['id'] }}" class="language-form" style="display: {{$language['id'] == app()->getLocale() ? 'block' : 'none'}};">
                         <div class="row">
                             @foreach(['name' => __('messages.name'), 'description' => __('messages.description')] as $field => $label)
                                 <div class="form-group col-md-{{ $field === 'name' ? '4' : '12' }}">
@@ -89,9 +89,9 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <div class="custom-control custom-switch">
-                                   
+                                     
                                     {{ html()->checkbox('is_featured', $categorydata->is_featured)->class('custom-control-input')->id('is_featured') }}
-                                    <label class="custom-control-label" for="is_featured">{{ __('messages.set_as_featured') }}</label>
+                                    <label class="custom-control-label"  for="is_featured">{{ __('messages.set_as_featured') }}</label>
                                 </div>
                             </div>
                         </div>
@@ -356,9 +356,10 @@ function removeLocalImage(event) {
 
         function checkImage() {
             var id = @json($categorydata->id);
+            console.log(id);
             var route = "{{ route('check-image', ':id') }}";
             route = route.replace(':id', id);
-            var type = 'category';
+            var type = 'store category';
 
             $.ajax({
                 url: route,

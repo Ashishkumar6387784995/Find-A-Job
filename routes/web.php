@@ -53,7 +53,7 @@ use App\Http\Controllers\Installer\EnvironmentController;
 use App\Http\Controllers\Installer\DatabaseController;
 use App\Http\Controllers\Installer\FinalController;
 use App\Http\Controllers\Store\OrderController;
-
+use App\Http\Controllers\Store\CategoriesController;
 
 
 
@@ -130,6 +130,22 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::post('category/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
     });
     Route::post('check-in-trash', [CategoryController::class, 'check_in_trash'])->name('check-in-trash');
+
+    
+    // store Categories
+    Route::prefix('store')->name('store.')->group(function () {
+        // Route::middleware(['permission:store-categories list'])->group(function () {
+
+            // RESTful resource routes (index, create, store, show, edit, update)
+            Route::resource('category', CategoriesController::class);
+            Route::get('category-index-data', [CategoriesController::class, 'index_data'])->name('category.index_data');
+            Route::post('category-bulk-action', [CategoriesController::class, 'bulk_action'])->name('category.bulk-action');
+            Route::post('category-action', [CategoriesController::class, 'action'])->name('category.action');
+            Route::post('category/{id}', [CategoriesController::class, 'destroy'])->name('category.destroy');
+        // });
+    });
+
+
 
     Route::group(['middleware' => ['permission:service list']], function () {
         Route::resource('service', ServiceController::class);
