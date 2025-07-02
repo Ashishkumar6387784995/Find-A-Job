@@ -185,6 +185,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
     });
     Route::get('handymandetail/{id}', [HandymanController::class, 'handyman_detail'])->name('handyman.detail');
+    // Route::get('companydetail/{id}', [HandymanController::class, 'company_detail'])->name('company.detail');
+    // Route::get('storedetail/{id}', [HandymanController::class, 'store_detail'])->name('store.detail');
+    Route::get('companydetail/{id}', [OrderController::class, 'index'])->name('company.detail');
+    Route::get('storedetail/{id}', [OrderController::class, 'index'])->name('store.detail');
     Route::group(['middleware' => ['permission:coupon list']], function () {
         Route::resource('coupon', CouponController::class);
         Route::get('coupon-index_data', [CouponController::class, 'index_data'])->name('coupon.index_data');
