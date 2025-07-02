@@ -67,8 +67,10 @@
                               <div class="form-group">
                                  <label for="user_type" class="text-secondary">{{ __('messages.user_type') }} <span class="text-danger">*</span></label>
                                  <select name="usertype" class="form-control select2 mb-5" id="user_type" style="width:100%">
+                                    <option value="company">{{ __('messages.company') }}</option>
                                     <option value="provider">{{ __('messages.provider') }}</option>
                                     <option value="handyman">{{ __('messages.handyman') }}</option>
+                                    <option value="store">{{ __('messages.store') }}</option>
                                  </select>
                               </div>
                            </div>
@@ -124,7 +126,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary btn-block mt-2 w-100" id="submit-btn">{{ __('auth.create_account') }}</button>
                         <div class="col-lg-12 mt-3">
-                           <p class="mb-0 text-center">{{__('auth.already_have_account')}} <a class="btn-link p-0 text-capitalize" href="{{route('auth.login')}}">{{__('auth.sign_in')}}</a></p>
+                           <p class="mb-0 text-center">{{__('auth.already_have_account')}} <a class="btn-link p-0 text-capitalize" href="{{route('login')}}">{{__('auth.sign_in')}}</a></p>
                         </div>
                      </form>
                   </div>
