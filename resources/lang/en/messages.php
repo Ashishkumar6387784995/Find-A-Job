@@ -60,6 +60,7 @@
     'password_sent' => 'Password has been sent successfully to your email address.',
     'site_name' => 'Site Name',
     'company' => 'Company',
+    'shop' => 'Shop',
     'store' => 'Store',
     'category' => 'Category',
     'service' => 'Service',
@@ -1009,4 +1010,7 @@
     "seller_pending_products"=> "Seller Pending Products",
     "product_reviews"=> "Product Reviews",
     "product_report"=> "Product Report",
+
+    'shop' => 'Shop',
+    'web'  => 'Web'
 );

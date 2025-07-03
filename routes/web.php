@@ -53,8 +53,9 @@ use App\Http\Controllers\Installer\EnvironmentController;
 use App\Http\Controllers\Installer\DatabaseController;
 use App\Http\Controllers\Installer\FinalController;
 use App\Http\Controllers\Store\OrderController;
+use App\Http\Controllers\shop\shopCategoryController;
+use App\Http\Controllers\web\webCategoryController;
 use App\Http\Controllers\Store\CategoriesController;
-
 
 
 /*
@@ -130,6 +131,37 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::post('category/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
     });
     Route::post('check-in-trash', [CategoryController::class, 'check_in_trash'])->name('check-in-trash');
+
+
+
+    // Shop Category
+
+    Route::prefix('shop')->name('shop.')->group(function () {
+        // Route::middleware(['permission:shop-categories list'])->group(function () {
+
+            // RESTful resource routes (index, create, shop, show, edit, update)
+            Route::resource('category', shopCategoryController::class);
+            Route::get('category-index-data', [shopCategoryController::class, 'index_data'])->name('category.index_data');
+            Route::post('category-bulk-action', [shopCategoryController::class, 'bulk_action'])->name('category.bulk-action');
+            Route::post('category-action', [shopCategoryController::class, 'action'])->name('category.action');
+            Route::post('category/{id}', [shopCategoryController::class, 'destroy'])->name('category.destroy');
+        // });
+    });
+
+    //
+    
+    Route::prefix('web')->name('web.')->group(function () {
+        // Route::middleware(['permission:web-categories list'])->group(function () {
+
+            // RESTful resource routes (index, create, web, show, edit, update)
+            Route::resource('category', webCategoryController::class);
+            Route::get('category-index-data', [webCategoryController::class, 'index_data'])->name('category.index_data');
+            Route::post('category-bulk-action', [webCategoryController::class, 'bulk_action'])->name('category.bulk-action');
+            Route::post('category-action', [webCategoryController::class, 'action'])->name('category.action');
+            Route::post('category/{id}', [webCategoryController::class, 'destroy'])->name('category.destroy');
+        // });
+    });
+
 
     
     // store Categories

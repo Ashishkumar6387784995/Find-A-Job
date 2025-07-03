@@ -336,6 +336,34 @@ class HomeController extends Controller
                 $providertype_status->save();
                 break;
 
+                //web
+
+                  case 'web_category_status':
+                $category = \App\Models\web\webCategory::find($request->id);
+                $category->status = $request->status;
+                $category->save();
+                break;
+            case 'web_category_featured':
+                $message_form = __('messages.category');
+                $category = \App\Models\web\webCategory::find($request->id);
+                $category->is_featured = $request->status;
+                $category->save();
+                break;
+
+
+            //shop
+            case 'shop_category_status':
+                $category = \App\Models\shop\shopCategory::find($request->id);
+                $category->status = $request->status;
+                $category->save();
+                break;
+            case 'shop_category_featured':
+                $message_form = __('messages.category');
+                $category = \App\Models\shop\shopCategory::find($request->id);
+                $category->is_featured = $request->status;
+                $category->save();
+                break;
+
             // store
             case 'store_category_status':
                 $category = \App\Models\storeCategories::find($request->id);
@@ -347,7 +375,7 @@ class HomeController extends Controller
                 $category = \App\Models\storeCategories::find($request->id);
                 $category->is_featured = $request->status;
                 $category->save();
-                break;  
+                break;
 
             default:
                 $message = 'error';
