@@ -67,7 +67,7 @@
                                             data-select2-type="category"
                                             data-selected-id="{{ $servicedata->category_id ?? '' }}"
                                             data-language-id="{{ $language['id'] }}"
-                                            data-ajax--url="{{ route('ajax-list', ['type' => 'category', 'language_id' => $language['id']]) }}"
+                                            data-ajax--url="{{ route('ajax-list', ['type' => 'shop_category', 'language_id' => $language['id']]) }}"
                                             data-placeholder="{{ __('messages.select_name', ['select' => __('messages.category')]) }}" >
                                     </select>
                                     <small class="help-block with-errors text-danger"></small>
