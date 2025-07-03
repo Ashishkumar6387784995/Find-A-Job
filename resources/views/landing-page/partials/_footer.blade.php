@@ -446,12 +446,36 @@
 </script>
 
  <script>
+// document.addEventListener("DOMContentLoaded", function () {
+//   var swiper = new Swiper(".topSwiper", {
+//     slidesPerView: 7,
+//     spaceBetween: 20,
+//     centeredSlides: true,
+// 	loop: true,
+//     autoplay: {
+//       delay: 2500,
+//       disableOnInteraction: false,
+//     },
+//     pagination: {
+//       el: ".swiper-pagination",
+//       clickable: true,
+//     },
+//     navigation: {
+//       nextEl: ".swiper-button-next",
+//       prevEl: ".swiper-button-prev",
+//     },
+//   });
+// });
+
+
 document.addEventListener("DOMContentLoaded", function () {
   var swiper = new Swiper(".topSwiper", {
-    slidesPerView: 7,
+    slidesPerView: 7,           
+    slidesPerGroup: 1,           
     spaceBetween: 20,
-    centeredSlides: true,
-	loop: true,
+    centeredSlides: false,       
+    loop: true,
+    loopedSlides: 14,             
     autoplay: {
       delay: 2500,
       disableOnInteraction: false,
@@ -502,6 +526,7 @@ document.addEventListener("DOMContentLoaded", function () {
       color: black !important;
       z-index: 1;
     }
+   
   </style>
 
 

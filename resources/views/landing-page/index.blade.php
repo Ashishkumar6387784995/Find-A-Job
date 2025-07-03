@@ -8,7 +8,7 @@
 	<div class="container-fluid wrapper-content-slider">
 		<div class="row align-items-center">
 			<div class="col-xl-6 wrppaer-location">
-				<div class="me-0 pe-0 me-xl-5 pe-xl-5">
+				<div class="me-0 mt-2 pe-0 me-xl-5 pe-xl-5">
 					@if ($sectionData && isset($sectionData['section_1']) && $sectionData['section_1']['section_1'] == 1)
 					{{--<div class="iq-title-box mb-5">
 						<div class="iq-title-box">
@@ -152,7 +152,7 @@
 		</div> -->
 
 
-		<div class="typing-animation"><a href="" class="typewrite" data-period="2000" data-type="[ &quot;Directory&quot;, &quot;Deal&quot;, &quot;People&quot;, &quot;Local&quot; ,&quot;Shopping&quot; ]">
+		<div class="typing-animation"><a class="typewrite" data-period="2000" data-type="[ &quot;Directory&quot;, &quot;Deal&quot;, &quot;People&quot;, &quot;Local&quot; ,&quot;Shopping&quot; ]">
           <span class="wrap">&nbsp;</span>
         </a></div>
 	</div>

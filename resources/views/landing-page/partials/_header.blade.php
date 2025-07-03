@@ -84,55 +84,7 @@
                   <div class="icon-title">Shopping</div>
                </div>
             </div>
-            <div class="swiper-slide swiper-slidee">
-               <div class="icon-card">
-                  <img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/top/map.png" alt="Map Icon">
-                  <div class="icon-title">MAP</div>
-               </div>
-            </div>
-            <div class="swiper-slide swiper-slidee">
-               <div class="icon-card">
-                  <img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/top/team.png" alt="Map Icon">
-                  <div class="icon-title">People</div>
-               </div>
-
-            </div>
-            <div class="swiper-slide swiper-slidee">
-               <div class="icon-card">
-                  <img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/top/store-01.png" alt="Map Icon">
-                  <div class="icon-title">Local</div>
-               </div>
-            </div>
-            <div class="swiper-slide swiper-slidee">
-               <div class="icon-card">
-                  <img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/top/trolley.png" alt="Map Icon">
-                  <div class="icon-title">E-commerce</div>
-               </div>
-            </div>
-            <div class="swiper-slide swiper-slidee">
-               <div class="icon-card">
-                  <img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/top/taxi.png" alt="Map Icon">
-                  <div class="icon-title">Taxi</div>
-               </div>
-            </div>
-            <div class="swiper-slide swiper-slidee">
-               <div class="icon-card">
-                  <img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/top/ai.png" alt="Map Icon">
-                  <div class="icon-title">AI</div>
-               </div>
-            </div>
-            <div class="swiper-slide swiper-slidee">
-               <div class="icon-card">
-                  <img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/top/voucher.png" alt="Map Icon">
-                  <div class="icon-title">Coupon</div>
-               </div>
-            </div>
-            <div class="swiper-slide swiper-slidee">
-               <div class="icon-card">
-                  <img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/top/shopping.png" alt="Map Icon">
-                  <div class="icon-title">Shopping</div>
-               </div>
-            </div>
+            
          </div>
          <!-- Add Arrows -->
          <div class="swiper-button-next"></div>

@@ -2821,7 +2821,13 @@ table.provider-detail-info td h6 {
 .service_box {
   position: relative;
   text-align: center;
+  padding: 10px 15px;
   margin-bottom: 20px;
+}
+.service_box:hover{
+  background-color: rgb(247, 247, 209);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;;
+  border-radius: 15px;
 }
 
 .service_box .img-box img {
@@ -3009,7 +3015,15 @@ table.provider-detail-info td h6 {
   border-radius: 30px;
 }
 
-
+@media (max-width: 480px) {
+.service_box h5 a {
+    color: #000;
+    font-size: 14px;
+}
+.service_box {
+    padding: 7px 5px;
+}
+}
 @media (min-width: 768px) {
   .col-lg-1-5 {
     flex: 0 0 auto;

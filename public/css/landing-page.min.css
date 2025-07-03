@@ -19707,8 +19707,15 @@ footer .footer-bottom {
      margin-left: -16px;
   }
 }
-
-
+@media (max-width:1024px) {
+.topslider-section {
+    width: 100%;
+    overflow: hidden;
+    /* max-width: 1200px; */
+    margin: auto;
+    padding: 15px 20px;
+}
+}
 
 /* =======typing animation========= */
 .typing-animation{
