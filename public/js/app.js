@@ -591,3 +591,25 @@ Index Of Script
 
 
 })(jQuery);
+
+
+
+
+// ================modal shop  image details==================
+
+$(document).ready(function() {
+    let imgId = 1;
+
+    $('.img-select a').on('click', function(event) {
+        event.preventDefault();
+        imgId = $(this).data('id');
+        slideImage();
+    });
+
+    function slideImage() {
+        const displayWidth = $('.img-showcase img').first().width();
+        $('.img-showcase').css('transform', `translateX(${-(imgId - 1) * displayWidth}px)`);
+    }
+
+    $(window).on('resize', slideImage);
+});
