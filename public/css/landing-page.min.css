@@ -19695,7 +19695,8 @@ footer .footer-bottom {
 
 .wrapper-content-slider{
   padding: 0px 0px !important;
-  background: linear-gradient(0deg, #121c42de, #00B3F5);
+  /* background: linear-gradient(0deg, #121c42de, #00B3F5); */
+  background: linear-gradient(30deg, #121c42de, #169dcf);
 }
 .wrppaer-location{
   padding-left: 50px;
@@ -19714,6 +19715,12 @@ footer .footer-bottom {
     /* max-width: 1200px; */
     margin: auto;
     padding: 15px 20px;
+}
+.service-img {
+    height: 10.5rem !important;
+    width: 10.5rem !important;
+    border-radius: 50% !important;
+    /* object-fit: contain; */
 }
 }
 
@@ -19745,3 +19752,8 @@ footer .footer-bottom {
     font-size: 25px;
   }
 }
+
+.img-details img{
+        width: 150px !important;
+        height: 150px !important;
+    }

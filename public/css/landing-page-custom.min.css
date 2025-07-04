@@ -2377,7 +2377,8 @@ table.provider-detail-info td h6 {
 
 .service-user-name {
   font-family: Inter, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  font-weight: 500
+  font-weight: 500;
+  margin-left: 10px;
 }
 
 .our-service .swiper-slide {
@@ -2821,14 +2822,14 @@ table.provider-detail-info td h6 {
 .service_box {
   position: relative;
   text-align: center;
-  padding: 10px 15px;
+  /* padding: 10px 15px; */
   margin-bottom: 20px;
 }
-.service_box:hover{
+/* .service_box:hover{
   background-color: rgb(247, 247, 209);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;;
   border-radius: 15px;
-}
+} */
 
 .service_box .img-box img {
   height: 90px;
