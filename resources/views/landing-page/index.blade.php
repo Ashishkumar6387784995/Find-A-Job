@@ -209,7 +209,6 @@
 					</li>
 
 
-
 					<li class="nav-item" role="presentation">
 						<button class="nav-link" id="marketplace-tab" data-bs-toggle="tab" data-bs-target="#marketplace" type="button">
 							<i class="bi bi-gear-wide-connected me-2"></i>Marketplace
@@ -217,13 +216,11 @@
 					</li>
 
 
-
-
-
-
-
-
-
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="store-tab" data-bs-toggle="tab" data-bs-target="#store" type="button">
+							<i class="bi bi-gear-wide-connected me-2"></i>Store
+						</button>
+					</li>
 				</ul>
 
 				<!-- Tab Content -->
@@ -844,9 +841,25 @@
 
 					</div>
 
+					<!-- store Tab -->
+					<div class="tab-pane fade" id="store" role="tabpanel">
+						<div class="row">
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box" data-toggle="modal" data-target="#exampleModal">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+									<h5><a href="#">Store 1</a></h5>
+								</div>
 
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box" data-toggle="modal" data-target="#exampleModal">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+									<h5><a href="#">Store 2</a></h5>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-
 			</div>
 
 		</div>
@@ -1611,6 +1624,7 @@ session(['recently_viewed:' . $auth_user_id => $recentlyViewed]);
 @endif
  -->
 
+@include('landing-page.shop-model')
  <style>
 	
    
