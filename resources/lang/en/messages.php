@@ -1012,5 +1012,9 @@
     "product_report"=> "Product Report",
 
     'shop' => 'Shop',
+    'allshop' => 'All Shop ',
+    
+
     'web'  => 'Web'
+
 );

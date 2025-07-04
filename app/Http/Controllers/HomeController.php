@@ -364,6 +364,19 @@ class HomeController extends Controller
                 $category->save();
                 break;
 
+                //allshop
+            case 'allshop_category_status':
+                $category = \App\Models\shop\allshop::find($request->id);
+                $category->status = $request->status;
+                $category->save();
+                break;
+            case 'allshop_category_featured':
+                $message_form = __('messages.category');
+                $category = \App\Models\shop\allshop::find($request->id);
+                $category->is_featured = $request->status;
+                $category->save();
+                break;
+
             // store
             case 'store_category_status':
                 $category = \App\Models\storeCategories::find($request->id);
@@ -869,7 +882,8 @@ class HomeController extends Controller
                     $items->where('name', 'LIKE', $value . '%');
                 }
                 $items = $items->get();
-            break;
+                return response()->json($items);
+                break;
             default:
                 break;
         }

@@ -54,7 +54,8 @@ use App\Http\Controllers\Installer\DatabaseController;
 use App\Http\Controllers\Installer\FinalController;
 use App\Http\Controllers\Store\OrderController;
 use App\Http\Controllers\shop\shopCategoryController;
-use App\Http\Controllers\web\webCategoryController;
+use App\Http\Controllers\shop\AllShopCategoryController;
+use App\Http\Controllers\web\webCategoryController; 
 use App\Http\Controllers\Store\CategoriesController;
 
 
@@ -139,14 +140,36 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::prefix('shop')->name('shop.')->group(function () {
         // Route::middleware(['permission:shop-categories list'])->group(function () {
 
-            // RESTful resource routes (index, create, shop, show, edit, update)
-            Route::resource('category', shopCategoryController::class);
+        // RESTful resource routes (index, create, show, edit, update)
+        Route::resource('category', shopCategoryController::class);
             Route::get('category-index-data', [shopCategoryController::class, 'index_data'])->name('category.index_data');
             Route::post('category-bulk-action', [shopCategoryController::class, 'bulk_action'])->name('category.bulk-action');
             Route::post('category-action', [shopCategoryController::class, 'action'])->name('category.action');
             Route::post('category/{id}', [shopCategoryController::class, 'destroy'])->name('category.destroy');
         // });
+
+        Route::resource('allshop', AllShopCategoryController::class);
+        Route::get('allshop-index-data', [AllShopCategoryController::class, 'index_data'])->name('allshop.index_data');
+        Route::post('allshop-bulk-action', [AllShopCategoryController::class, 'bulk_action'])->name('allshop.bulk-action');
+        Route::post('allshop-action', [AllShopCategoryController::class, 'action'])->name('allshop.action');
+        Route::post('allshop/{id}', [AllShopCategoryController::class, 'destroy'])->name('allshop.destroy');
+
+
     });
+
+        // allshop Category
+
+    // Route::prefix('allshop')->name('allshop.')->group(function () {
+    //     // Route::middleware(['permission:shop-categories list'])->group(function () {
+
+    //         // RESTful resource routes (index, create, shop, show, edit, update)
+    //         Route::resource('category', AllShopCategoryController::class);
+    //         Route::get('category-index-data', [AllShopCategoryController::class, 'index_data'])->name('category.index_data');
+    //         Route::post('category-bulk-action', [AllShopCategoryController::class, 'bulk_action'])->name('category.bulk-action');
+    //         Route::post('category-action', [AllShopCategoryController::class, 'action'])->name('category.action');
+    //         Route::post('category/{id}', [AllShopCategoryController::class, 'destroy'])->name('category.destroy');
+    //     // });
+    // });
 
     //
     
