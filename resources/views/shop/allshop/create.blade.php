@@ -27,112 +27,109 @@
 
                         @include('partials._language_toggale')
                         @foreach($language_array as $language)
-                        <div id="form-language-{{ $language['id'] }}" class="language-form" style="display: {{ $language['id'] == app()->getLocale() ? 'block' : 'none' }};">
+                            <div id="form-language-{{ $language['id'] }}" class="language-form" style="display: {{ $language['id'] == app()->getLocale() ? 'block' : 'none' }};">
+                                <div class="row">
+                                    @foreach(['name' => __('messages.name'), 'description' => __('messages.description')] as $field => $label)
+                                        <div class="form-group col-md-{{ $field === 'name' ? '4' : '12' }}">
+                                            {{ html()->label($label . ($field === 'name' ? ' <span class="text-danger">*</span>' : ''), $field)->class('form-control-label language-label') }}
 
-                            <div class="row">
-                                @foreach(['name' => __('messages.name'), 'description' => __('messages.description')] as $field => $label)
-                                <div class="form-group col-md-{{ $field === 'name' ? '4' : '12' }}">
-                                    {{ html()->label($label . ($field === 'name' ? ' <span class="text-danger">*</span>' : ''), $field)->class('form-control-label language-label') }}
+                                            @php
+                                                $translatedValue = old(
+                                                    $language['id'] == 'en' ? $field : "translations[{$language['id']}][$field]",
+                                                    $servicedata ? $servicedata->translate($field, $language['id']) : ''
+                                                );
+                                                $inputName = $language['id'] == 'en' ? $field : "translations[{$language['id']}][$field]";
+                                            @endphp
 
-                                    @php
-                                    $value = $language['id'] == 'en'
-                                    ? $servicedata ? $servicedata->translate($field, 'en') : ''
-                                    : ($servicedata ? $servicedata->translate($field, $language['id']) : '');
-                                    $name = $language['id'] == 'en' ? $field : "translations[{$language['id']}][$field]";
-                                    @endphp
+                                            @if($field === 'name')
+                                                {{ html()->text($inputName, $translatedValue)
+                                                    ->placeholder($label)
+                                                    ->class('form-control')
+                                                    ->attribute('title', 'Please enter alphabetic characters and spaces only')
+                                                    ->attribute('data-required', 'true') }}
+                                            @else
+                                                {{ html()->textarea($inputName, $translatedValue)
+                                                    ->class('form-control textarea')
+                                                    ->rows(3)
+                                                    ->placeholder($label) }}
+                                            @endif
 
-                                    @if($field === 'name')
-                                    {{ html()->text($name, $value)
-                                            ->placeholder($label)
-                                            ->class('form-control')
-                                            ->attribute('title', 'Please enter alphabetic characters and spaces only')
-                                            ->attribute('data-required', 'true') }}
-                                    @else
-                                    {{ html()->textarea($name, $value)
-                                            ->class('form-control textarea')
-                                            ->rows(3)
-                                            ->placeholder($label) }}
-                                    @endif
+                                            <small class="help-block with-errors text-danger"></small>
+                                        </div>
+                                    @endforeach
 
-                                    <small class="help-block with-errors text-danger"></small>
-                                </div>
-                                @endforeach
-
-                                <!-- Category Selection -->
-                                <div class="form-group col-md-4">
-                                    {{ html()->label(__('messages.select_name', ['select' => __('messages.category')]) . ' <span class="text-danger">*</span>', 'category_id')->class('form-control-label') }}
-                                    <select name="category_id"
-                                        id="category_id_{{ $language['id'] }}"
-                                        class="form-control select2js-category"
-                                        data-select2-type="category"
-                                        data-selected-id="{{ $servicedata->category_id ?? '' }}"
-                                        data-language-id="{{ $language['id'] }}"
-                                        data-ajax--url="{{ route('ajax-list', ['type' => 'shop_category', 'language_id' => $language['id']]) }}"
-                                        data-placeholder="{{ __('messages.select_name', ['select' => __('messages.category')]) }}">
-                                    </select>
-                                    <small class="help-block with-errors text-danger"></small>
+                                    <!-- Category Selection -->
+                                    <div class="form-group col-md-4">
+                                        {{ html()->label(__('messages.select_name', ['select' => __('messages.category')]) . ' <span class="text-danger">*</span>', 'category_id')->class('form-control-label') }}
+                                        <select name="category_id" id="category_id_{{ $language['id'] }}" class="form-control select2js-category"
+                                                data-select2-type="category"
+                                                data-selected-id="{{ old('category_id', $servicedata->category_id ?? '') }}"
+                                                data-language-id="{{ $language['id'] }}"
+                                                data-ajax--url="{{ route('ajax-list', ['type' => 'shop_category', 'language_id' => $language['id']]) }}"
+                                                data-placeholder="{{ __('messages.select_name', ['select' => __('messages.category')]) }}">
+                                        </select>
+                                        <small class="help-block with-errors text-danger"></small>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
+
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label class="form-control-label" for="address">Select Address</label>
-                                <textarea class="form-control textarea" name="address" id="address" rows="3" placeholder="Address"></textarea>
+                                <label class="form-control-label" for="address">Select Address <span class="text-danger">*</span></label>
+                                <textarea class="form-control textarea" name="address" id="address" rows="3" placeholder="Address">{{ old('address', $servicedata->address ?? '') }}</textarea>
                             </div>
 
-                       <div class="form-group col-md-4" id="discount_div">
-                            <label class="form-control-label" for="discount">Discount %</label>
-                            <input type="number" min="0" max="99" step="any" placeholder="Enter Discount" class="form-control" id="discount" name="discount">
-                            <span id="discount-error" class="text-danger"></span>
-                        </div>
+                            <div class="form-group col-md-4" id="discount_div">
+                                <label class="form-control-label" for="discount">Discount %</label>
+                                <input type="number" min="0" max="99" step="any" placeholder="Enter Discount" class="form-control" id="discount" name="discount" value="{{ old('discount', $servicedata->discount ?? '') }}">
+                                <span id="discount-error" class="text-danger"></span>
+                            </div>
 
-                        <div class="form-group col-md-4">
-                            <label class="form-control-label" for="status">Status <span class="text-danger">*</span></label>
-                            <select name="status" id="status" class="form-control select2js" required>
-                                <option value="1">Active</option>
-                                <option value="0">Inactive</option>
-                            </select>
-                        </div>
-
+                            <div class="form-group col-md-4">
+                                <label class="form-control-label" for="status">Status <span class="text-danger">*</span></label>
+                                <select name="status" id="status" class="form-control select2js" required>
+                                    <option value="1" {{ old('status', $servicedata->status ?? '') == 1 ? 'selected' : '' }}>Active</option>
+                                    <option value="0" {{ old('status', $servicedata->status ?? '') == 0 ? 'selected' : '' }}>Inactive</option>
+                                </select>
+                            </div>
 
                             <div class="form-group col-md-12">
-                                <label for="map_link" class="form-label">Map Link</label>
-                                <input type="text" class="form-control" id="map_link" name="map_link" placeholder="Map Link">
+                                <label for="map_link" class="form-label">Map Link <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="map_link" name="map_link" placeholder="Map Link" value="{{ old('map_link', $servicedata->map_link ?? '') }}">
                             </div>
 
                             <div class="form-group col-md-4">
-                                <label for="incorporation_certificate" class="form-label">Incorporation Certificate</label>
-                                <input type="text" class="form-control" id="incorporation_certificate" name="incorporation_certificate" placeholder="Incorporation Certificate">
+                                <label for="incorporation_certificate" class="form-label">Incorporation Certificate <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="incorporation_certificate" name="incorporation_certificate" placeholder="Incorporation Certificate" value="{{ old('incorporation_certificate', $servicedata->incorporation_certificate ?? '') }}">
                             </div>
 
                             <div class="form-group col-md-4">
-                                <label for="nzbn_number" class="form-label">NZBN Number</label>
-                                <input type="text" class="form-control" id="nzbn_number" name="nzbn_number" placeholder="Enter NZBN Number">
+                                <label for="nzbn_number" class="form-label">NZBN Number <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="nzbn_number" name="nzbn_number" placeholder="Enter NZBN Number" value="{{ old('nzbn_number', $servicedata->nzbn_number ?? '') }}">
                             </div>
 
                             <div class="form-group col-md-4">
-                                <label for="ird_number" class="form-label">IRD Number</label>
-                                <input type="text" class="form-control" id="ird_number" name="ird_number" placeholder="Enter IRD Number">
+                                <label for="ird_number" class="form-label">IRD Number <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="ird_number" name="ird_number" placeholder="Enter IRD Number" value="{{ old('ird_number', $servicedata->ird_number ?? '') }}">
                             </div>
 
                             <div class="form-group col-md-4">
-                                <label for="phone_number" class="form-label">Phone Number</label>
-                                <input type="number" class="form-control" id="phone_number" name="phone_number" placeholder="Enter Phone Number">
+                                <label for="phone_number" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number" required value="{{ old('phone', $servicedata->phone ?? '') }}">
                             </div>
 
                             <div class="form-group col-md-4">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+                                <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" required value="{{ old('email', $servicedata->email ?? '') }}">
                             </div>
 
                             <div class="form-group col-md-4">
-                                <label class="form-control-label" for="service_attachment">
+                                <label class="form-control-label" for="shop_attachment">
                                     {{ __('messages.image') }} <span class="text-danger">*</span>
                                 </label>
                                 <div class="custom-file">
-                                    <input type="file" onchange="preview()" name="service_attachment[]" class="custom-file-input"
-                                        data-file-error="{{ __('messages.files_not_allowed') }}" multiple accept="image/*" required>
+                                    <input type="file" onchange="preview()" name="shop_attachment[]" class="custom-file-input" data-file-error="{{ __('messages.files_not_allowed') }}" multiple accept="image/*">
                                     <label class="custom-file-label upload-label">
                                         {{ __('messages.choose_file', ['file' => __('messages.attachments')]) }}
                                     </label>
@@ -140,14 +137,18 @@
                             </div>
                         </div>
 
+                        @if(isset($servicedata->id))
+                            <input type="hidden" name="id" value="{{ $servicedata->id }}">
+                        @endif
+
 
 
                         <div class="row service_attachment_div">
                             <div class="col-md-12">
-                                @if(getMediaFileExit($servicedata, 'service_attachment'))
+                                @if(getMediaFileExit($servicedata, 'shop_attachment'))
                                 @php
 
-                                $attchments = $servicedata->getMedia('service_attachment');
+                                $attchments = $servicedata->getMedia('shop_attachment');
 
                                 $file_extention = config('constant.IMAGE_EXTENTIONS');
                                 @endphp

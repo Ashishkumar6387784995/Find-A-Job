@@ -194,78 +194,66 @@ class AllShopCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-  {
-    try {
-        // Validation
-        $validator = Validator::make($request->all(), [ 
-            'name' => 'required',
-            'category_id' => 'required|string|max:255',
-            'phone' => 'required',
-            'email' => 'required|string|email',
-            'address' => 'required|string|max:255',
-            'map_link' => 'required|string',
-            'incorporation_certificate' => 'required|string|max:255',
-            'nzbn_number' => 'required|string',
-            'ird_number' => 'required|string',
-            'discount' => 'number',
-        ]);
+    {
+        try {
+            // Validation
+            $validator = Validator::make($request->all(), [
+                'name' => 'required',
+                'category_id' => 'required|string|max:255',
+                'phone' => 'required',
+                'email' => 'required|string|email',
+                'address' => 'required|string|max:255',
+                'map_link' => 'required|string',
+                'incorporation_certificate' => 'required|string|max:255',
+                'nzbn_number' => 'required|string',
+                'ird_number' => 'required|string',
+                'discount' => 'nullable|numeric',
+            ]);
 
-        if ($validator->fails()) {
-            return response()->json([
-                'status' => false,
-                'errors' => $validator->errors()    
-            ], 422);
+            if ($validator->fails()) {
+                return redirect()->back()->withInput()->with('errors', $validator->errors());
+            }
+
+            DB::beginTransaction();
+
+            $loginUserId = Auth::guard('web')->user()->id;
+
+            // If updating
+            $data = allshop::find($request->id) ?? new allshop();
+
+            // Set data
+            $data->name = $request->name;
+            $data->user_id = $loginUserId;
+            $data->category_id = $request->category_id;
+            $data->phone = $request->phone;
+            $data->email = $request->email;
+            $data->address = $request->address;
+            $data->map_link = $request->map_link;
+            $data->incorporation_certificate = $request->incorporation_certificate;
+            $data->nzbn_number = $request->nzbn_number;
+            $data->ird_number = $request->ird_number;
+            $data->discount = $request->discount;
+            $data->status = 1;
+            $data->save();
+
+            // File upload (if applicable)
+            if ($request->hasFile('shop_attachment')) {
+                storeMediaFile($data, $request->file('shop_attachment'), 'shop_attachment');
+            } elseif (!$request->id && !getMediaFileExit($data, 'shop_attachment')) {
+                return redirect()->back()
+                    ->withErrors(['shop_attachment' => 'The attachments field is required.'])
+                    ->withInput();
+            }
+
+            DB::commit();
+
+            $message = $request->id ? 'Shop updated successfully' : 'Shop added successfully';
+            return redirect()->route('shop.allshop.index')->withSuccess($message);
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->back()->withInput()->with('errors', $e->getMessage());
         }
-
-        // Duplicate role check
-        $exists = allshop::where('name', $request->name)
-            ->where('category_id', $request->category_id)
-            ->exists();
-
-        if ($exists) {
-            return response()->json([
-                'status' => false,
-                'errors' => ['addshop' => 'This Addshop already exists in the selected department.']
-            ], 422);
-        }
-
-        // Save to DB
-        DB::beginTransaction();
-
-        $loginUserId = Auth::guard('allshop')->user()->id;
-
-        $data = new allshop();
-        $data->name = $request->name;
-        $data->user_id = $loginUserId;
-        $data->category_id = $request->category_id; 
-        $data->phone = $request->phone; 
-        $data->email = $request->email; 
-        $data->address = $request->address; 
-        $data->map_link = $request->map_link; 
-        $data->incorporation_certificate = $request->incorporation_certificate; 
-        $data->incorporation_certificate = $request->incorporation_certificate; 
-        $data->nzbn_number = $request->nzbn_number; 
-        $data->ird_number = $request->ird_number; 
-        $data->discount = $request->discount; 
-        $data->status = 1; 
-        $data->save();
-
-        DB::commit();
-
-        return response()->json([
-            'status' => true,
-            'message' => 'Add shop added successfully.'
-        ]);
-        
-    } catch (\Exception $e) {
-        DB::rollback();
-        return response()->json([
-            'status' => false,
-            'message' => 'Something went wrong.',
-            'error' => $e->getMessage()
-        ], 500);
     }
-}
 
     /**
      * Display the specified resource.
