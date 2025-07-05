@@ -8,7 +8,7 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Traits\TranslationTrait;
-use App\Models\translations;
+use App\Models\Translations;
 
 class allshop extends Model implements  HasMedia
 {

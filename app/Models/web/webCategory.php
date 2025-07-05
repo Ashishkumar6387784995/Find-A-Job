@@ -9,7 +9,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Permission\Traits\HasRoles;
 use App\Traits\TranslationTrait;
-use App\Models\translations;
+use App\Models\Translations;
 
 class webCategory extends Model  implements HasMedia
 {

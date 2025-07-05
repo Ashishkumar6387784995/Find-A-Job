@@ -543,7 +543,7 @@
             ->nickname('all shop')
             ->data('permission', 'service list')
             ->link->attr(['class' => ''])
-            ->href('shop/allshop');
+            ->href(route('shop.allshop.index'));
 
 
 
