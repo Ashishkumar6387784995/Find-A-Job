@@ -1015,6 +1015,9 @@
     'allshop' => 'All Shop ',
     
 
-    'web'  => 'Web'
+    'web'  => 'Web',
+    'webs' => "All Web",
+    'list' => "List",
 
+        
 );
