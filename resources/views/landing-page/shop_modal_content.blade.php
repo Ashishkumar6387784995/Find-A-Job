@@ -36,9 +36,8 @@
         </div>
 
         @if($shop->discount)
-        <div class="col-12">
+        <div class="col-12 text-center">
             <label class="form-label text-muted mb-0">Discount  <span class="fw-medium-discount">{{ (int) ($shop->discount ?? 0) }}% OFF</span></label>
-            
         </div>
         @endif
          </div>
