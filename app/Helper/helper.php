@@ -3,7 +3,11 @@
 use \Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Google\Client as Google_Client;
+use Illuminate\Support\Str;
 use App\Models\shop\allshop;
+use App\Models\shop\UserFavouriteShops;
+
+
 function authSession($force=false){
     $session = new \App\Models\User;
     if($force){
@@ -2268,7 +2272,33 @@ if (!function_exists('getAllShopLists')) {
 if (!function_exists('getShopCategoryByID')) {
     function getShopCategoryByID($id)
     {
-        $data = App\Models\Shop\ShopCategory::findOrFail($id);
+        $data = App\Models\shop\shopCategory::findOrFail($id);
         return $data->name;
+    }
+}
+
+if (!function_exists('getFavouriteStatus')) {
+    /**
+     * Get favourite status for a user and target item.
+     *
+     * @param int $userId
+     * @param int $targetId
+     * @param string $modelPath Example: 'Shop\\UserFavouriteShops'
+     * @return array
+     */
+    function getFavouriteStatus($userId, $targetId, $modelPath)
+    {
+        $modelClass = 'App\\Models\\' . $modelPath;
+
+        if (!class_exists($modelClass)) {
+            return ['isFavourite' => false];
+        }
+
+        // Dynamically call model
+        $exists = $modelClass::where('user_id', $userId)
+            ->where('shop_id', $targetId)
+            ->exists();
+
+        return ['isFavourite' => $exists];
     }
 }

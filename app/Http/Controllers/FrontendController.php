@@ -81,9 +81,22 @@ class FrontendController extends Controller
         return view('landing-page.index',compact('sectionData','postjobservice','auth_user_id','favourite','totalRating','status', 'servicesList'));
     }
 
+
+
     public function shopDetailsView($id)
     {
-        $shop = allshop::with('media')->findOrFail($id);
+        $shop = AllShop::with('media')->findOrFail($id);
+
+        $isFavourite = false;
+
+        if (auth()->check()) {
+            $status = @getFavouriteStatus(auth()->id(), $shop->id, 'shop\\UserFavouriteShops');
+
+            $isFavourite = $status['isFavourite'] ?? false;
+        }
+
+        $shop['isFavourite'] = $isFavourite;
+
         return view('landing-page.shop_modal_content', compact('shop'));
     }
 

@@ -876,7 +876,7 @@ class HomeController extends Controller
                 $items = $items->get();
                 break;
             case 'shop_category':
-                $items = \App\Models\Shop\ShopCategory::select('id', 'name as text')
+                $items = \App\Models\shop\shopCategory::select('id', 'name as text')
                     ->where('status', 1);
                 if ($value != '') {
                     $items->where('name', 'LIKE', $value . '%');

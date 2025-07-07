@@ -4,10 +4,12 @@
             <div class="img-details img-box img-box1">
                 <img src="{{ $shop->getFirstMediaUrl('shop_attachment') ?? asset('default.png') }}" />
 
-                <svg class="shop-whishlist " width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="{{$shop->id}}">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.43593 6.29916C0.899433 4.62416 1.52643 2.70966 3.28493 2.14316C4.20993 1.84466 5.23093 2.02066 5.99993 2.59916C6.72743 2.03666 7.78593 1.84666 8.70993 2.14316C10.4684 2.70966 11.0994 4.62416 10.5634 6.29916C9.72843 8.95416 5.99993 10.9992 5.99993 10.9992C5.99993 10.9992 2.29893 8.98516 1.43593 6.29916Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path d="M8 3.84998C8.535 4.02298 8.913 4.50048 8.9585 5.06098" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
+                <button type="button" class="btn btn-light bg-white rounded-circle text-primary p-0 avatar-30 btn btn-light bg-white rounded-circle shop-whishlist text-primary p-0 avatar-30 delete_fav lh-normal" data-id="{{$shop->id}}">
+                    <svg width="16" height="16" viewBox="0 0 12 13" xmlns="http://www.w3.org/2000/svg" fill="{{ $shop->isFavourite ? 'currentColor' : 'none' }}">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.43593 6.29916C0.899433 4.62416 1.52643 2.70966 3.28493 2.14316C4.20993 1.84466 5.23093 2.02066 5.99993 2.59916C6.72743 2.03666 7.78593 1.84666 8.70993 2.14316C10.4684 2.70966 11.0994 4.62416 10.5634 6.29916C9.72843 8.95416 5.99993 10.9992 5.99993 10.9992C5.99993 10.9992 2.29893 8.98516 1.43593 6.29916Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M8 3.84998C8.535 4.02298 8.913 4.50048 8.9585 5.06098" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
             </div>
         </div>
 

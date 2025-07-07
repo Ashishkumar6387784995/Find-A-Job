@@ -1904,10 +1904,10 @@ window.onload = function () {
 			},
 			success: function(response) {
 				if (response.status === 'added') {
-					button.addClass('text-danger').removeClass('text-primary');
+					button.find('svg').attr('fill', 'currentColor');
 					showMessage(response.message);
 				} else if (response.status === 'removed') {
-					button.addClass('text-primary').removeClass('text-danger');
+					button.find('svg').attr('fill', 'none');
 					showMessage(response.message);
 				} else {
 					console.warn('Unexpected response:', response);

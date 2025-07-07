@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Shop;
+namespace App\Models\shop;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,7 +11,7 @@ use Spatie\Permission\Traits\HasRoles;
 use App\Traits\TranslationTrait;
 use App\Models\Translations;
 
-class ShopCategory extends Model implements HasMedia
+class shopCategory extends Model implements HasMedia
 {
     use HasFactory, HasRoles, InteractsWithMedia, SoftDeletes, TranslationTrait;
 
