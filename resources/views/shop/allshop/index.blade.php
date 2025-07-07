@@ -14,7 +14,7 @@
                             @if ($auth_user->can('category add'))
                             <a href="{{ route('shop.allshop.create') }}" class="float-end me-1 btn btn-sm btn-primary"><i
                                     class="fa fa-plus-circle"></i>
-                                {{ trans('messages.add_form_title', ['form' => trans('messages.category')]) }}</a>
+                                {{ trans('messages.add_form_title', ['form' => trans('messages.shop')]) }}</a>
                             @endif
                         </div>
                     </div>

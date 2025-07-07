@@ -93,7 +93,7 @@ class AllShopCategoryController extends Controller
 
                 return '<div class="custom-control custom-switch custom-switch-text custom-switch-color custom-control-inline">
                     <div class="custom-switch-inner">
-                        <input type="checkbox" class="custom-control-input  change_status" data-type="shop_category_featured" data-name="is_featured" '.($query->is_featured ? "checked" : "").'  '.  $disabled.' value="'.$query->id.'" id="f'.$query->id.'" data-id="'.$query->id.'">
+                        <input type="checkbox" class="custom-control-input  change_status" data-type="allshop_featured" data-name="is_featured" '.($query->is_featured ? "checked" : "").'  '.  $disabled.' value="'.$query->id.'" id="f'.$query->id.'" data-id="'.$query->id.'">
                         <label class="custom-control-label" for="f'.$query->id.'" data-on-label="'.__("messages.yes").'" data-off-label="'.__("messages.no").'"></label>
                     </div>
                 </div>';
@@ -102,7 +102,7 @@ class AllShopCategoryController extends Controller
                 $disabled = $query->trashed() ? 'disabled': '';
                 return '<div class="custom-control custom-switch custom-switch-text custom-switch-color custom-control-inline">
                     <div class="custom-switch-inner">
-                        <input type="checkbox" class="custom-control-input  change_status" data-type="shop_category_status" '.($query->status ? "checked" : "").'  '.$disabled.' value="'.$query->id.'" id="'.$query->id.'" data-id="'.$query->id.'">
+                        <input type="checkbox" class="custom-control-input  change_status" data-type="allshop_status" '.($query->status ? "checked" : "").'  '.$disabled.' value="'.$query->id.'" id="'.$query->id.'" data-id="'.$query->id.'">
                         <label class="custom-control-label" for="'.$query->id.'" data-on-label="" data-off-label=""></label>
                     </div>
                 </div>';

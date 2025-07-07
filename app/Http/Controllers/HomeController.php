@@ -365,13 +365,13 @@ class HomeController extends Controller
                 break;
 
                 //allshop
-            case 'allshop_category_status':
+            case 'allshop_status':
                 $category = \App\Models\shop\allshop::find($request->id);
                 $category->status = $request->status;
                 $category->save();
                 break;
-            case 'allshop_category_featured':
-                $message_form = __('messages.category');
+            case 'allshop_featured':
+                $message_form = __('messages.shop');
                 $category = \App\Models\shop\allshop::find($request->id);
                 $category->is_featured = $request->status;
                 $category->save();
@@ -386,6 +386,19 @@ class HomeController extends Controller
             case 'store_category_featured':
                 $message_form = __('messages.category');
                 $category = \App\Models\storeCategories::find($request->id);
+                $category->is_featured = $request->status;
+                $category->save();
+                break;
+
+            // store
+            case 'shop_status':
+                $category = \App\Models\web\Webs::find($request->id);
+                $category->status = $request->status;
+                $category->save();
+                break;
+            case 'shop_featured':
+                $message_form = __('messages.web');
+                $category = \App\Models\web\Webs::find($request->id);
                 $category->is_featured = $request->status;
                 $category->save();
                 break;
@@ -877,6 +890,17 @@ class HomeController extends Controller
                 break;
             case 'shop_category':
                 $items = \App\Models\shop\shopCategory::select('id', 'name as text')
+                    ->where('status', 1);
+                if ($value != '') {
+                    $items->where('name', 'LIKE', $value . '%');
+                }
+                $items = $items->get();
+                return response()->json($items);
+                break;
+            
+            // web
+            case 'web_category':
+                $items = \App\Models\web\webCategory::select('id', 'name as text')
                     ->where('status', 1);
                 if ($value != '') {
                     $items->where('name', 'LIKE', $value . '%');

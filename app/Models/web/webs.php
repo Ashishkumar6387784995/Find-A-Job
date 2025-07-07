@@ -10,10 +10,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Traits\TranslationTrait;
 use App\Models\Translations;
 
-class webs extends Model implements  HasMedia
+class Webs extends Model implements  HasMedia
 {
-    //
-       use InteractsWithMedia,HasFactory,SoftDeletes;
+    use InteractsWithMedia,HasFactory,SoftDeletes;
     use TranslationTrait;
     protected $table = 'webs';
     protected $fillable = [

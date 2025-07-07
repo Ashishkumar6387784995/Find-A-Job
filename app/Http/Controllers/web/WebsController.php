@@ -91,7 +91,7 @@ class WebsController extends Controller
 
                 return '<div class="custom-control custom-switch custom-switch-text custom-switch-color custom-control-inline">
                     <div class="custom-switch-inner">
-                        <input type="checkbox" class="custom-control-input  change_status" data-type="shop_category_featured" data-name="is_featured" '.($query->is_featured ? "checked" : "").'  '.  $disabled.' value="'.$query->id.'" id="f'.$query->id.'" data-id="'.$query->id.'">
+                        <input type="checkbox" class="custom-control-input  change_status" data-type="shop_featured" data-name="is_featured" '.($query->is_featured ? "checked" : "").'  '.  $disabled.' value="'.$query->id.'" id="f'.$query->id.'" data-id="'.$query->id.'">
                         <label class="custom-control-label" for="f'.$query->id.'" data-on-label="'.__("messages.yes").'" data-off-label="'.__("messages.no").'"></label>
                     </div>
                 </div>';
@@ -100,7 +100,7 @@ class WebsController extends Controller
                 $disabled = $query->trashed() ? 'disabled': '';
                 return '<div class="custom-control custom-switch custom-switch-text custom-switch-color custom-control-inline">
                     <div class="custom-switch-inner">
-                        <input type="checkbox" class="custom-control-input  change_status" data-type="shop_category_status" '.($query->status ? "checked" : "").'  '.$disabled.' value="'.$query->id.'" id="'.$query->id.'" data-id="'.$query->id.'">
+                        <input type="checkbox" class="custom-control-input  change_status" data-type="shop_status" '.($query->status ? "checked" : "").'  '.$disabled.' value="'.$query->id.'" id="'.$query->id.'" data-id="'.$query->id.'">
                         <label class="custom-control-label" for="'.$query->id.'" data-on-label="" data-off-label=""></label>
                     </div>
                 </div>';
@@ -283,13 +283,13 @@ class WebsController extends Controller
         if(demoUserPermission()){
             return  redirect()->back()->withErrors(trans('messages.demo_permission_denied'));
         }
-        $category = Webs::find($id);
+        $shop = Webs::find($id);
 
-        $msg= __('messages.msg_fail_to_delete',['name' => __('messages.category')] );
+        $msg= __('messages.msg_fail_to_delete',['name' => __('messages.shop')] );
 
-        if($category!='') {
-            $category->delete();
-            $msg= __('messages.msg_deleted',['name' => __('messages.category')] );
+        if($shop!='') {
+            $shop->delete();
+            $msg= __('messages.msg_deleted',['name' => __('messages.shop')] );
         }
         if(request()->is('api/*')) {
             return comman_message_response($msg);
@@ -298,15 +298,15 @@ class WebsController extends Controller
     }
     public function action(Request $request){
         $id = $request->id;
-        $category  = Webs::withTrashed()->where('id',$id)->first();
-        $msg = __('messages.t_found_entry',['name' => __('messages.category')] );
+        $shop  = Webs::withTrashed()->where('id',$id)->first();
+        $msg = __('messages.t_found_entry',['name' => __('messages.shop')] );
         if($request->type == 'restore') {
-            $category->restore();
-            $msg = __('messages.msg_restored',['name' => __('messages.category')] );
+            $shop->restore();
+            $msg = __('messages.msg_restored',['name' => __('messages.shop')] );
         }
         if($request->type === 'forcedelete'){
-            $category->forceDelete();
-            $msg = __('messages.msg_forcedelete',['name' => __('messages.category')] );
+            $shop->forceDelete();
+            $msg = __('messages.msg_forcedelete',['name' => __('messages.shop')] );
         }
         if(request()->is('api/*')){
             return comman_message_response($msg);
