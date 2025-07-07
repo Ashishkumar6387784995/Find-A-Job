@@ -613,3 +613,21 @@ $(document).ready(function() {
 
     $(window).on('resize', slideImage);
 });
+
+
+// Notification message functions
+function errorMessage(message) {
+    Snackbar.show({
+        text: message,
+        pos: 'bottom-center',
+        backgroundColor: '#dc3545',
+        actionTextColor: 'white'
+    });
+}
+
+function showMessage(message) {
+    Snackbar.show({
+        text: message,
+        pos: 'bottom-center'
+    });
+}

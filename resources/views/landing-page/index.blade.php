@@ -3,7 +3,6 @@
 
 
 
-<!-- Banner -->
 <div class="padding-top-bottom-90 bg-light">
 	<div class="container-fluid wrapper-content-slider">
 		<div class="row align-items-center">
@@ -844,19 +843,26 @@
 					<!-- store Tab -->
 					<div class="tab-pane fade" id="store" role="tabpanel">
 						<div class="row">
-							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								<div class="service_box" data-toggle="modal" data-target="#exampleModal">
-									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
-									<h5><a href="#">Store 1</a></h5>
-								</div>
-
-							</div>
-							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-								<div class="service_box" data-toggle="modal" data-target="#exampleModal">
-									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
-									<h5><a href="#">Store 2</a></h5>
-								</div>
-							</div>
+							@php $datas= @getAllShopLists(); @endphp
+							@if($datas)
+								@foreach($datas as $data)
+									@if(getMediaFileExit($data, 'shop_attachment'))
+									
+										@php 
+											$attchments = $data->getMedia('shop_attachment');
+											$filePath = 'storage/'.$attchments[0]->id .'/'.$attchments[0]->file_name;
+										@endphp
+										<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+											<div class="service_box shop_box cursor-pointer" data-id="{{ $data->id }}" data-toggle="modal" data-target="#exampleModal">
+												<div class="img-box img-box1">
+													<img src="{{asset($filePath) }}" class="img-fluid"/>
+												</div>
+												<h5><a>{{$data->name}}</a></h5>
+											</div>
+										</div>
+									@endif
+								@endforeach
+							@endif
 						</div>
 					</div>
 				</div>
@@ -1859,4 +1865,69 @@ window.onload = function () {
 };
 
 </script>
+<script>
+	$(document).ready(function () {
+		$('.shop_box').on('click', function () {
+			const shopId = $(this).data('id');
+			$('#shopModalBody').html('<div class="text-center">Loading...</div>');
+			var baseURL = "{{url('/')}}";
+
+			$.ajax({
+				url: `${baseURL}/shop-details-view/${shopId}`,
+				method: 'GET',
+				success: function (html) {
+					$('#shopModalBody').html(html);
+				},
+				error: function () {
+					$('#shopModalBody').html('<div class="text-danger text-center">Failed to load shop details.</div>');
+				}
+			});
+		});
+	});
+</script>
+
+
+<script>
+	jQuery(document).on('click', '.shop-whishlist', function(e) {
+		e.preventDefault();
+
+		const button = $(this);
+		const shopId = button.data('id');
+		const baseURL = "{{ url('/') }}";
+
+		$.ajax({
+			url: `${baseURL}/shop/wishlist/toggle`,
+			method: 'POST',
+			data: {
+				_token: '{{ csrf_token() }}',
+				shop_id: shopId
+			},
+			success: function(response) {
+				if (response.status === 'added') {
+					button.addClass('text-danger').removeClass('text-primary');
+					showMessage(response.message);
+				} else if (response.status === 'removed') {
+					button.addClass('text-primary').removeClass('text-danger');
+					showMessage(response.message);
+				} else {
+					console.warn('Unexpected response:', response);
+				}
+			},
+			error: function(xhr) {
+				console.error('Wishlist update failed:', xhr.responseText);
+				let msg = 'Something went wrong. Please login or try again.';
+				try {
+					const json = JSON.parse(xhr.responseText);
+					if (json.message) {
+						msg = json.message;
+					}
+				} catch (e) {
+					console.warn('Error parsing JSON response.');
+				}
+				errorMessage(msg);
+			}
+		});
+	});
+</script>
+
 @endsection

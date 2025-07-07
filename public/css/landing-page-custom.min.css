@@ -3065,3 +3065,7 @@ table.provider-detail-info td h6 {
   }
 }
  
+
+.cursor-pointer{
+  cursor: pointer;
+}

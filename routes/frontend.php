@@ -25,6 +25,9 @@ require __DIR__.'/auth.php';
 
 // Route::middleware([CheckInstallation::class])->group(function () {
     Route::get('/', [FrontendController::class, 'index'])->name('frontend.index');
+    Route::get('/shop-details-view/{id}', [FrontendController::class, 'shopDetailsView']);
+    Route::post('/shop/wishlist/toggle', [FrontendController::class, 'toggleWishlist'])->name('wishlist.toggle');
+
     Route::get('/login-page', [FrontendController::class, 'userLoginView'])->name('user.login');
     Route::post('/user-login', [CustomerController::class, 'userLogin'])->name('user.user_login');
     Route::get('/register-page', [FrontendController::class, 'userRegistrationView'])->name('user.register');

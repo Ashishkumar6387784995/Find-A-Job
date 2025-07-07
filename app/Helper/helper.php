@@ -3,6 +3,7 @@
 use \Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Google\Client as Google_Client;
+use App\Models\shop\allshop;
 function authSession($force=false){
     $session = new \App\Models\User;
     if($force){
@@ -2249,5 +2250,25 @@ if (!function_exists('getFooterSettings')) {
             'categories' => $categories,
             'services' => $services,
         ];
+    }
+}
+
+
+
+if (!function_exists('getAllShopLists')) {
+    function getAllShopLists()
+    {
+        $shopsList = allshop::orderby('created_at', 'desc')->where('status',1)->get()->take('18');
+        return $shopsList;
+    }
+}
+
+
+
+if (!function_exists('getShopCategoryByID')) {
+    function getShopCategoryByID($id)
+    {
+        $data = App\Models\Shop\ShopCategory::findOrFail($id);
+        return $data->name;
     }
 }

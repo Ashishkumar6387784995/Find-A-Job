@@ -27,6 +27,8 @@ use App\Models\FrontendSetting;
 use Yajra\DataTables\DataTables;
 use Auth;
 use App\Models\HandymanRating;
+use App\Models\shop\allshop;
+use App\Models\shop\UserFavouriteShops;
 use App\Models\ProviderServiceAddressMapping;
 use Carbon\Carbon;
 use App\Models\Tax;
@@ -78,6 +80,38 @@ class FrontendController extends Controller
         // @endforeach
         return view('landing-page.index',compact('sectionData','postjobservice','auth_user_id','favourite','totalRating','status', 'servicesList'));
     }
+
+    public function shopDetailsView($id)
+    {
+        $shop = allshop::with('media')->findOrFail($id);
+        return view('landing-page.shop_modal_content', compact('shop'));
+    }
+
+    public function toggleWishlist(Request $request)
+    {
+        $user = auth()->user();
+        if (!$user) {
+            return response()->json(['message' => 'Unauthorized - Please Login'], 401);
+        }
+
+        $shopId = $request->shop_id;
+
+        $wishlist = UserFavouriteShops::where('user_id', $user->id)
+                            ->where('shop_id', $shopId)
+                            ->first();
+
+        if ($wishlist) {
+            $wishlist->delete();
+            return response()->json(['status' => 'removed', 'message'=>'Removed from wishlist']);
+        } else {
+            UserFavouriteShops::create([
+                'user_id' => $user->id,
+                'shop_id' => $shopId,
+            ]);
+            return response()->json(['status' => 'added', 'message'=>'Added to wishlist']);
+        }
+    }
+
 
     public function userLoginView(Request $request){
         $footerSection = FrontendSetting::where('key', 'login-register-setting')->first();

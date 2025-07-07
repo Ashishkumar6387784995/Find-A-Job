@@ -14,78 +14,10 @@
                         </path>
                     </svg>
                 </span>
-
-                <!-- <button type="button" class="close iconBtn_" data-dismiss="modal" aria-label="Close" onclick="jQuery('#exampleModal').modal('hide');">
-                    <span aria-hidden="true">&times;</span>
-                </button> -->
             </div>
 
-            <div class="modal-body px-4">
-                <!-- Section 1: General Info -->
-
-                <!-- Section 3: Other Details -->
-                <div class="mb-4">
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label class="form-label text-muted mb-0">Discount</label>
-                            <div class="fw-medium">Flat ₹100 OFF</div>
-                        </div>
-                        <div class="col-md-6">
-                            <!-- <label class="form-label text-muted mb-0">Image</label> -->
-                            <!-- <br> -->
-                            <div class="img-details"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png"   /></div>
-
-                        </div>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="mb-4">
-                    <h6 class="text-primary fw-semibold mb-3">General Information</h6>
-
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label class="form-label text-muted mb-0">Name</label>
-                            <div class="fw-medium">John's Store</div>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label text-muted mb-0">Category</label>
-                            <div class="fw-medium">Retail</div>
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label text-muted mb-0">Description</label>
-                            <div class="fw-medium">A one-stop shop for daily essentials, groceries, and household products.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr>
-
-                <!-- Section 2: Contact -->
-                <div class="mb-4">
-                    <h6 class="text-primary fw-semibold mb-3">Contact Details</h6>
-
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label class="form-label text-muted mb-0">Phone</label>
-                            <div class="fw-medium">+91 9876543210</div>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label text-muted mb-0">Email</label>
-                            <div class="fw-medium">john@example.com</div>
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label text-muted mb-0">Address</label>
-                            <div class="fw-medium">123 Main Street, Delhi, India</div>
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label text-muted mb-0">Map Link</label>
-                            <div><a href="https://goo.gl/maps/example" target="_blank" class="text-decoration-underline">View on Google Maps</a></div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr>
+            <div class="modal-body px-4" id="shopModalBody">
+                <div class="text-center">Loading...</div>
             </div>
 
             <div class="modal-footer border-top-0">
@@ -115,19 +47,5 @@
     .modal-body h6 {
         font-size: 1rem;
     }
-
-
-
-   
-
-
-
-
-
-
-
-
 </style>
-
-
 

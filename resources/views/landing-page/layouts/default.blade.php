@@ -8,6 +8,9 @@
 
     @yield('after_head')
 
+<!-- Add in your layout or partial like _dynamic_script.blade.php -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css">
+<script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script>
 
 </head>
 <script>
