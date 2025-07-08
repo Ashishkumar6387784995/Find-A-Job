@@ -127,27 +127,27 @@ class WebsController extends Controller
             case 'change-status':
 
                 $branches =  Webs::whereIn('id', $ids)->update(['status' => $request->status]);
-                $message = 'Bulk Category Status Updated';
+                $message = 'Bulk Web Status Updated';
                 break;
 
             case 'change-featured':
                 $branches =  Webs::whereIn('id', $ids)->update(['is_featured' => $request->is_featured]);
-                $message = 'Bulk Category Featured Updated';
+                $message = 'Bulk Web Featured Updated';
                 break;
 
             case 'delete':
                  Webs::whereIn('id', $ids)->delete();
-                $message = 'Bulk Category Deleted';
+                $message = 'Bulk Web Deleted';
                 break;
 
             case 'restore':
                  Webs::whereIn('id', $ids)->restore();
-                $message = 'Bulk Category Restored';
+                $message = 'Bulk Web Restored';
                 break;
 
             case 'permanently-delete':
                  Webs::whereIn('id', $ids)->forceDelete();
-                $message = 'Bulk Category Permanently Deleted';
+                $message = 'Bulk Web Permanently Deleted';
                 break;
 
             default:
@@ -285,11 +285,11 @@ class WebsController extends Controller
         }
         $shop = Webs::find($id);
 
-        $msg= __('messages.msg_fail_to_delete',['name' => __('messages.shop')] );
+        $msg= __('messages.msg_fail_to_delete',['name' => __('messages.web')] );
 
         if($shop!='') {
             $shop->delete();
-            $msg= __('messages.msg_deleted',['name' => __('messages.shop')] );
+            $msg= __('messages.msg_deleted',['name' => __('messages.web')] );
         }
         if(request()->is('api/*')) {
             return comman_message_response($msg);
@@ -299,14 +299,14 @@ class WebsController extends Controller
     public function action(Request $request){
         $id = $request->id;
         $shop  = Webs::withTrashed()->where('id',$id)->first();
-        $msg = __('messages.t_found_entry',['name' => __('messages.shop')] );
+        $msg = __('messages.t_found_entry',['name' => __('messages.web')] );
         if($request->type == 'restore') {
             $shop->restore();
-            $msg = __('messages.msg_restored',['name' => __('messages.shop')] );
+            $msg = __('messages.msg_restored',['name' => __('messages.web')] );
         }
         if($request->type === 'forcedelete'){
             $shop->forceDelete();
-            $msg = __('messages.msg_forcedelete',['name' => __('messages.shop')] );
+            $msg = __('messages.msg_forcedelete',['name' => __('messages.web')] );
         }
         if(request()->is('api/*')){
             return comman_message_response($msg);
