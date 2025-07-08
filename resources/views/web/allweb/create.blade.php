@@ -57,39 +57,58 @@
                                             <small class="help-block with-errors text-danger"></small>
                                         </div>
                                     @endforeach
-
-                                    <!-- Category Selection -->
-                                    <div class="form-group col-md-4">
-                                        {{ html()->label(__('messages.select_name', ['select' => __('messages.category')]) . ' <span class="text-danger">*</span>', 'category_id')->class('form-control-label') }}
-                                        <select name="category_id" id="category_id_{{ $language['id'] }}" class="form-control select2js-category"
-                                                data-select2-type="category"
-                                                data-selected-id="{{ old('category_id', $servicedata->category_id ?? '') }}"
-                                                data-language-id="{{ $language['id'] }}"
-                                                data-ajax--url="{{ route('ajax-list', ['type' => 'web_category', 'language_id' => $language['id']]) }}"
-                                                data-placeholder="{{ __('messages.select_name', ['select' => __('messages.category')]) }}">
-                                        </select>
-                                        <small class="help-block with-errors text-danger"></small>
-                                    </div>
                                 </div>
                             </div>
                         @endforeach
 
 
+                            <div class="row">
+                                <!-- Category Selection -->
+                                <div class="form-group col-md-4">
+                                    {{ html()->label(__('messages.select_name', ['select' => __('messages.category')]) . ' <span class="text-danger">*</span>', 'category_id')->class('form-control-label') }}
+                                    <select name="category_id" id="category_id_{{ $language['id'] }}" class="form-control select2js-category"
+                                            data-select2-type="category"
+                                            data-selected-id="{{ old('category_id', $servicedata->category_id ?? '') }}"
+                                            data-language-id="{{ $language['id'] }}"
+                                            data-ajax--url="{{ route('ajax-list', ['type' => 'web_category', 'language_id' => $language['id']]) }}"
+                                            data-placeholder="{{ __('messages.select_name', ['select' => __('messages.category')]) }}">
+                                    </select>
+                                    <small class="help-block with-errors text-danger"></small>
+                                </div>
+    
+    
+                                <div class="form-group col-md-8">
+                                    <label for="web_link" class="form-label">Web Link <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="web_link" name="web_link" placeholder="Web Link" value="{{ old('web_link', $servicedata->web_link ?? '') }}">
+                                </div>
 
-                            <div class="form-group col-md-4">
-                                <label class="form-control-label" for="status">Status <span class="text-danger">*</span></label>
-                                <select name="status" id="status" class="form-control select2js" required>
-                                    <option value="1" {{ old('status', $servicedata->status ?? '') == 1 ? 'selected' : '' }}>Active</option>
-                                    <option value="0" {{ old('status', $servicedata->status ?? '') == 0 ? 'selected' : '' }}>Inactive</option>
-                                </select>
+                                    
+    
+                                <div class="form-group col-md-4">
+                                    <label class="form-control-label" for="status">Status <span class="text-danger">*</span></label>
+                                    <select name="status" id="status" class="form-control select2js" required>
+                                        <option value="1" {{ old('status', $servicedata->status ?? '') == 1 ? 'selected' : '' }}>Active</option>
+                                        <option value="0" {{ old('status', $servicedata->status ?? '') == 0 ? 'selected' : '' }}>Inactive</option>
+                                    </select>
+                                </div>
+
+                                <!-- Image Field -->
+                                <div class="form-group col-md-4">
+                                    <label class="form-control-label" for="web_attachment">{{ __('messages.image') }} <span class="text-danger">*</span></label>
+                                    <div class="custom-file">
+
+                                        <input type="file" name="web_attachment" class="custom-file-input" id="web_attachment"
+                                        accept="image/*"  {{ is_null($servicedata->id) ? 'required' : '' }}>
+    
+                                        @if($servicedata && getMediaFileExit($servicedata, 'web_attachment'))
+                                            <label class="custom-file-label upload-label">{{ $servicedata->getFirstMedia('web_attachment')->file_name }}</label>
+                                        @else
+                                            <label class="custom-file-label upload-label">{{ __('messages.choose_file',['file' =>  __('messages.image') ]) }}</label>
+                                        @endif
+                                    </div>
+                                    <small class="help-block with-errors text-danger" id="image-error"></small>
+                                </div>
                             </div>
-
-                            <div class="form-group col-md-12">
-                                <label for="web_link" class="form-label">Web Link <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="web_link" name="web_link" placeholder="Web Link" value="{{ old('web_link', $servicedata->web_link ?? '') }}">
-                            </div>
-
-                           
                         </div>
 
                         @if(isset($servicedata->id))
@@ -100,10 +119,10 @@
 
                         <div class="row service_attachment_div">
                             <div class="col-md-12">
-                                @if(getMediaFileExit($servicedata, 'shop_attachment'))
+                                @if(getMediaFileExit($servicedata, 'web_attachment'))
                                 @php
 
-                                $attchments = $servicedata->getMedia('shop_attachment');
+                                $attchments = $servicedata->getMedia('web_attachment');
 
                                 $file_extention = config('constant.IMAGE_EXTENTIONS');
                                 @endphp
@@ -152,20 +171,8 @@
                             </div>
                         </div>
 
+
                         <div class="row">
-                            <!-- <div class="form-group col-md-12">
-                                    {{ html()->label(__('messages.description'), 'description')->class('form-control-label') }}
-                                    {{ html()->textarea('description', $servicedata->description)->class('form-control textarea')->rows(3)->placeholder(__('messages.description')) }}
-                                </div> -->
-                            @if(!empty( $slotservice) && $slotservice == 1)
-                            <div class="form-group col-md-3">
-                                <div class="custom-control custom-switch">
-                                    {{ html()->checkbox('is_slot', $servicedata->is_slot)->class('custom-control-input')->id('is_slot')}}
-                                    <label class="custom-control-label"
-                                        for="is_slot">{{ __('messages.slot') }}</label>
-                                </div>
-                            </div>
-                            @endif
                             <div class="form-group col-md-3">
                                 <div class="custom-control custom-switch">
                                     {{ html()->checkbox('is_featured', $servicedata->is_featured)->class('custom-control-input')->id('is_featured')}}
@@ -174,8 +181,11 @@
                                 </div>
                             </div>
 
-                            {{ html()->submit( __('messages.save'))->class('btn btn-md btn-primary float-end') }}
-                            {{ html()->form()->close() }}
+                            <div class="form-group col-md-3">
+                                </div>
+                                {{ html()->submit( __('messages.save'))->class('btn btn-md btn-primary float-end') }}
+                                {{ html()->form()->close() }}
+
                         </div>
                     </div>
                 </div>

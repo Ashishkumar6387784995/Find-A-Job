@@ -220,13 +220,13 @@ class WebsController extends Controller
             $data->save();
 
             // File upload (if applicable)
-            // if ($request->hasFile('shop_attachment')) {
-            //     storeMediaFile($data, $request->file('shop_attachment'), 'shop_attachment');
-            // } elseif (!$request->id && !getMediaFileExit($data, 'shop_attachment')) {
-            //     return redirect()->back()
-            //         ->withErrors(['shop_attachment' => 'The attachments field is required.'])
-            //         ->withInput();
-            // }
+            if ($request->hasFile('web_attachment')) {
+                storeMediaFile($data, $request->file('web_attachment'), 'web_attachment');
+            } elseif (!$request->id && !getMediaFileExit($data, 'web_attachment')) {
+                return redirect()->back()
+                    ->withErrors(['web_attachment' => 'The attachments field is required.'])
+                    ->withInput();
+            }
 
             DB::commit();
 
