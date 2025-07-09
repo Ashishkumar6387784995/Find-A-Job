@@ -12,9 +12,9 @@
                         <div class="d-flex justify-content-between align-items-center p-3 flex-wrap gap-3">
                             <h5 class="fw-bold">{{ $pageTitle ?? trans('messages.list') }}</h5>
                             @if ($auth_user->can('category add'))
-                            <a href="{{ route('shop.allshop.create') }}" class="float-end me-1 btn btn-sm btn-primary"><i
+                            <a href="{{ route('web.allweb.create') }}" class="float-end me-1 btn btn-sm btn-primary"><i
                                     class="fa fa-plus-circle"></i>
-                                {{ trans('messages.add_form_title', ['form' => trans('messages.shop')]) }}</a>
+                                {{ trans('messages.add_form_title', ['form' => trans('messages.web')]) }}</a>
                             @endif
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                 <div class="row justify-content-between gy-3">
                     <div class="col-md-6 col-lg-4 col-xl-3">
                         <div class="col-md-12">
-                            <form action="{{ route('shop.allshop.bulk-action') }}" id="quick-action-form"
+                            <form action="{{ route('web.allweb.bulk-action') }}" id="quick-action-form"
                                 class="form-disabled d-flex gap-3 align-items-center">
                                 @csrf
                                 <select name="action_type" class="form-control select2" id="quick-action-type"
@@ -54,7 +54,7 @@
                                     </select>
                                 </div>
                                 <button id="quick-action-apply" class="btn btn-primary" data-ajax="true"
-                                    data--submit="{{ route('shop.allshop.bulk-action') }}" data-datatable="reload"
+                                    data--submit="{{ route('web.allweb.bulk-action') }}" data-datatable="reload"
                                     data-confirmation='true'
                                     data-title="{{ __('category', ['form' => __('category')]) }}"
                                     title="{{ __('category', ['form' => __('category')]) }}"
@@ -112,7 +112,7 @@
                 dom: '<"row align-items-center"><"table-responsive my-3 mt-3 mb-2 pb-1" rt><"row align-items-center data_table_widgets" <"col-md-6" <"d-flex align-items-center flex-wrap gap-3" l i>><"col-md-6" p>><"clear">',
                 ajax: {
                     type: "GET",
-                    url: '{{ route("shop.allshop.index_data") }}', 
+                    url: '{{ route("web.allweb.index_data") }}', 
                     data: function(d) {
                         d.search = {    
                             value: $('.dt-search').val()

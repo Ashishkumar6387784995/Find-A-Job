@@ -216,8 +216,8 @@
 
 
 					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="store-tab" data-bs-toggle="tab" data-bs-target="#store" type="button">
-							<i class="bi bi-gear-wide-connected me-2"></i>Store
+						<button class="nav-link" id="shop-tab" data-bs-toggle="tab" data-bs-target="#shop" type="button">
+							<i class="bi bi-gear-wide-connected me-2"></i>Shops
 						</button>
 					</li>
 
@@ -846,8 +846,8 @@
 
 					</div>
 
-					<!-- store Tab -->
-					<div class="tab-pane fade" id="store" role="tabpanel">
+					<!-- shop Tab -->
+					<div class="tab-pane fade" id="shop" role="tabpanel">
 						<div class="row">
 							@php $datas= @getAllShopLists(); @endphp
 							@if($datas)

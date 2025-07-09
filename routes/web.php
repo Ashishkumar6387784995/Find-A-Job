@@ -56,6 +56,7 @@ use App\Http\Controllers\Store\OrderController;
 use App\Http\Controllers\shop\shopCategoryController;
 use App\Http\Controllers\shop\AllShopCategoryController;
 use App\Http\Controllers\web\webCategoryController; 
+use App\Http\Controllers\web\WebsController; 
 use App\Http\Controllers\Store\CategoriesController;
 
 
@@ -183,7 +184,16 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             Route::post('category-action', [webCategoryController::class, 'action'])->name('category.action');
             Route::post('category/{id}', [webCategoryController::class, 'destroy'])->name('category.destroy');
         // });
+        
+        Route::resource('allweb', WebsController::class);
+        Route::get('allweb-index-data', [WebsController::class, 'index_data'])->name('allweb.index_data');
+        Route::post('allweb-bulk-action', [WebsController::class, 'bulk_action'])->name('allweb.bulk-action');
+        Route::post('allweb-action', [WebsController::class, 'action'])->name('allweb.action');
+        Route::post('allweb/{id}', [WebsController::class, 'destroy'])->name('allweb.destroy');
+
     });
+
+    
 
 
     

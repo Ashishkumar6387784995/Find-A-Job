@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\shop;
+namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\shop\allshop;
+use App\Models\web\Webs;
 use App\Traits\TranslationTrait;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\DB;
@@ -12,11 +12,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 
-
-class AllShopCategoryController extends Controller
+class WebsController extends Controller
 {
-    //
-       use TranslationTrait;
+         use TranslationTrait;
     /**
      * Display a listing of the resource.
      *
@@ -27,11 +25,11 @@ class AllShopCategoryController extends Controller
         $filter = [
             'status' => $request->status,
         ];
-        $pageTitle = trans('messages.list_form_title',['form' => trans('messages.allshop')] );
+        $pageTitle = trans('messages.list_form_title',['form' => trans('messages.webs')] );
         
         $auth_user = authSession();
         $assets = ['datatable'];
-        return view('shop.allshop.index', compact('pageTitle','auth_user','assets','filter'));
+        return view('web.allweb.index', compact('pageTitle','auth_user','assets','filter'));
     }
 
 
@@ -40,7 +38,7 @@ class AllShopCategoryController extends Controller
     public function index_data(DataTables $datatable,Request $request)
     {
         
-        $query = allshop::with('translations');
+        $query = Webs::with('translations');
         $filter = $request->filter;
         $primary_locale = app()->getLocale() ?? 'en';
         if (!$request->order) {
@@ -64,7 +62,7 @@ class AllShopCategoryController extends Controller
             ->editColumn('name', function($query) use($primary_locale){
                 $name = $this->getTranslation($query->translations, $primary_locale, 'name', $query->name) ?? $query->name;  
                 if (auth()->user()->can('category edit')) {
-                    $link = '<a class="btn-link btn-link-hover" href='.route('shop.allshop.create', ['id' => $query->id]).'>'.$name.'</a>';
+                    $link = '<a class="btn-link btn-link-hover" href='.route('web.allweb.create', ['id' => $query->id]).'>'.$name.'</a>';
                 } else {
                     $link = $name;
                 }
@@ -86,14 +84,14 @@ class AllShopCategoryController extends Controller
                
             })
             ->addColumn('action', function ($data) {
-                return view('shop.allshop.action', compact('data'))->render();
+                return view('web.allweb.action', compact('data'))->render();
             })
             ->editColumn('is_featured' , function ($query){
                 $disabled = $query->trashed() ? 'disabled': '';
 
                 return '<div class="custom-control custom-switch custom-switch-text custom-switch-color custom-control-inline">
                     <div class="custom-switch-inner">
-                        <input type="checkbox" class="custom-control-input  change_status" data-type="allshop_featured" data-name="is_featured" '.($query->is_featured ? "checked" : "").'  '.  $disabled.' value="'.$query->id.'" id="f'.$query->id.'" data-id="'.$query->id.'">
+                        <input type="checkbox" class="custom-control-input  change_status" data-type="shop_featured" data-name="is_featured" '.($query->is_featured ? "checked" : "").'  '.  $disabled.' value="'.$query->id.'" id="f'.$query->id.'" data-id="'.$query->id.'">
                         <label class="custom-control-label" for="f'.$query->id.'" data-on-label="'.__("messages.yes").'" data-off-label="'.__("messages.no").'"></label>
                     </div>
                 </div>';
@@ -102,7 +100,7 @@ class AllShopCategoryController extends Controller
                 $disabled = $query->trashed() ? 'disabled': '';
                 return '<div class="custom-control custom-switch custom-switch-text custom-switch-color custom-control-inline">
                     <div class="custom-switch-inner">
-                        <input type="checkbox" class="custom-control-input  change_status" data-type="allshop_status" '.($query->status ? "checked" : "").'  '.$disabled.' value="'.$query->id.'" id="'.$query->id.'" data-id="'.$query->id.'">
+                        <input type="checkbox" class="custom-control-input  change_status" data-type="shop_status" '.($query->status ? "checked" : "").'  '.$disabled.' value="'.$query->id.'" id="'.$query->id.'" data-id="'.$query->id.'">
                         <label class="custom-control-label" for="'.$query->id.'" data-on-label="" data-off-label=""></label>
                     </div>
                 </div>';
@@ -128,28 +126,28 @@ class AllShopCategoryController extends Controller
         switch ($actionType) {
             case 'change-status':
 
-                $branches =  allshop::whereIn('id', $ids)->update(['status' => $request->status]);
-                $message = 'Bulk Category Status Updated';
+                $branches =  Webs::whereIn('id', $ids)->update(['status' => $request->status]);
+                $message = 'Bulk Web Status Updated';
                 break;
 
             case 'change-featured':
-                $branches =  allshop::whereIn('id', $ids)->update(['is_featured' => $request->is_featured]);
-                $message = 'Bulk Category Featured Updated';
+                $branches =  Webs::whereIn('id', $ids)->update(['is_featured' => $request->is_featured]);
+                $message = 'Bulk Web Featured Updated';
                 break;
 
             case 'delete':
-                 allshop::whereIn('id', $ids)->delete();
-                $message = 'Bulk Category Deleted';
+                 Webs::whereIn('id', $ids)->delete();
+                $message = 'Bulk Web Deleted';
                 break;
 
             case 'restore':
-                 allshop::whereIn('id', $ids)->restore();
-                $message = 'Bulk Category Restored';
+                 Webs::whereIn('id', $ids)->restore();
+                $message = 'Bulk Web Restored';
                 break;
 
             case 'permanently-delete':
-                 allshop::whereIn('id', $ids)->forceDelete();
-                $message = 'Bulk Category Permanently Deleted';
+                 Webs::whereIn('id', $ids)->forceDelete();
+                $message = 'Bulk Web Permanently Deleted';
                 break;
 
             default:
@@ -176,16 +174,15 @@ class AllShopCategoryController extends Controller
         $auth_user = authSession();
         $primary_locale = app()->getLocale() ?? 'en';
         $language_array = $this->languagesArray();
-        $servicedata = allshop::find($id);
+        $servicedata = Webs::find($id);
         
        
-        $pageTitle = trans('messages.update_form_title',['form'=>trans('messages.allshop').' '.trans('messages.list')]);
-
+        $pageTitle = trans('messages.update_form_title',['form'=>trans('messages.webs').' '.trans('messages.list')]);
         if($servicedata == null){
-            $pageTitle = trans('messages.add_button_form',['form' => trans('messages.allshop').' '.trans('messages.list')]);
-            $servicedata = new allshop;
+            $pageTitle = trans('messages.add_button_form',['form' => trans('messages.webs').' '.trans('messages.list')]);
+            $servicedata = new Webs();
         }
-        return view('shop.allshop.create', compact('pageTitle' ,'servicedata' ,'auth_user','language_array' ));
+        return view('web.allweb.create', compact('pageTitle' ,'servicedata' ,'auth_user','language_array' ));
     }
     /**
      * Store a newly created resource in storage.
@@ -200,14 +197,7 @@ class AllShopCategoryController extends Controller
             $validator = Validator::make($request->all(), [
                 'name' => 'required',
                 'category_id' => 'required|string|max:255',
-                'phone' => 'required',
-                'email' => 'required|string|email',
-                'address' => 'required|string|max:255',
-                'map_link' => 'required|string',
-                'incorporation_certificate' => 'required|string|max:255',
-                'nzbn_number' => 'required|string',
-                'ird_number' => 'required|string',
-                'discount' => 'nullable|numeric',
+                'web_link' => 'required|string',
             ]);
 
             if ($validator->fails()) {
@@ -219,36 +209,29 @@ class AllShopCategoryController extends Controller
             $loginUserId = Auth::guard('web')->user()->id;
 
             // If updating
-            $data = allshop::find($request->id) ?? new allshop();
-
+            $data = Webs::find($request->id) ?? new Webs();
+            
             // Set data
             $data->name = $request->name;
             $data->user_id = $loginUserId;
             $data->category_id = $request->category_id;
-            $data->phone = $request->phone;
-            $data->email = $request->email;
-            $data->address = $request->address;
-            $data->map_link = $request->map_link;
-            $data->incorporation_certificate = $request->incorporation_certificate;
-            $data->nzbn_number = $request->nzbn_number;
-            $data->ird_number = $request->ird_number;
-            $data->discount = $request->discount;
+            $data->web_link = $request->web_link;
             $data->status = 1;
             $data->save();
 
             // File upload (if applicable)
-            if ($request->hasFile('shop_attachment')) {
-                storeMediaFile($data, $request->file('shop_attachment'), 'shop_attachment');
-            } elseif (!$request->id && !getMediaFileExit($data, 'shop_attachment')) {
+            if ($request->hasFile('web_attachment')) {
+                storeMediaFile($data, $request->file('web_attachment'), 'web_attachment');
+            } elseif (!$request->id && !getMediaFileExit($data, 'web_attachment')) {
                 return redirect()->back()
-                    ->withErrors(['shop_attachment' => 'The attachments field is required.'])
+                    ->withErrors(['web_attachment' => 'The attachments field is required.'])
                     ->withInput();
             }
 
             DB::commit();
 
-            $message = $request->id ? 'Shop updated successfully' : 'Shop added successfully';
-            return redirect()->route('shop.allshop.index')->withSuccess($message);
+            $message = $request->id ? 'webs updated successfully' : 'webs added successfully';
+            return redirect()->route('web.allweb.index')->withSuccess($message);
         } catch (\Exception $e) {
             DB::rollback();
             return redirect()->back()->withInput()->with('errors', $e->getMessage());
@@ -300,13 +283,13 @@ class AllShopCategoryController extends Controller
         if(demoUserPermission()){
             return  redirect()->back()->withErrors(trans('messages.demo_permission_denied'));
         }
-        $category = allshop::find($id);
+        $shop = Webs::find($id);
 
-        $msg= __('messages.msg_fail_to_delete',['name' => __('messages.category')] );
+        $msg= __('messages.msg_fail_to_delete',['name' => __('messages.web')] );
 
-        if($category!='') {
-            $category->delete();
-            $msg= __('messages.msg_deleted',['name' => __('messages.category')] );
+        if($shop!='') {
+            $shop->delete();
+            $msg= __('messages.msg_deleted',['name' => __('messages.web')] );
         }
         if(request()->is('api/*')) {
             return comman_message_response($msg);
@@ -315,15 +298,15 @@ class AllShopCategoryController extends Controller
     }
     public function action(Request $request){
         $id = $request->id;
-        $category  = allshop::withTrashed()->where('id',$id)->first();
-        $msg = __('messages.t_found_entry',['name' => __('messages.category')] );
+        $shop  = Webs::withTrashed()->where('id',$id)->first();
+        $msg = __('messages.t_found_entry',['name' => __('messages.web')] );
         if($request->type == 'restore') {
-            $category->restore();
-            $msg = __('messages.msg_restored',['name' => __('messages.category')] );
+            $shop->restore();
+            $msg = __('messages.msg_restored',['name' => __('messages.web')] );
         }
         if($request->type === 'forcedelete'){
-            $category->forceDelete();
-            $msg = __('messages.msg_forcedelete',['name' => __('messages.category')] );
+            $shop->forceDelete();
+            $msg = __('messages.msg_forcedelete',['name' => __('messages.web')] );
         }
         if(request()->is('api/*')){
             return comman_message_response($msg);
@@ -339,7 +322,7 @@ class AllShopCategoryController extends Controller
 
         switch($type){
             case 'category':
-                $InTrash = allshop::withTrashed()->whereIn('id', $ids)->whereNotNull('deleted_at')->get();
+                $InTrash = Webs::withTrashed()->whereIn('id', $ids)->whereNotNull('deleted_at')->get();
             break;
             case 'subcategory':
                 $InTrash = SubCategory::withTrashed()->whereIn('id', $ids)->whereNotNull('deleted_at')->get();
