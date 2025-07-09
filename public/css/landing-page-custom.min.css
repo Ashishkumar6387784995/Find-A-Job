@@ -3086,10 +3086,10 @@ table.provider-detail-info td h6 {
     background: none !important;
     
 }
-.custom-tabs .nav-link1.active {
+/* .custom-tabs .nav-link1.active {
     color: #fff;
     border: 2px solid #d29c49;
-}
+} */
 
 .plus-icon {
     background-color: #fff;
@@ -3104,4 +3104,7 @@ table.provider-detail-info td h6 {
 .plus-icon svg {
   width: 50px;
   height: 50px;
+}
+.service-box-circle {
+    margin-bottom: 0px;
 }

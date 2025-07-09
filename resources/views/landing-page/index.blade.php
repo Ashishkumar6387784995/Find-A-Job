@@ -881,8 +881,8 @@
 				           <ul class="nav nav-tabs custom-tabs justify-content-center" id="myTab" role="tablist">
 							<li class="nav-item nav-item-1" role="presentation">
 							<div  class="nav-link1 active" id="news-tab" data-bs-toggle="tab" data-bs-target="#news">
-								<div class="service_box  ">
-									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+								<div class="service_box service-box-circle ">
+									<div class="img-box"><img src="{{asset('images/home/news.png')}}" class="img-fluid" /></div>
 									<h5><a href="#">News</a></h5>
 								</div>
 							</div>
@@ -890,8 +890,8 @@
 
 							<li class="nav-item nav-item-1" role="presentation">
 							<div  class="nav-link1" id="clean-tab" data-bs-toggle="tab" data-bs-target="#clean" >
-								<div class="service_box ">
-									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+								<div class="service_box service-box-circle">
+									<div class="img-box"><img src="{{asset('images/home/mop.png')}}" class="img-fluid" /></div>
 									<h5><a href="#">Clean</a></h5>
 								</div>
 
@@ -900,8 +900,8 @@
 
 							<li class="nav-item nav-item-1" role="presentation">
 							<div class="nav-link1" id="process-tab" data-bs-toggle="tab" data-bs-target="#process" >
-								<div class="service_box ">
-									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+								<div class="service_box service-box-circle">
+									<div class="img-box"><img src="{{asset('images/home/process.png')}}" class="img-fluid" /></div>
 									<h5><a href="#">Process</a></h5>
 								</div>
 
@@ -910,8 +910,8 @@
 
 							<li class="nav-item nav-item-1" role="presentation">
 							<div class="nav-link1 " id="bookmarks-tab" data-bs-toggle="tab" data-bs-target="#bookmarks">
-								<div class="service_box " >
-									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+								<div class="service_box service-box-circle" >
+									<div class="img-box"><img src="{{asset('images/home/bookmarks.png')}}" class="img-fluid" /></div>
 									<h5><a href="#">Bookmarks</a></h5>
 								</div>
 
