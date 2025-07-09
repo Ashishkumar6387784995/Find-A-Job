@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Jun 26, 2025 at 07:38 AM
--- Server version: 10.11.10-MariaDB
--- PHP Version: 7.2.34
+-- Host: 127.0.0.1
+-- Generation Time: Jul 09, 2025 at 07:37 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,8 +18,48 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `u104097785_Devdailycleans`
+-- Database: `find-a-job`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `all_shop`
+--
+
+CREATE TABLE `all_shop` (
+  `id` int(11) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `address` text DEFAULT NULL,
+  `map_link` text DEFAULT NULL,
+  `incorporation_certificate` varchar(255) DEFAULT NULL,
+  `nzbn_number` varchar(50) DEFAULT NULL,
+  `ird_number` varchar(50) DEFAULT NULL,
+  `discount` decimal(5,2) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT 1,
+  `time_slot` varchar(100) DEFAULT NULL,
+  `is_featured` tinyint(1) DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `all_shop`
+--
+
+INSERT INTO `all_shop` (`id`, `user_id`, `name`, `description`, `category_id`, `phone`, `email`, `address`, `map_link`, `incorporation_certificate`, `nzbn_number`, `ird_number`, `discount`, `status`, `time_slot`, `is_featured`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, 'Tech World', 'A leading electronics and gadgets store', 1, '9511420085', 'vnawa077@gmail.com', 'poopop', 'dfsagbmfKL', 'sdfkl', 'dfksfsv', 'sdlkfsfklg', NULL, 1, '10:00 AM - 8:00 PM', 1, '2025-07-03 13:09:08', '2025-07-04 07:37:36', NULL),
+(2, 1, 'Timpu Solution', NULL, 6, '9511420085', 'vnawa077@gmail.com', 'wjsju', 'http://127.0.0.1:8000/shop/allshop/create', 'fef4s6d787', 'd7e687ef', 'd4f4546', 12.00, 1, NULL, 0, '2025-07-04 06:55:04', '2025-07-04 06:55:04', NULL),
+(3, 1, 'Timpu Solution', NULL, 6, '9511420085', 'vnawa077@gmail.com', 'wjsju', 'http://127.0.0.1:8000/shop/allshop/create', 'fef4s6d787', 'd7e687ef', 'd4f4546', 12.00, 1, NULL, 0, '2025-07-04 07:00:35', '2025-07-04 07:00:35', NULL),
+(4, 1, 'p[p[p[[p', NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 1, '2025-07-04 07:01:11', '2025-07-07 07:44:58', NULL),
+(5, 1, 'p[p[p[[p', NULL, 6, '8114444444', 'admin@net-wallet.com', 'dwqeqqqw', 'wwqqw', 'adscdsd', 'dfksfsv', '211312', 12.00, 0, NULL, 0, '2025-07-04 07:01:31', '2025-07-07 07:45:46', NULL),
+(6, 1, 'sdvbnmn', NULL, 7, '2131', '43221@g', 'dssdd', 'http://127.0.0.1:8000/shop/allshop/create', 'adscdsd', 'ssss', '211312', 21.00, 1, NULL, 0, '2025-07-04 07:15:53', '2025-07-04 07:15:53', NULL);
 
 -- --------------------------------------------------------
 
@@ -416,17 +456,17 @@ INSERT INTO `categories` (`id`, `name`, `description`, `color`, `status`, `is_fe
 (14, 'Salon', 'The Salon category is a hub of beauty and grooming expertise, offering insights into hairstyling, skincare, and personal care routines for a confident and polished you. ✂️', '#000000', 1, 0, NULL, '2023-09-04 07:28:27', '2023-09-04 07:28:27'),
 (15, 'Photography', 'The Photography category captures the essence of visual storytelling, offering tips on composition, editing, and equipment to help you create captivating images. 📸', '#000000', 1, 0, NULL, '2023-09-04 07:28:53', '2023-09-04 07:28:53'),
 (16, 'Pest Control', 'The Pest Control category equips you with effective strategies to manage and eliminate pests, ensuring a pest-free environment and peace of mind. 🪲🪳', '#000000', 1, 0, NULL, '2023-09-04 07:29:13', '2023-09-04 07:29:13'),
-(17, 'Pandit', 'The Pandit category offers spiritual guidance, rituals, and insights rooted in ancient traditions, assisting individuals in their journey towards deeper understanding and connection.🔥', '#000000', 1, 0, NULL, '2023-09-04 07:29:31', '2025-06-03 09:43:59'),
-(18, 'Painter', 'The Painter category celebrates the world of colors and creativity, offering guidance on techniques, styles, and mediums for both aspiring and seasoned artists.🖌️🎨', '#000000', 1, 1, NULL, '2023-09-04 07:30:04', '2025-05-16 06:57:29'),
+(17, 'Pandit', 'The Pandit category offers spiritual guidance, rituals, and insights rooted in ancient traditions, assisting individuals in their journey towards deeper understanding and connection.🔥', '#000000', 1, 1, NULL, '2023-09-04 07:29:31', '2025-07-08 06:08:51'),
+(18, 'Painter', 'The Painter category celebrates the world of colors and creativity, offering guidance on techniques, styles, and mediums for both aspiring and seasoned artists.🖌️🎨', '#000000', 1, 1, NULL, '2023-09-04 07:30:04', '2025-07-08 06:08:51'),
 (19, 'Laundry', 'Experience the convenience of pristine garments with our comprehensive Laundry services, ensuring freshness and care for your clothing.🧼', '#000000', 1, 0, NULL, '2023-09-04 07:30:26', '2023-09-04 07:30:26'),
-(20, 'Gardener', 'The Gardener category cultivates a wealth of knowledge on plant care, landscaping, and sustainable gardening practices to help enthusiasts foster thriving green spaces. 🏡⛏️', '#000000', 1, 0, NULL, '2023-09-04 07:30:55', '2023-09-04 07:35:54'),
-(21, 'Automotive Care', 'Experience top-notch Automotive Care for your vehicle\'s longevity and performance. From maintenance to repairs, our experts ensure your ride stays at its best. 🚛🚙', '#000000', 1, 0, NULL, '2023-09-04 07:31:27', '2023-09-04 07:31:27'),
-(22, 'Cooking', 'The Cooking category offers a delightful exploration of culinary techniques, recipes, and kitchen tips, catering to both novice cooks and seasoned chefs. 🫕🍲', '#000000', 1, 1, NULL, '2023-09-04 07:32:07', '2023-09-04 07:32:10'),
-(23, 'Plumber', 'The Plumber category guides you through the intricacies of pipes, fixtures, and plumbing systems to help you tackle issues and master essential plumbing skills. 🛠️', '#000000', 1, 1, NULL, '2023-09-04 07:32:54', '2023-09-04 07:32:54'),
-(24, 'Cleaning', 'Efficiently remove dirt and grime with our cleaning products, restoring surfaces to their pristine condition. 🧼🧽🧹🧻', '#000000', 1, 1, NULL, '2023-09-04 07:33:21', '2023-09-04 07:33:21'),
-(25, 'Electrician', 'Delve into the Electrician category to illuminate your understanding of electrical systems, from wiring complexities to safety essentials. 💡🪛🔌', '#000000', 1, 1, NULL, '2023-09-04 07:34:01', '2023-09-04 07:36:04'),
-(26, 'Carpenter', 'A carpenter is a skilled tradesperson who specializes in working with wood to construct, install, and repair structures and objects. 🪛 🪚', '#000000', 1, 1, NULL, '2023-09-04 07:34:41', '2023-09-04 07:34:53'),
-(27, 'Remote Services', 'This service will be completed Online/Remotely. 🧑🏻‍🔧🔧🪛', '#000000', 1, 1, NULL, '2023-09-04 07:35:01', '2023-09-04 07:35:01');
+(20, 'Gardener', 'The Gardener category cultivates a wealth of knowledge on plant care, landscaping, and sustainable gardening practices to help enthusiasts foster thriving green spaces. 🏡⛏️', '#000000', 1, 1, NULL, '2023-09-04 07:30:55', '2025-07-08 06:08:51'),
+(21, 'Automotive Care', 'Experience top-notch Automotive Care for your vehicle\'s longevity and performance. From maintenance to repairs, our experts ensure your ride stays at its best. 🚛🚙', '#000000', 1, 1, NULL, '2023-09-04 07:31:27', '2025-07-08 06:08:51'),
+(22, 'Cooking', 'The Cooking category offers a delightful exploration of culinary techniques, recipes, and kitchen tips, catering to both novice cooks and seasoned chefs. 🫕🍲', '#000000', 1, 1, NULL, '2023-09-04 07:32:07', '2025-07-08 06:08:51'),
+(23, 'Plumber', 'The Plumber category guides you through the intricacies of pipes, fixtures, and plumbing systems to help you tackle issues and master essential plumbing skills. 🛠️', '#000000', 1, 1, NULL, '2023-09-04 07:32:54', '2025-07-08 06:08:51'),
+(24, 'Cleaning', 'Efficiently remove dirt and grime with our cleaning products, restoring surfaces to their pristine condition. 🧼🧽🧹🧻', '#000000', 1, 1, NULL, '2023-09-04 07:33:21', '2025-07-08 06:08:51'),
+(25, 'Electrician', 'Delve into the Electrician category to illuminate your understanding of electrical systems, from wiring complexities to safety essentials. 💡🪛🔌', '#000000', 1, 1, NULL, '2023-09-04 07:34:01', '2025-07-08 06:08:51'),
+(26, 'Carpenter', 'A carpenter is a skilled tradesperson who specializes in working with wood to construct, install, and repair structures and objects. 🪛 🪚', '#000000', 1, 1, NULL, '2023-09-04 07:34:41', '2025-07-08 06:08:51'),
+(27, 'Remote Services', 'This service will be completed Online/Remotely. 🧑🏻‍🔧🔧🪛', '#000000', 1, 1, NULL, '2023-09-04 07:35:01', '2025-07-08 06:08:51');
 
 -- --------------------------------------------------------
 
@@ -50019,8 +50059,11 @@ INSERT INTO `media` (`id`, `model_type`, `model_id`, `uuid`, `collection_name`, 
 (334, 'App\\Models\\Service', 138, 'a1770d0e-88a9-4a38-8ba6-6fc09b13a2d5', 'service_attachment', 'car', 'car.png', 'image/png', 'public', 'public', 13361, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:44:10', '2025-06-03 06:44:10'),
 (335, 'App\\Models\\Service', 139, '8f6c216b-1df4-4b03-a947-4d6efcf430fd', 'service_attachment', 'mop-230x230-1', 'mop-230x230-1.png', 'image/png', 'public', 'public', 10535, '[]', '[]', '[]', '[]', 1, '2025-06-03 06:48:58', '2025-06-03 06:48:58'),
 (342, 'App\\Models\\Service', 139, '32c7bcb7-ed85-423b-9697-92b0d8b5c3d7', 'service_attachment', 'WhatsApp Image 2025-04-28 at 10.40.11 AM', 'WhatsApp-Image-2025-04-28-at-10.40.11-AM.jpeg', 'image/jpeg', 'public', 'public', 276963, '[]', '[]', '[]', '[]', 2, '2025-06-03 11:19:34', '2025-06-03 11:19:34'),
-(343, 'App\\Models\\Service', 139, '1420ce8a-370f-4da0-91a6-41a78d055b03', 'service_attachment', 'WhatsApp Image 2025-04-28 at 10.40.12 AM (1)', 'WhatsApp-Image-2025-04-28-at-10.40.12-AM-(1).jpeg', 'image/jpeg', 'public', 'public', 444101, '[]', '[]', '[]', '[]', 3, '2025-06-03 11:19:34', '2025-06-03 11:19:34'),
-(344, 'App\\Models\\Service', 139, '9132825e-e63e-4c2e-a7c4-cbb571edef36', 'service_attachment', 'WhatsApp Image 2025-04-28 at 10.40.08 AM', 'WhatsApp-Image-2025-04-28-at-10.40.08-AM.jpeg', 'image/jpeg', 'public', 'public', 338816, '[]', '[]', '[]', '[]', 4, '2025-06-03 12:21:29', '2025-06-03 12:21:29');
+(353, 'App\\Models\\web\\webCategory', 9, '4c389ab1-5d31-437c-bc34-144b40c055ae', 'category_image', 'screencapture-127-0-0-1-8000-company-bulk-staff-request-form-2025-06-27-11_43_51', 'screencapture-127-0-0-1-8000-company-bulk-staff-request-form-2025-06-27-11_43_51.png', 'image/png', 'public', 'public', 374420, '[]', '[]', '[]', '[]', 1, '2025-07-04 07:10:39', '2025-07-04 07:10:39'),
+(355, 'App\\Models\\shop\\allshop', 6, 'baa137aa-5721-4824-88c7-c808b216da4b', 'shop_attachment', 'gym', 'gym.png', 'image/png', 'public', 'public', 2023, '[]', '[]', '[]', '[]', 1, '2025-07-05 01:22:54', '2025-07-05 01:22:54'),
+(356, 'App\\Models\\shop\\allshop', 5, 'f098f05f-e932-43ef-a912-71eb83db4590', 'shop_attachment', 'traditional-7659865_1280', 'traditional-7659865_1280.jpg', 'image/jpeg', 'public', 'public', 433980, '[]', '[]', '[]', '[]', 1, '2025-07-05 01:24:11', '2025-07-05 01:24:11'),
+(357, 'App\\Models\\shop\\allshop', 1, 'a57e8860-a3b7-4b09-af24-928269d59314', 'shop_attachment', 'interview-7695015_1280', 'interview-7695015_1280.png', 'image/png', 'public', 'public', 239083, '[]', '[]', '[]', '[]', 1, '2025-07-07 05:05:32', '2025-07-07 05:05:32'),
+(358, 'App\\Models\\web\\Webs', 2, '5e939638-9321-477e-9dca-404a55ceb7ec', 'web_attachment', 'WhatsApp Image 2025-04-28 at 10.40.12 AM (2)', 'WhatsApp-Image-2025-04-28-at-10.40.12-AM-(2).jpeg', 'image/jpeg', 'public', 'public', 79042, '[]', '[]', '[]', '[]', 1, '2025-07-08 06:55:01', '2025-07-08 06:55:01');
 
 -- --------------------------------------------------------
 
@@ -50237,6 +50280,9 @@ INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (4, 'App\\Models\\User', 58),
 (4, 'App\\Models\\User', 59),
 (4, 'App\\Models\\User', 60),
+(4, 'App\\Models\\User', 61),
+(4, 'App\\Models\\User', 62),
+(4, 'App\\Models\\User', 63),
 (5, 'App\\Models\\User', 18),
 (5, 'App\\Models\\User', 19),
 (5, 'App\\Models\\User', 20),
@@ -50260,7 +50306,11 @@ INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (5, 'App\\Models\\User', 54),
 (5, 'App\\Models\\User', 55),
 (5, 'App\\Models\\User', 56),
-(5, 'App\\Models\\User', 57);
+(5, 'App\\Models\\User', 57),
+(6, 'App\\Models\\User', 67),
+(6, 'App\\Models\\User', 68),
+(7, 'App\\Models\\User', 65),
+(7, 'App\\Models\\User', 69);
 
 -- --------------------------------------------------------
 
@@ -50741,6 +50791,16 @@ CREATE TABLE `personal_access_tokens` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `personal_access_tokens`
+--
+
+INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `name`, `token`, `abilities`, `last_used_at`, `created_at`, `updated_at`, `expires_at`) VALUES
+(1, 'App\\Models\\User', 1, 'auth_token', '4205089da53c6e4ede226ea27b662b40c39aac0d9a99f03088ebd99503cc29f3', '[\"*\"]', NULL, '2025-07-02 04:50:40', '2025-07-02 04:50:40', NULL),
+(2, 'App\\Models\\User', 1, 'auth_token', 'ebcf56a9e0bdb1bcbf91aece4e6cfb648e98f59579371f90607511873d0a7d33', '[\"*\"]', NULL, '2025-07-02 04:58:47', '2025-07-02 04:58:47', NULL),
+(3, 'App\\Models\\User', 1, 'auth_token', '538b87b03c57c743efd8442b696611d66f09d5f89456747b37039e37859558bc', '[\"*\"]', NULL, '2025-07-02 04:59:21', '2025-07-02 04:59:21', NULL),
+(4, 'App\\Models\\User', 1, 'auth_token', '0b06604356805dd40ed22fc5d1957bb2eface79d8d15497f382a31490e58b4bf', '[\"*\"]', NULL, '2025-07-02 06:01:00', '2025-07-02 06:01:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -51751,7 +51811,9 @@ INSERT INTO `roles` (`id`, `name`, `guard_name`, `status`, `created_at`, `update
 (2, 'demo_admin', 'web', 1, '2021-06-03 06:53:16', '2021-06-04 04:54:13'),
 (3, 'user', 'web', 1, '2021-06-04 05:01:46', '2021-06-04 05:01:46'),
 (4, 'provider', 'web', 1, '2021-06-04 05:01:46', '2021-06-04 05:01:46'),
-(5, 'handyman', 'web', 1, '2021-06-04 05:01:46', '2021-06-04 05:01:46');
+(5, 'handyman', 'web', 1, '2021-06-04 05:01:46', '2021-06-04 05:01:46'),
+(6, 'company', 'web', 1, '2025-06-30 05:01:46', '2025-06-30 05:01:46'),
+(7, 'store', 'web', 1, '2025-06-30 05:01:46', '2025-06-30 05:01:46');
 
 -- --------------------------------------------------------
 
@@ -52284,7 +52346,7 @@ INSERT INTO `services` (`id`, `name`, `category_id`, `provider_id`, `price`, `ty
 (136, 'Lawn Moving', 21, 6, 34, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:42:28', '2025-06-03 06:42:28', NULL, 'service', 0, 0, NULL, 'ON_SITE'),
 (137, 'Rubbish Cleaning', 24, 9, 32, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:43:25', '2025-06-03 06:43:25', NULL, 'service', 0, 0, NULL, 'ON_SITE'),
 (138, 'Car Cleaning', 24, 9, 31, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:44:10', '2025-06-03 06:44:10', NULL, 'service', 0, 0, NULL, 'ON_SITE'),
-(139, 'Commercial Cleaning', 24, 7, 24, 'fixed', NULL, NULL, 1, NULL, 0, 1, NULL, '2025-06-03 06:48:58', '2025-06-03 06:48:58', NULL, 'service', 0, 0, NULL, 'ON_SITE');
+(139, 'Commercial Cleaning', 24, 7, 24, 'fixed', NULL, NULL, 1, 'Our Commercial Cleaning service is tailored for offices, retail stores, restaurants, clinics, and other business spaces. We provide thorough, reliable, and hygienic cleaning solutions that ensure a spotless and healthy environment for your employees and customers. From daily maintenance to deep cleaning, our trained staff use eco-friendly products and industry-grade equipment to meet your specific needs with precision and professionalism.', 0, 1, NULL, '2025-06-03 06:48:58', '2025-07-04 01:18:29', NULL, 'service', 0, 0, NULL, 'ON_SITE');
 
 -- --------------------------------------------------------
 
@@ -52651,6 +52713,36 @@ INSERT INTO `settings` (`id`, `type`, `key`, `value`) VALUES
 INSERT INTO `settings` (`id`, `type`, `key`, `value`) VALUES
 (13, 'data_deletion_request', 'data_deletion_request', '{\"data_deletion_request\":\"<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: #727272; font-family: Inter, sans-serif, \'Liberation Mono\', \'Courier New\', monospace; font-size: 16px; background-color: #ffffff;\\\">To ensure the safety and privacy of your data, we offer a streamlined process for requesting its removal from our servers. To initiate the deletion process, kindly send an email from your registered email address to our dedicated email inbox at&nbsp;<span style=\\\"box-sizing: border-box; font-weight: bolder;\\\">hello@iqonic.design<\\/span>&nbsp;Upon based on your request, our team will thoroughly examine the provided details and proceed with necessary actions in adherence to our privacy policies and legal obligations.<\\/p>\\r\\n<p style=\\\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: #727272; font-family: Inter, sans-serif, \'Liberation Mono\', \'Courier New\', monospace; font-size: 16px; background-color: #ffffff;\\\">&nbsp;<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: #727272; font-family: Inter, sans-serif, \'Liberation Mono\', \'Courier New\', monospace; font-size: 16px; background-color: #ffffff;\\\">Sincerely,<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: #727272; font-family: Inter, sans-serif, \'Liberation Mono\', \'Courier New\', monospace; font-size: 16px; background-color: #ffffff;\\\">The Handyman Team<\\/p>\",\"status\":\"1\"}'),
 (14, 'about_us', 'about_us', '{\"about_us\":\"<p>Launch your own mobile-based online On-Demand Home Services with Find A Job mobile app. The customizable templates of this amazing app can quickly let developers to set up a service booking system to accept bookings from clients from anywhere in only a few minutes. With ready to use Sign in page, Sign up pages, Payment methods page, Booking lists, Service Type demo, Handyman detail page, Coupon page, and more, this Find A Job app allows business to have a complete and running booking service system app in no time.The provider in this Find A Job app can assign the booking to Handyman and accelerate the service. This Find A Job system app comes with a Laravel PHP admin panel to have a meaningful insights from the admin dashboard and statistics. Assign multi-roles and permissions like Admin, Service Provider, Handyman, and customers using this app. Additionally, this Find A Job app supports Multiple Language\\/ RTL support. This customizable, ready-to-use app comes with light as well as dark theme support and push notification to engage with clients in a more interactive way.<\\/p>\",\"status\":\"1\"}');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shop_category`
+--
+
+CREATE TABLE `shop_category` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_by` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` text DEFAULT NULL,
+  `color` varchar(100) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT 1 COMMENT '1- Active , 0- InActive',
+  `is_featured` tinyint(4) DEFAULT 0,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `shop_category`
+--
+
+INSERT INTO `shop_category` (`id`, `created_by`, `name`, `description`, `color`, `status`, `is_featured`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Ac Technician', 'All type Ac Maintenance', NULL, 1, 1, NULL, '2025-06-30 07:20:36', '2025-07-03 00:27:56'),
+(5, 1, 'House Keeping', 'General: Housekeeping encompasses cleaning, tidying, maintenance, laundry, stocking supplies, and sometimes errands or light cooking.', NULL, 1, 1, NULL, '2025-07-01 05:57:27', '2025-07-03 00:27:59'),
+(6, 1, 'Car Wash 4', 'Any type car washing. 4', NULL, 0, 0, NULL, '2025-07-01 07:56:48', '2025-07-07 07:42:51'),
+(7, 1, 'Truck Driver', 'A truck driver is responsible for transporting goods and materials over land, using various types of trucks, often over long distances', NULL, 1, 1, NULL, '2025-07-02 06:09:04', '2025-07-03 00:28:04'),
+(8, 1, 'Home Sensitization', 'Fully home Sensitization', NULL, 1, 1, NULL, '2025-07-02 23:55:47', '2025-07-03 00:28:08');
 
 -- --------------------------------------------------------
 
@@ -56849,6 +56941,63 @@ INSERT INTO `static_data` (`id`, `type`, `label`, `value`, `status`, `created_at
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `store_categories`
+--
+
+CREATE TABLE `store_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_by` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` text DEFAULT NULL,
+  `color` varchar(100) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT 1 COMMENT '1- Active , 0- InActive',
+  `is_featured` tinyint(4) DEFAULT 0,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `store_categories`
+--
+
+INSERT INTO `store_categories` (`id`, `created_by`, `name`, `description`, `color`, `status`, `is_featured`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Ac Technician', 'All type Ac Maintenance', NULL, 1, 1, NULL, '2025-06-30 07:20:36', '2025-07-03 00:27:56'),
+(5, 1, 'House Keeping', 'General: Housekeeping encompasses cleaning, tidying, maintenance, laundry, stocking supplies, and sometimes errands or light cooking.', NULL, 1, 1, NULL, '2025-07-01 05:57:27', '2025-07-03 00:27:59'),
+(6, 1, 'Car Wash 4', 'Any type car washing. 4', NULL, 1, 1, NULL, '2025-07-01 07:56:48', '2025-07-03 00:28:02'),
+(7, 1, 'Truck Driver', 'A truck driver is responsible for transporting goods and materials over land, using various types of trucks, often over long distances', NULL, 1, 1, NULL, '2025-07-02 06:09:04', '2025-07-03 00:28:04'),
+(8, 1, 'Home Sensitization', 'Fully home Sensitization', NULL, 1, 1, NULL, '2025-07-02 23:55:47', '2025-07-03 00:28:08');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `store_sub_categories`
+--
+
+CREATE TABLE `store_sub_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `category_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `status` tinyint(4) DEFAULT 1 COMMENT '1- Active , 0- InActive',
+  `is_featured` tinyint(4) DEFAULT 0,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `store_sub_categories`
+--
+
+INSERT INTO `store_sub_categories` (`id`, `category_id`, `name`, `description`, `status`, `is_featured`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, 9, 'AC Installation and Setup', 'Explore step-by-step guides and tips for correctly installing and setting up air conditioning units in various environments, ensuring optimal cooling performance.', 1, 1, NULL, '2023-09-04 07:38:30', '2023-09-04 07:46:02'),
+(2, 9, 'AC Maintenance and Cleaning', 'Learn essential techniques for regular maintenance, cleaning, and upkeep of air conditioning systems to improve efficiency, extend lifespan, and maintain air quality.', 1, 0, NULL, '2023-09-04 07:39:08', '2023-09-04 07:39:08'),
+(3, 21, 'Maintenance and Servicing', 'Keep your vehicle in optimal condition. 🚛🚙', 1, 1, NULL, '2023-09-04 07:42:12', '2023-09-04 07:46:02');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `subscription_transactions`
 --
 
@@ -56894,13 +57043,13 @@ INSERT INTO `sub_categories` (`id`, `category_id`, `name`, `description`, `statu
 (4, 21, 'Repairs and Diagnostics', 'Swift solutions for vehicle issues. 🚒', 1, 0, NULL, '2023-09-04 07:43:52', '2023-09-04 07:43:52'),
 (5, 26, 'Furniture Carpentry', 'Learn the art of crafting functional and aesthetically pleasing furniture pieces through woodworking techniques . 🪚 🔨', 1, 1, NULL, '2023-09-04 07:45:27', '2023-09-04 07:46:06'),
 (6, 26, 'Structural Carpentry', 'Dive into the construction side of carpentry, focusing on building frameworks, roofs, and structural elements for various projects. 🔨', 1, 0, NULL, '2023-09-04 07:45:57', '2023-09-04 07:45:57'),
-(7, 24, 'House & Office Cleaning', 'Comprehensive cleaning solutions for both residential spaces and professional workplaces, ensuring cleanliness and comfort.  🧽🧹🧻', 1, 1, NULL, '2023-09-04 07:47:55', '2023-10-06 06:11:29'),
+(7, 24, 'House & Office Cleaning', 'Comprehensive cleaning solutions for both residential spaces and professional workplaces, ensuring cleanliness and comfort.  🧽🧹🧻', 1, 1, NULL, '2023-09-04 07:47:55', '2025-07-08 06:09:45'),
 (8, 24, 'Interior Surface Refresh', 'Experience thorough cleaning and revitalization with our comprehensive Carpet, Curtain, Ceiling & Upholstery Cleaning services. 🧽🪣🧼', 1, 1, NULL, '2023-09-04 07:50:37', '2023-09-04 07:50:42'),
 (9, 22, 'Home Style Cuisine Services', 'Experience the warmth of home-cooked meals with our Home-style Cuisine Services, offering daily meals and family-style dinners crafted with care. 🍲🫕', 1, 0, NULL, '2023-09-04 07:54:24', '2023-09-04 07:54:24'),
 (10, 22, 'International Culinary Specialists', 'Experience a global gastronomic journey with our International Culinary Specialists, bringing the world\'s flavors to your plate. 🥙🥗🫔🍕🥘', 1, 0, NULL, '2023-09-04 07:55:04', '2023-09-04 07:55:04'),
 (11, 25, 'Wiring and Installation', 'Expert wiring solutions for safety and functionality. 🪛🛠️', 1, 1, NULL, '2023-09-06 08:02:07', '2023-09-06 08:09:44'),
 (12, 25, 'Lighting Fixtures', 'Illuminate your space with our lighting solutions. 🔩🔧', 1, 0, NULL, '2023-09-06 08:02:57', '2023-09-06 08:02:57'),
-(13, 20, 'Garden Maintenance', 'Transform your outdoor space with creative landscape designs. 🌲🪴🥀🌻🌴🌾', 1, 1, NULL, '2023-09-06 08:05:23', '2023-09-11 05:16:11'),
+(13, 20, 'Garden Maintenance', 'Transform your outdoor space with creative landscape designs. 🌲🪴🥀🌻🌴🌾', 1, 1, NULL, '2023-09-06 08:05:23', '2025-07-08 06:09:45'),
 (14, 20, 'Lawn Care', 'Maintain a lush and healthy lawn with expert care. ⛏️🪴🥀', 1, 0, NULL, '2023-09-06 08:06:15', '2023-09-08 02:40:19'),
 (15, 18, 'Interior Painting', 'Transform your indoor spaces with expert interior painting. 🖌️', 1, 1, NULL, '2023-09-06 08:08:23', '2023-09-06 08:09:41'),
 (16, 18, 'Exterior Painting', 'Renew your property\'s exterior with professional painting. 🖌️', 1, 0, NULL, '2023-09-06 08:09:34', '2023-09-06 08:09:34'),
@@ -56918,7 +57067,7 @@ INSERT INTO `sub_categories` (`id`, `category_id`, `name`, `description`, `statu
 (28, 13, 'Commercial Sanitization', 'Professional sanitization for a hygienic workplace. 🚿', 1, 0, NULL, '2023-09-08 00:45:35', '2023-09-08 00:45:35'),
 (29, 12, 'Personal Protection', 'Ensure personal safety with professional security solutions. 👮🏻', 1, 0, NULL, '2023-09-08 00:54:18', '2023-09-08 00:54:18'),
 (30, 12, 'Property Security', 'Safeguard properties with effective security measures. 👮🏻‍♀️', 1, 0, NULL, '2023-09-08 00:55:09', '2023-09-08 00:55:09'),
-(31, 11, 'Home Automation', 'Transform your home with advanced automation. 📱', 1, 1, NULL, '2023-09-08 02:25:09', '2023-09-08 02:54:33'),
+(31, 11, 'Home Automation', 'Transform your home with advanced automation. 📱', 1, 1, NULL, '2023-09-08 02:25:09', '2025-07-08 06:09:45'),
 (32, 11, 'Entertainment and Media', 'Elevate your home entertainment experience. 🎥', 1, 0, NULL, '2023-09-08 02:27:27', '2023-09-08 02:27:27'),
 (33, 10, 'Clothing Alterations', 'Perfect fits with expert alterations. 👗👕👖', 1, 0, NULL, '2023-09-08 02:29:02', '2023-09-08 02:29:02'),
 (34, 10, 'Custom Clothing', 'Unique designs tailored just for you. 👘👚🥻', 1, 0, NULL, '2023-09-08 02:32:37', '2023-09-08 02:32:37'),
@@ -56927,16 +57076,16 @@ INSERT INTO `sub_categories` (`id`, `category_id`, `name`, `description`, `statu
 (37, 19, 'Special Garment Care', 'Tailored care for unique items.  👘👚🥻', 1, 0, NULL, '2023-09-08 02:37:35', '2023-09-08 02:37:35'),
 (38, 19, 'Dry Cleaning', 'Restore elegance and quality to your wardrobe.  👗👔👖', 1, 0, NULL, '2023-09-08 02:38:41', '2023-09-08 02:38:41'),
 (40, 21, 'Detailing and Appearance', 'Enhance your vehicle\'s aesthetics. 🚗', 1, 0, NULL, '2023-09-08 02:41:19', '2023-09-08 02:41:19'),
-(41, 10, 'Repairs and Restorations', 'Extend the life of your favorite garments. 👗👔👖', 1, 1, NULL, '2023-09-08 02:42:10', '2023-09-08 02:49:39'),
+(41, 10, 'Repairs and Restorations', 'Extend the life of your favorite garments. 👗👔👖', 1, 1, NULL, '2023-09-08 02:42:10', '2025-07-08 06:09:45'),
 (42, 11, 'Security and Surveillance', 'Enhance your home\'s security with cutting-edge technology. 📹', 1, 0, NULL, '2023-09-08 02:44:50', '2023-09-08 02:44:50'),
-(43, 14, 'Nail Care', 'Enhance your nails with professional care. 💅🏼', 1, 1, NULL, '2023-09-08 02:45:18', '2023-09-08 02:49:40'),
+(43, 14, 'Nail Care', 'Enhance your nails with professional care. 💅🏼', 1, 1, NULL, '2023-09-08 02:45:18', '2025-07-08 06:09:45'),
 (44, 23, 'Drainage Solutions', 'Effective solutions for drainage problems. 🛠️🪠', 1, 0, NULL, '2023-09-08 02:46:19', '2023-09-08 02:46:19'),
-(45, 22, 'Baking and Pastry', 'Explore the artistry of flavors and textures with our Baking and Pastry creations, where sweet delights come to life. 🎂🧁', 1, 1, NULL, '2023-09-08 02:47:07', '2023-09-08 02:49:41'),
-(46, 25, 'Electrical Troubleshooting', 'Swift diagnosis and resolution of electrical issues. 🪛🛠️', 1, 1, NULL, '2023-09-08 02:48:27', '2023-09-08 02:49:44'),
+(45, 22, 'Baking and Pastry', 'Explore the artistry of flavors and textures with our Baking and Pastry creations, where sweet delights come to life. 🎂🧁', 1, 1, NULL, '2023-09-08 02:47:07', '2025-07-08 06:09:45'),
+(46, 25, 'Electrical Troubleshooting', 'Swift diagnosis and resolution of electrical issues. 🪛🛠️', 1, 1, NULL, '2023-09-08 02:48:27', '2025-07-08 06:09:45'),
 (47, 24, 'Deep Cleaning', 'Revitalize your space with our thorough deep cleaning service. Our expert cleaners target hidden dirt and grime, leaving your surroundings refreshed and rejuvenated. 🧽🧹🧻 🪣🧼', 1, 0, NULL, '2023-09-08 02:49:27', '2023-09-08 02:49:27'),
-(48, 26, 'Finish Carpentry', 'Explore the intricate details of carpentry, including molding, trim work, and fine finishes that add the perfect touch to any woodworking project. 🪚 🔨', 1, 0, NULL, '2023-09-08 02:51:16', '2023-09-08 02:51:16'),
-(49, 9, 'AC Troubleshooting and Repairs', 'Discover troubleshooting methods and solutions to common AC issues, along with guidance on minor repairs, helping you save costs and keep your air conditioner in top working condition. 🪛🛠️', 1, 1, NULL, '2023-09-08 02:52:02', '2023-09-08 02:54:06'),
-(50, 19, 'Wash and Fold', 'Convenience and freshness in every load. 👖👕👗', 1, 0, NULL, '2023-09-09 01:41:40', '2023-09-09 01:41:40');
+(48, 26, 'Finish Carpentry', 'Explore the intricate details of carpentry, including molding, trim work, and fine finishes that add the perfect touch to any woodworking project. 🪚 🔨', 1, 1, NULL, '2023-09-08 02:51:16', '2025-07-08 06:09:45'),
+(49, 9, 'AC Troubleshooting and Repairs', 'Discover troubleshooting methods and solutions to common AC issues, along with guidance on minor repairs, helping you save costs and keep your air conditioner in top working condition. 🪛🛠️', 1, 1, NULL, '2023-09-08 02:52:02', '2025-07-08 06:09:45'),
+(50, 19, 'Wash and Fold', 'Convenience and freshness in every load. 👖👕👗', 1, 1, NULL, '2023-09-09 01:41:40', '2025-07-08 06:09:45');
 
 -- --------------------------------------------------------
 
@@ -57034,11 +57183,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `first_name`, `last_name`, `email`, `password`, `user_type`, `contact_number`, `country_id`, `state_id`, `city_id`, `provider_id`, `address`, `player_id`, `status`, `display_name`, `providertype_id`, `is_featured`, `time_zone`, `last_notification_seen`, `email_verified_at`, `remember_token`, `deleted_at`, `created_at`, `updated_at`, `login_type`, `service_address_id`, `uid`, `handymantype_id`, `is_subscribe`, `social_image`, `is_available`, `designation`, `last_online_time`, `slots_for_all_services`, `known_languages`, `skills`, `description`, `why_choose_me`, `is_email_verified`, `language_option`) VALUES
-(1, 'admin', 'Super', 'Admin', 'admin@admin.com', '$2y$10$sI.KLeWHLbcOOAm3AtqNE.m6Xl5MAQX/cnqA3m9IZICAj7CctjVXu', 'admin', '9876543210', 38, 674, 10839, NULL, 'Melville, SK, Canada', NULL, 1, 'Admin Admin', NULL, 0, 'UTC', '2023-09-29 02:17:07', NULL, NULL, NULL, '2021-05-28 10:29:15', '2023-10-03 04:22:48', NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 'en'),
+(1, 'admin', 'Super', 'Admin', 'admin@admin.com', '$2y$10$sI.KLeWHLbcOOAm3AtqNE.m6Xl5MAQX/cnqA3m9IZICAj7CctjVXu', 'admin', '9876543210', 38, 674, 10839, NULL, 'Melville, SK, Canada', NULL, 1, 'Admin Admin', NULL, 0, 'UTC', '2025-07-08 06:39:25', NULL, NULL, NULL, '2021-05-28 10:29:15', '2025-07-08 06:39:25', NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 'en'),
 (2, 'demo_admin', 'Demo', 'Admin', 'demo@admin.com', '$2y$10$.aAUJjiCdWcNtxZApP1mHeet2bnkV28XotslYkylsnrdYdRezhDAG', 'demo_admin', '4564552664', 231, 3924, 42865, NULL, NULL, NULL, 1, 'Demo Admin', NULL, 0, 'UTC', NULL, NULL, NULL, NULL, '2021-05-29 00:10:38', NULL, NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 'en'),
 (3, 'pedro_norris', 'Pedro', 'Norris', 'demo@user.com', '$2y$10$ZpS0Lff9ekNT40HjJrNfwOWWavDR8iHiZzb/OT6uBp.qiWvOTrmGe', 'user', '1-56781289', 38, 674, 10843, NULL, 'North Battleford, SK, Canada', '02e37223-24ec-45c3-831b-f550af48c816', 1, 'Pedro Norris', NULL, 0, 'UTC', NULL, NULL, NULL, NULL, '2021-05-28 07:06:58', '2023-09-12 00:01:58', NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 'en'),
 (4, 'felix_harris', 'Felix', 'Harris', 'demo@provider.com', '$2y$10$TJzchSyVoKWcq7gxoI/UM.rWIFVu5KKAQ7mV1qHSAy8LfuNyxG3UC', 'provider', '1-81289567', 38, 674, 10843, NULL, 'North Battleford, SK, Canada', '2890cc77-2f48-4f98-b9e0-f867e488d6b0', 1, 'Felix Harris', 1, 1, 'UTC', '2023-09-22 08:06:32', NULL, NULL, NULL, '2021-05-29 00:13:47', '2023-09-22 08:06:32', NULL, NULL, NULL, NULL, 1, NULL, 0, 'Manager', NULL, 0, '[\"English\",\"Spanish\",\"French\"]', '[]', 'My work is not just a job, but a lifelong passion. With years of experience, I\'ve refined my skills and honed my craft to provide top-quality service to my clients. 😍', NULL, 1, 'en'),
-(6, 'andrew_rhodes', 'Andrew', 'Rhodes', 'andrew@gmail.com', '$2y$10$Qmt.Y68.ORv2nEp9mFTcA.CCuDKiNt4EfQKj.8zJc6ls43sF4nI9u', 'provider', '1-8783783872', 231, 3938, 44580, NULL, 'Covington, KY, USA', '2890cc77-2f48-4f98-b9e0-f867e488d6b0', 1, 'Andrew Rhodes', 1, 0, 'UTC', NULL, NULL, NULL, NULL, '2023-09-01 07:51:24', '2023-10-06 00:22:20', NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 'en'),
+(6, 'andrew_rhodes', 'Andrew', 'Rhodes', 'andrew@gmail.com', '$2y$10$Qmt.Y68.ORv2nEp9mFTcA.CCuDKiNt4EfQKj.8zJc6ls43sF4nI9u', 'provider', '1-8783783872', 231, 3938, 44580, NULL, 'Covington, KY, USA', '2890cc77-2f48-4f98-b9e0-f867e488d6b0', 1, 'Andrew Rhodes', 1, 0, 'UTC', NULL, NULL, NULL, NULL, '2023-09-01 07:51:24', '2025-07-02 04:42:27', NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 'en'),
 (7, 'jennifer_perez', 'Jennifer', 'Davis', 'jennifer@gmail.com', '$2y$10$CnvSdco.sKvobxFiA0aZe.6YsHZ/C.NR2chE.w5VWBYXS6V82gpzS', 'provider', '44-5874968574', 230, 3810, 41414, NULL, 'Belfast, UK', '2890cc77-2f48-4f98-b9e0-f867e488d6b0', 1, 'Jennifer Davis', 2, 0, 'UTC', NULL, NULL, NULL, NULL, '2023-09-01 07:54:13', '2023-09-29 00:19:13', NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 'en'),
 (8, 'danny_mark', 'Danny', 'Mark', 'danny@gmail.com', '$2y$10$lsF28CXKiXK/Vf4ljisr9eCvXtGdZ7ptEqBIcJLh2m2g161gGycVC', 'provider', '1-66755245', 231, 3942, 44771, NULL, 'Cambridge, MD, USA', '2890cc77-2f48-4f98-b9e0-f867e488d6b0', 1, 'Danny Mark', 1, 0, 'UTC', NULL, NULL, NULL, NULL, '2023-09-03 23:59:53', '2023-09-30 01:41:39', NULL, NULL, NULL, NULL, 0, NULL, 0, 'Manager', NULL, 0, NULL, NULL, NULL, NULL, 1, 'en'),
 (9, 'kahlil_graham', 'Kahlil', 'Graham', 'kahil@gmail.com', '$2y$10$KomXwIujfFW/14mnxhg/ZO4mny3yJS8cFicQKFVAfBCntNFg5UP0S', 'provider', '1-5896547896', 231, 3941, 44709, NULL, 'Augusta, ME, USA', NULL, 1, 'Kahlil Graham', 1, 0, 'UTC', NULL, NULL, NULL, NULL, '2023-09-04 00:03:47', '2023-09-04 00:58:41', NULL, NULL, NULL, NULL, 0, NULL, 0, 'Manager', NULL, 0, NULL, NULL, NULL, NULL, 1, 'en'),
@@ -57086,11 +57235,15 @@ INSERT INTO `users` (`id`, `username`, `first_name`, `last_name`, `email`, `pass
 (53, 'antonio_griffin', 'Antonio', 'Griffin', 'antonio@gmail.com', '$2y$10$EhnTZBgvbzAMzJK3NEoTBuuvd6IkmiYvxwtYw4iUcRSqdaYSwDqW2', 'provider', '1-63521452', 38, 674, 10843, NULL, 'North Battleford, SK, Canada', NULL, 0, 'Antonio Griffin', 1, 0, 'UTC', NULL, NULL, NULL, NULL, '2023-09-25 02:19:34', '2023-09-25 02:32:08', NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 'en'),
 (54, 'adam_parry', 'Adam', 'Parry', 'adam@gmail.com', '$2y$10$cybdADn.XNjN5sRN3h5L0uzRwZD8wdPKaIr3EkDLddp3IUs1NqOdq', 'handyman', '1-36251842', NULL, NULL, NULL, NULL, NULL, NULL, 0, 'Adam Parry', NULL, 0, 'UTC', NULL, NULL, NULL, NULL, '2023-10-04 04:08:17', '2023-10-04 04:08:17', NULL, NULL, NULL, 1, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 'en'),
 (55, 'richard_miller', 'Richard', 'Miller', 'richardmiller@gmail.com', '$2y$10$IRM/G3qNPH.f0SAMuPFz4OuraSwkcUs1a6XqM4cFVxODf5lNeCnVS', 'handyman', '61-52142536', NULL, NULL, NULL, NULL, NULL, NULL, 0, 'Richard Miller', NULL, 0, 'UTC', NULL, NULL, NULL, NULL, '2023-10-04 04:09:11', '2023-10-04 04:09:11', NULL, NULL, NULL, 2, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 'en'),
-(56, 'tina_francis', 'Tina', 'Francis', 'tina@gmail.com', '$2y$10$8ynZ7C/uaJ3.ZaVdR1ooSe77WPm0rFp1VOrHVeSgsXQJzWy8ugeZq', 'handyman', '44-52632235', NULL, NULL, NULL, NULL, NULL, NULL, 0, 'Tina Francis', NULL, 0, 'UTC', NULL, NULL, NULL, NULL, '2023-10-04 04:10:02', '2023-10-04 04:10:02', NULL, NULL, NULL, 1, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 'en'),
+(56, 'tina_francis', 'Tina', 'Francis', 'tina@gmail.com', '$2y$10$8ynZ7C/uaJ3.ZaVdR1ooSe77WPm0rFp1VOrHVeSgsXQJzWy8ugeZq', 'handyman', '44-52632235', NULL, NULL, NULL, NULL, NULL, NULL, 0, 'Tina Francis', NULL, 0, 'UTC', NULL, NULL, NULL, NULL, '2023-10-04 04:10:02', '2025-07-02 04:42:09', NULL, NULL, NULL, 1, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 'en'),
 (57, 'ralph_stanley', 'Ralph', 'Stanley', 'ralph@gmail.com', '$2y$10$LkMIjsnzEtrDvBh2BLTc7.hH7YyK.mumjmqidmzrZrYtzDgn2pGhK', 'handyman', '1-52552356', NULL, NULL, NULL, NULL, NULL, NULL, 0, 'Ralph Stanley', NULL, 0, 'UTC', NULL, NULL, NULL, NULL, '2023-10-04 04:10:49', '2023-10-04 04:10:49', NULL, NULL, NULL, 2, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 'en'),
 (58, 'julion_foster', 'Julion', 'Foster', 'julion@gmail.com', '$2y$10$PyN8lwwm9jmLWDozmDBwIuZlvXQuu7.a56q/lYLh.eJWm647YyhcK', 'provider', '1-75545214', 38, 671, 10269, NULL, 'Ontario, Barrie, Canada', NULL, 0, 'Julion Foster', 1, 0, 'UTC', NULL, NULL, NULL, NULL, '2023-10-13 00:11:24', '2023-10-13 00:17:40', NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 'en'),
-(59, 'cynthia_gross', 'Cynthia', 'Gross', 'cynthia@gmail.com', '$2y$10$uAzuHLkhgoFvpB87bWvW7eu1J7NtGEgCpOA1xXWG2zpeDtf0fQIou', 'provider', '1-52235478', 38, 674, 10859, NULL, 'Warman, SK, Canada', NULL, 0, 'Cynthia Gross', 2, 0, 'UTC', NULL, NULL, NULL, NULL, '2023-10-13 00:14:51', '2023-10-13 00:18:11', NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 'en'),
-(60, 'ruth_fletcher', 'Ruth', 'Fletcher', 'ruth@gmail.com', '$2y$10$ryPcV7YTLYAYNUO3Yf1KPOkIuq.wmm91Z8B5XybtKqBam22lXhOqC', 'provider', '1-24478563', 231, 3943, 44996, NULL, 'New Bedford, MA, USA', NULL, 0, 'Ruth Fletcher', 1, 0, 'UTC', NULL, NULL, NULL, NULL, '2023-10-13 00:20:37', '2023-10-13 00:21:29', NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 'en');
+(59, 'cynthia_gross', 'cynthia', 'Gross', 'cynthia@gmail.com', '$2y$10$uAzuHLkhgoFvpB87bWvW7eu1J7NtGEgCpOA1xXWG2zpeDtf0fQIou', 'provider', '1-52235478', 38, 674, 10859, NULL, 'Warman, SK, Canada', NULL, 1, 'Cynthia Gross', 2, 0, 'UTC', NULL, NULL, NULL, NULL, '2023-10-13 00:14:51', '2025-06-30 04:16:16', NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 'en'),
+(60, 'ruth_fletcher', 'Ruth', 'Fletcher', 'ruth@gmail.com', '$2y$10$ryPcV7YTLYAYNUO3Yf1KPOkIuq.wmm91Z8B5XybtKqBam22lXhOqC', 'provider', '1-24478563', 231, 3943, 44996, NULL, 'New Bedford, MA, USA', NULL, 0, 'Ruth Fletcher', 1, 0, 'UTC', NULL, NULL, NULL, NULL, '2023-10-13 00:20:37', '2023-10-13 00:21:29', NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 'en'),
+(65, 'AshishStore', 'Ashish', 'Store', 'ashishhandyman@gmail.com', '$2y$10$8.yyenTANHglC5hj9OBzFe70VZE0SUqT.9vUtTUnw1laTvORRxZl6', 'store', '+918114278804', NULL, NULL, NULL, NULL, NULL, NULL, 0, 'Ashish Handyman', NULL, 0, 'UTC', NULL, NULL, NULL, NULL, '2025-06-30 05:17:24', '2025-06-30 12:55:06', NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 'en'),
+(67, 'AshishCompany', 'Ashish', 'Company', 'ashish@vrwebconsulting.com', '$2y$10$sSCsHQkx14S4r8xnR8Dpm.kudvzOMqfZw9njE/7ore1gRJ4l4klHK', 'company', '=', NULL, NULL, NULL, NULL, NULL, NULL, 0, 'Ashish Kumar Handyman', NULL, 0, 'UTC', NULL, NULL, NULL, NULL, '2025-06-30 05:49:23', '2025-07-02 07:20:27', NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 'en'),
+(68, '313123213', 'raj', 'kumar', 'ravindra@gmail.com', '$2y$10$anUXol5vKFjkcun/AEd23uc/aQC5A19B143XA6VZQ61MJLQoHp9IS', 'company', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 'raj kumar', NULL, 0, 'UTC', NULL, NULL, NULL, NULL, '2025-06-30 06:57:56', '2025-06-30 07:07:43', NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 'en'),
+(69, 'admin@botble.com', 'admin@botble.com', 'Kumar', 'admin@botble.com', '$2y$10$4ryB2qbjf.O2OtC471ajn./Od1IFvQfcQ7xGU5UXlrK4HTe1qMsGe', 'store', '+916387784995', NULL, NULL, NULL, NULL, 'Malhipur Sultanpur\r\nMalhipur Sultanpur', NULL, 0, 'admin@botble.com Kumar', NULL, 0, 'UTC', NULL, NULL, NULL, NULL, '2025-07-02 01:38:11', '2025-07-02 07:10:18', NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 'en');
 
 -- --------------------------------------------------------
 
@@ -57148,6 +57301,28 @@ INSERT INTO `user_favourite_services` (`id`, `service_id`, `user_id`, `deleted_a
 (7, 83, 37, NULL, '2024-02-04 22:45:31', '2024-02-04 22:45:31'),
 (8, 57, 42, NULL, '2024-02-04 22:46:43', '2024-02-04 22:46:43'),
 (9, 61, 42, NULL, '2024-02-04 22:46:58', '2024-02-04 22:46:58');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_favourite_shops`
+--
+
+CREATE TABLE `user_favourite_shops` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `shop_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `user_favourite_shops`
+--
+
+INSERT INTO `user_favourite_shops` (`id`, `shop_id`, `user_id`, `created_at`, `updated_at`) VALUES
+(26, 1, 1, '2025-07-07 03:00:09', '2025-07-07 03:00:09'),
+(30, 6, 1, '2025-07-07 04:08:29', '2025-07-07 04:08:29');
 
 -- --------------------------------------------------------
 
@@ -57246,6 +57421,69 @@ CREATE TABLE `wallet_histories` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `webs`
+--
+
+CREATE TABLE `webs` (
+  `id` int(11) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `web_link` text DEFAULT NULL,
+  `status` tinyint(1) DEFAULT 1,
+  `is_featured` tinyint(1) DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `webs`
+--
+
+INSERT INTO `webs` (`id`, `user_id`, `name`, `description`, `category_id`, `web_link`, `status`, `is_featured`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, 'Tech World', 'A leading electronics and gadgets store', 1, 'dfsagbmfKL', 1, 1, '2025-07-03 13:09:08', '2025-07-07 07:28:38', '2025-07-07 07:28:38'),
+(2, 1, 'Timpu Solution', NULL, 6, 'http://127.0.0.1:8000/shop/allshop/create', 1, 1, '2025-07-04 06:55:04', '2025-07-07 07:52:58', NULL),
+(3, 1, 'Timpu Solution', NULL, 6, 'http://127.0.0.1:8000/shop/allshop/create', 1, 1, '2025-07-04 07:00:35', '2025-07-07 07:52:58', NULL),
+(4, 1, 'p[p[p[[p', NULL, 7, NULL, 1, 1, '2025-07-04 07:01:11', '2025-07-07 07:52:58', NULL),
+(5, 1, 'p[p[p[[p', NULL, 7, NULL, 0, 1, '2025-07-04 07:01:31', '2025-07-07 07:52:58', NULL),
+(6, 1, 'sdvbnmn', NULL, 7, 'http://127.0.0.1:8000/shop/allshop/create', 0, 1, '2025-07-04 07:15:53', '2025-07-07 07:52:58', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `web_category`
+--
+
+CREATE TABLE `web_category` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_by` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` text DEFAULT NULL,
+  `color` varchar(100) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT 1 COMMENT '1- Active , 0- InActive',
+  `is_featured` tinyint(4) DEFAULT 0,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `web_category`
+--
+
+INSERT INTO `web_category` (`id`, `created_by`, `name`, `description`, `color`, `status`, `is_featured`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Ac Technician', 'All type Ac Maintenance', NULL, 1, 1, NULL, '2025-06-30 07:20:36', '2025-07-07 07:52:08'),
+(5, 1, 'House Keeping', 'General: Housekeeping encompasses cleaning, tidying, maintenance, laundry, stocking supplies, and sometimes errands or light cooking.', NULL, 1, 1, NULL, '2025-07-01 05:57:27', '2025-07-07 07:52:08'),
+(6, 1, 'Car Wash 4', 'Any type car washing. 4', NULL, 1, 1, NULL, '2025-07-01 07:56:48', '2025-07-07 07:52:08'),
+(7, 1, 'Truck Driver', 'A truck driver is responsible for transporting goods and materials over land, using various types of trucks, often over long distances', NULL, 1, 1, NULL, '2025-07-02 06:09:04', '2025-07-07 07:52:08'),
+(8, 1, 'Home Sensitization', 'Fully home Sensitization', NULL, 1, 1, NULL, '2025-07-02 23:55:47', '2025-07-07 07:52:08'),
+(9, 1, 'New company', NULL, NULL, 1, 0, '2025-07-07 07:49:47', '2025-07-04 07:10:38', '2025-07-07 07:49:47');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `withdraw_money`
 --
 
@@ -57266,6 +57504,12 @@ CREATE TABLE `withdraw_money` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `all_shop`
+--
+ALTER TABLE `all_shop`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `app_downloads`
@@ -57735,6 +57979,12 @@ ALTER TABLE `settings`
   ADD KEY `settings_key_index` (`key`);
 
 --
+-- Indexes for table `shop_category`
+--
+ALTER TABLE `shop_category`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `sliders`
 --
 ALTER TABLE `sliders`
@@ -57751,6 +58001,19 @@ ALTER TABLE `states`
 --
 ALTER TABLE `static_data`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `store_categories`
+--
+ALTER TABLE `store_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `store_sub_categories`
+--
+ALTER TABLE `store_sub_categories`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `store_sub_categories_category_id_foreign` (`category_id`);
 
 --
 -- Indexes for table `subscription_transactions`
@@ -57806,6 +58069,12 @@ ALTER TABLE `user_favourite_services`
   ADD KEY `user_favourite_services_user_id_foreign` (`user_id`);
 
 --
+-- Indexes for table `user_favourite_shops`
+--
+ALTER TABLE `user_favourite_shops`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `wallets`
 --
 ALTER TABLE `wallets`
@@ -57819,6 +58088,18 @@ ALTER TABLE `wallet_histories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `webs`
+--
+ALTER TABLE `webs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `web_category`
+--
+ALTER TABLE `web_category`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `withdraw_money`
 --
 ALTER TABLE `withdraw_money`
@@ -57827,6 +58108,12 @@ ALTER TABLE `withdraw_money`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `all_shop`
+--
+ALTER TABLE `all_shop`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `app_downloads`
@@ -58024,7 +58311,7 @@ ALTER TABLE `mail_template_content_mappings`
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=345;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=359;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -58078,7 +58365,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `plans`
@@ -58168,7 +58455,7 @@ ALTER TABLE `provider_types`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `services`
@@ -58207,6 +58494,12 @@ ALTER TABLE `settings`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
+-- AUTO_INCREMENT for table `shop_category`
+--
+ALTER TABLE `shop_category`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
@@ -58223,6 +58516,18 @@ ALTER TABLE `states`
 --
 ALTER TABLE `static_data`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `store_categories`
+--
+ALTER TABLE `store_categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `store_sub_categories`
+--
+ALTER TABLE `store_sub_categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `subscription_transactions`
@@ -58252,7 +58557,7 @@ ALTER TABLE `translations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `user_favourite_providers`
@@ -58267,6 +58572,12 @@ ALTER TABLE `user_favourite_services`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `user_favourite_shops`
+--
+ALTER TABLE `user_favourite_shops`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
+--
 -- AUTO_INCREMENT for table `wallets`
 --
 ALTER TABLE `wallets`
@@ -58277,6 +58588,18 @@ ALTER TABLE `wallets`
 --
 ALTER TABLE `wallet_histories`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `webs`
+--
+ALTER TABLE `webs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `web_category`
+--
+ALTER TABLE `web_category`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `withdraw_money`
@@ -58494,6 +58817,12 @@ ALTER TABLE `service_proofs`
   ADD CONSTRAINT `service_proofs_booking_id_foreign` FOREIGN KEY (`booking_id`) REFERENCES `bookings` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `service_proofs_service_id_foreign` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `service_proofs_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `store_sub_categories`
+--
+ALTER TABLE `store_sub_categories`
+  ADD CONSTRAINT `store_sub_categories_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `subscription_transactions`
