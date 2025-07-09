@@ -417,6 +417,9 @@ a {
     display: flex;
     flex-wrap: wrap;
 }
+.custom-tabs .nav-item-1 {
+    margin-right: 0px !important;
+}
 }
 @media (max-width:767.98px) {
   .main-img .container h1 {
@@ -2847,6 +2850,7 @@ table.provider-detail-info td h6 {
   transition: all 0.3s ease;
   padding: 10px 2rem;
   background: #f2f2f2;
+  margin-bottom: 10px;
   border-radius: 34px;
 }
 
@@ -3068,4 +3072,36 @@ table.provider-detail-info td h6 {
 
 .cursor-pointer{
   cursor: pointer;
+}
+.web-service-tabs{
+  border-bottom: 2px solid #aaa;
+}
+
+.custom-tabs .nav-link1 {
+    color: #000;
+    border: none;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 10px 2rem;
+    background: none !important;
+    
+}
+.custom-tabs .nav-link1.active {
+    color: #fff;
+    border: 2px solid #d29c49;
+}
+
+.plus-icon {
+    background-color: #fff;
+    border: 2px solid #aaa;
+    height: 90px;
+    align-content: center;
+    max-width: 90px;
+    margin: 0px auto;
+    padding: 5px;
+    border-radius: 50%;
+}
+.plus-icon svg {
+  width: 50px;
+  height: 50px;
 }

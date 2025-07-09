@@ -220,6 +220,12 @@
 							<i class="bi bi-gear-wide-connected me-2"></i>Store
 						</button>
 					</li>
+
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="webs-tab" data-bs-toggle="tab" data-bs-target="#webs" type="button">
+							<i class="bi bi-gear-wide-connected me-2"></i>Webs
+						</button>
+					</li>
 				</ul>
 
 				<!-- Tab Content -->
@@ -865,6 +871,212 @@
 							@endif
 						</div>
 					</div>
+
+
+					<div class="tab-pane fade" id="webs" role="tabpanel">
+						<div class="row">
+							<!-- Webs Tabs Navigation -->
+							 <div class="col-md-12">
+				
+				           <ul class="nav nav-tabs custom-tabs justify-content-center" id="myTab" role="tablist">
+							<li class="nav-item nav-item-1" role="presentation">
+							<div  class="nav-link1 active" id="news-tab" data-bs-toggle="tab" data-bs-target="#news">
+								<div class="service_box  ">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+									<h5><a href="#">News</a></h5>
+								</div>
+							</div>
+						    </li>
+
+							<li class="nav-item nav-item-1" role="presentation">
+							<div  class="nav-link1" id="clean-tab" data-bs-toggle="tab" data-bs-target="#clean" >
+								<div class="service_box ">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+									<h5><a href="#">Clean</a></h5>
+								</div>
+
+							</div>
+							</li>
+
+							<li class="nav-item nav-item-1" role="presentation">
+							<div class="nav-link1" id="process-tab" data-bs-toggle="tab" data-bs-target="#process" >
+								<div class="service_box ">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+									<h5><a href="#">Process</a></h5>
+								</div>
+
+							</div>
+							</li>
+
+							<li class="nav-item nav-item-1" role="presentation">
+							<div class="nav-link1 " id="bookmarks-tab" data-bs-toggle="tab" data-bs-target="#bookmarks">
+								<div class="service_box " >
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+									<h5><a href="#">Bookmarks</a></h5>
+								</div>
+
+							</div>
+							</li>
+							</ul>
+
+
+					<div class="tab-content mt-5" id="myTabContent">
+
+                  <!-- =============Webs tab content=============== -->
+					<!-- news Tab -->
+					<div class="tab-pane fade show active" id="news" role="tabpanel">
+						<div class="row">
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+									<h5><a href="#">Window Tinting1</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+									<h5><a href="#">Water Blasting1</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="plus-icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+											<path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+										</svg>
+									</div>
+									<h5><a href="#">Add</a></h5>
+								</div>
+
+							</div>
+
+                         </div>
+                        </div>
+
+                        <!-- clean Tab -->
+                         <div class="tab-pane fade" id="clean" role="tabpanel">
+						<div class="row">
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+									<h5><a href="#">Window Tinting2</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+									<h5><a href="#">Water Blasting2</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="plus-icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+											<path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+										</svg>
+									</div>
+									<h5><a href="#">Add</a></h5>
+								</div>
+
+							</div>
+
+                         </div>
+                        </div>
+
+                        <!-- process Tab -->
+						<div class="tab-pane fade" id="process" role="tabpanel">
+						<div class="row">
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+									<h5><a href="#">Window Tinting3</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+									<h5><a href="#">Water Blasting3</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="plus-icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+											<path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+										</svg>
+									</div>
+									<h5><a href="#">Add</a></h5>
+								</div>
+
+							</div>
+
+                         </div>
+                        </div>
+
+
+                         <!-- bookmarks Tab -->
+						<div class="tab-pane fade" id="bookmarks" role="tabpanel">
+						<div class="row">
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+									<h5><a href="#">Window Tinting4</a></h5>
+								</div>
+
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
+									<h5><a href="#">Water Blasting4</a></h5>
+								</div>
+
+							</div>
+
+							<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+								<div class="service_box">
+									<div class="plus-icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+											<path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+										</svg>
+									</div>
+									<h5><a href="#">Add</a></h5>
+								</div>
+
+							</div>
+
+                         </div>
+                        </div>
+
+					</div>
+
+
+							 </div>
+                         </div>
+							<hr class="web-service-tabs">
+                      </div>
+
+
+					 
+
+                       
+
+						
+
+
+
+
+
+
+
 				</div>
 			</div>
 
@@ -1041,22 +1253,14 @@
 		<div class="row">
 			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 				<div class="service_box">
-					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/windows.png" class="img-fluid" /></div>
+					<div class="img-box"><img src="{{asset('images/home/30discount.png')}}" class="img-fluid" /></div>
 
 				</div>
 
 			</div>
 			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 				<div class="service_box">
-					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/water.png" class="img-fluid" /></div>
-
-				</div>
-
-			</div>
-
-			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-				<div class="service_box">
-					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/plastering.png" class="img-fluid" /></div>
+					<div class="img-box"><img src="{{asset('images/home/50discount.png')}}" class="img-fluid" /></div>
 
 				</div>
 
@@ -1064,7 +1268,7 @@
 
 			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 				<div class="service_box">
-					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/paint.png" class="img-fluid" /></div>
+					<div class="img-box"><img src="{{asset('images/home/60discount.png')}}" class="img-fluid" /></div>
 
 				</div>
 
@@ -1072,7 +1276,7 @@
 
 			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 				<div class="service_box">
-					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/moving-truck.png" class="img-fluid" /></div>
+					<div class="img-box"><img src="{{asset('images/home/75discount.png')}}" class="img-fluid" /></div>
 
 				</div>
 
@@ -1080,12 +1284,28 @@
 
 			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 				<div class="service_box">
-					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/delete1.png" class="img-fluid" /></div>
+					<div class="img-box"><img src="{{asset('images/home/80discount.png')}}" class="img-fluid" /></div>
 
 				</div>
 
 			</div>
 
+			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="{{asset('images/home/25discount.png')}}" class="img-fluid" /></div>
+
+				</div>
+
+			</div>
+
+
+			<!-- <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+				<div class="service_box">
+					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid" /></div>
+
+				</div>
+
+			</div>
 
 			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
 				<div class="service_box">
@@ -1093,15 +1313,7 @@
 
 				</div>
 
-			</div>
-
-			<div class="col-lg-2 col-md-3 col-sm-4 col-4">
-				<div class="service_box">
-					<div class="img-box"><img src="https://dailycleaners.co.nz/dollarshopdev/public/images/home/cctv.png" class="img-fluid" /></div>
-
-				</div>
-
-			</div>
+			</div> -->
 
 
 
